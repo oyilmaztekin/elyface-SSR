@@ -6,14 +6,17 @@
   "author": "özer yilmaztekin <yilmaztekin.ozer@gmail.com>",
   "license": "UNLICENCED",
   "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "next": "^7.0.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+  "devDependencies": {
+    "yarn": "^1.13.0"
   }
 }
