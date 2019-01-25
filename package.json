@@ -1,0 +1,14 @@
+{
+  "name": "haberiyakalaSSR",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/elluga/haberiyakalaSSR.git",
+  "author": "özer yilmaztekin <yilmaztekin.ozer@gmail.com>",
+  "license": "UNLICENCED",
+  "private": true,
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
