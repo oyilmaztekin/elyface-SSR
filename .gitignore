@@ -4,8 +4,7 @@ node_modules
 npm-debug.log
 
 # webpack output
-website/static/*/build
-website/build
+.next/
 
 # testing
 coverage
