@@ -1,3 +1,10 @@
-export default () => <h1>
+export default () => 
+(
+<React.Fragment>
+<h1>
     Haberi Yakala SSR Test
 </h1>
+<p>SSR Deneme paragraf</p>
+</React.Fragment>
+)
+
