@@ -2,9 +2,11 @@
 node_modules
 .DS_Store
 npm-debug.log
+.netlify
 
 # webpack output
 .next/
+out/
 
 # testing
 coverage
