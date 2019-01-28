@@ -1,0 +1,42 @@
+[
+  {
+    "key": "Gündem",
+    "href": "/gundem"
+  },
+  {
+    "key": "Siyaset",
+    "href": "/siyaset"
+  },
+  {
+    "key": "Ekonomi",
+    "href": "/ekonomi"
+  },
+  {
+    "key": "Spor",
+    "href": "/spor"
+  },
+  {
+    "key": "Yaşam",
+    "href": "/yasam"
+  },
+  {
+    "key": "Magazin",
+    "href": "/magazin"
+  },
+  {
+    "key": "Emlak",
+    "href": "/emlak"
+  },
+  {
+    "key": "Eğitim",
+    "href": "/egitim"
+  },
+  {
+    "key": "Teknoloji",
+    "href": "/teknoloji"
+  },
+  {
+    "key": "Seyahat",
+    "href": "/seyahat"
+  }
+]
