@@ -1,4 +1,4 @@
-import "./globalstyles/styles.scss"
+import "./globalstyles/styles.scss";
 
 export default () => (
   <React.Fragment>

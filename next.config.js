@@ -1,7 +1,8 @@
+/* eslint-disable */
 const withSass = require("@zeit/next-sass");
 
 module.exports = withSass({
-    exportPathMap: async function(defaultPathMap) {
+    exportPathMap: async function(defaultPathMap) { 
     return {
       "/": { page: "/" }
       // '/about': { page: '/about' },
