@@ -24,7 +24,7 @@ module.exports = withPlugins(
       {
         cssModules: true,
         cssLoaderOptions: {
-          localIdentName: "[local]___[hash:base64:5]"
+          localIdentName: "[local]"
         },
         [PHASE_PRODUCTION_BUILD + PHASE_EXPORT]: {
           cssLoaderOptions: {
@@ -38,7 +38,9 @@ module.exports = withPlugins(
     size,
     [
       {
-        exportPathMap: async function(defaultPathMap) {
+        exportPathMap: async function(
+          defaultPathMap
+        ) {
           return {
             "/": { page: "/" }
             // '/about': { page: '/about' },
