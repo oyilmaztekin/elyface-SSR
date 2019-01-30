@@ -10,6 +10,7 @@ import {
 } from "@storybook/addon-knobs";
 import Link from "next/link";
 import LinkButton from "@comp/linkButton/";
+import Image from "@comp/image/";
 
 const navStyle = {
   backgroundColor: "#ffa200",
@@ -22,7 +23,12 @@ const cardStyle = {
   width: 600 + "px"
 };
 
-storiesOf("LinkButton", module)
+const footerStyle = {
+  backgroundColor: "#282841",
+  padding: 40 + "px"
+};
+
+storiesOf("SSR Link Buttons", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .add("Navigation Buttons", () => {
@@ -66,5 +72,56 @@ storiesOf("LinkButton", module)
           </Link>
         </div>
       </div>
+    );
+  })
+
+  .add("Footer Buttons", () => {
+    return (
+      <div style={footerStyle}>
+        <Link
+          href={text("href", "#")}
+          passHref={boolean("passHref", true)}
+        >
+          <LinkButton
+            text={text(
+              "text for title and alt",
+              "Sample Button"
+            )}
+            type={text("type", "footerList")}
+          >
+            <span>Sample Button</span>
+          </LinkButton>
+        </Link>
+      </div>
+    );
+  })
+
+  .add("Link Img", () => {
+    return (
+      <Link
+        href={text("href", "#")}
+        passHref={boolean("passHref", true)}
+      >
+        <LinkButton
+          text={text(
+            "text for title and alt",
+            "Sample Button"
+          )}
+          type={text("type", "footerList")}
+        >
+          <Image
+            src={text(
+              "src",
+              "http://cdn.haberiyakala.com/assets/uploads/images/content/2019/01/23/cropped_content_enflasyon-2019da-15e-inecek_yB38C62IrIsvF37.jpg"
+            )}
+            desc={text(
+              "desc",
+              "Enflasyon haberi"
+            )}
+            width={text("width", "240")}
+            height={text("height", "")}
+          />
+        </LinkButton>
+      </Link>
     );
   });

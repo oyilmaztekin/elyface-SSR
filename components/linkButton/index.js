@@ -12,19 +12,20 @@ class LinkButton extends Component {
   render() {
     const conditionalClass = classNames({
       "link-nav": this.props.type === "nav",
-      "link-navBtn": this.props.type === "navBtn",
+      "link-nav-btn":
+        this.props.type === "navBtn",
       "link-bread": this.props.type === "bread",
       "link-tag": this.props.type === "tag",
       "link-img": this.props.type === "img",
       "link-title":
         this.props.type === "cardTitle",
-      "link-carouselBtn":
+      "link-carousel-btn":
         this.props.type === "carouselBtn",
       "link-category-title":
         this.props.type === "catTitle",
       "link-footer-category":
         this.props.type === "footerCat",
-      "link-footerList":
+      "link-footer-list":
         this.props.type === "footerList"
     });
     return (

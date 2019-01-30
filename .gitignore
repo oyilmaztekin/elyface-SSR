@@ -8,6 +8,7 @@ npm-debug.log
 .next/
 out/
 build/
+storybook-static/
 
 # testing
 coverage

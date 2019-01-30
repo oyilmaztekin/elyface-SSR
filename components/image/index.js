@@ -11,9 +11,14 @@ class Image extends Component {
     return (
       <img
         src={this.props.src}
-        alt={this.props.alt}
-        title={this.props.title}
+        alt={this.props.desc}
+        title={this.props.desc}
+        longdesc={this.props.longdesc}
+        width={this.props.width}
+        height={this.props.height}
         responsive={this.props.responsive}
+        srcSet={this.props.srcSet}
+        sizes={this.props.sizes}
       />
     );
   }
@@ -21,9 +26,13 @@ class Image extends Component {
 
 Image.propTypes = {
   src: propTypes.string.isRequired,
-  alt: propTypes.string,
-  title: propTypes.string,
-  responsive: propTypes.bool
+  desc: propTypes.string.isRequired,
+  responsive: propTypes.bool,
+  height: propTypes.string,
+  width: propTypes.string,
+  longdesc: propTypes.string,
+  srcSet: propTypes.string,
+  sizes: propTypes.string
 };
 
 export default Image;
