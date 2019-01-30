@@ -1,0 +1,29 @@
+@import "../../../globalstyles/styles.scss";
+
+.search-form {
+    position: relative;
+  &-input {
+    box-sizing: content-box;
+    padding: 10px 0;
+    width: 100%;
+    color: #fff;
+    font-size: 12px;
+    background: transparent;
+    border-top: 0 none;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-bottom: 2px solid
+      rgba(255, 255, 255, 0.8);
+  }
+  input[type="search"]{
+    outline: none;
+  }
+  &-submit{
+      background: transparent;
+      border:0 none;
+      position: absolute;
+      top:7px;
+      right:-10px;
+      cursor: pointer;
+  }
+}

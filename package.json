@@ -13,7 +13,8 @@
     "export": "next build && next export",
     "test": "jest",
     "story": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "esw ."
   },
   "husky": {
     "hooks": {

@@ -45,7 +45,7 @@ storiesOf("SSR Link Buttons", module)
             )}
             type={text("type", "navBtn")}
           >
-            <span>Sample Button</span>
+            <span>📷 Sample Button</span>
           </LinkButton>
         </Link>
       </div>
