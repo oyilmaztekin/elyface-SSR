@@ -2,9 +2,9 @@ import "@globalstyle";
 import "./assets/styles.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";
-import FormHOC from "./lib/formHoc";
+import SearchFormHOC from "./lib/searchFormHoc";
 
-class SearchField extends Component {
+class SearchForm extends Component {
   constructor(props) {
     super(props);
   }
@@ -23,15 +23,16 @@ class SearchField extends Component {
   }
 }
 
-SearchField.propTypes = {
+SearchForm.propTypes = {
   id: propTypes.string,
   value: propTypes.string,
   name: propTypes.string.isRequired,
   onChange: propTypes.func,
+  onSubmit: propTypes.func,
   placeholder: propTypes.string,
   type: propTypes.string,
   loading: propTypes.bool,
   submitText: propTypes.string
 };
 
-export default FormHOC(SearchField);
+export default SearchFormHOC(SearchForm);

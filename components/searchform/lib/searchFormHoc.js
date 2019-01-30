@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import autobind from "autobind-decorator";
 
-function FormHOC(SearchFieldComponent) {
+function SearchFormHOC(SearchFieldComponent) {
   return class SearchForm extends Component {
     static displayName = "SearchForm";
     constructor(props) {
@@ -12,19 +12,10 @@ function FormHOC(SearchFieldComponent) {
     }
 
     @autobind
-    getValues(event) {
-      return {
-        values: Object.values(
-          event.target.children
-        ).map(v => v.value)
-      };
-    }
-    @autobind
     handleSubmit(e) {
-      e.preventDefault();
-      const result = this.getValues(e).values;
       //eslint-disable-next-line
-      console.log(result);
+      console.log(this.state);
+      e.preventDefault();
     }
 
     @autobind
@@ -45,6 +36,8 @@ function FormHOC(SearchFieldComponent) {
         value,
         //eslint-disable-next-line
         submitText,
+        //eslint-disable-next-line
+        onClick,
         ...searchProps
       } = this.props;
       return (
@@ -61,6 +54,7 @@ function FormHOC(SearchFieldComponent) {
             type="submit"
             value={submitText}
             className="search-form-submit"
+            onClick={onClick}
           />
         </form>
       );
@@ -68,4 +62,4 @@ function FormHOC(SearchFieldComponent) {
   };
 }
 
-export default FormHOC;
+export default SearchFormHOC;

@@ -1,6 +1,6 @@
-# Search Field Component
+# Search Form Component
 
-Text field is a form text input component. 
+Text Form component. 
 
 
 ### Props

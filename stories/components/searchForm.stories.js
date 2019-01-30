@@ -4,12 +4,10 @@ import { storiesOf } from "@storybook/react";
 import centered from "@storybook/addon-centered";
 import {
   withKnobs,
-  text,
-  boolean,
-  object
+  text
 } from "@storybook/addon-knobs";
-import SearchField from "@comp/searchfield/";
-
+import SearchForm from "@comp/searchform/";
+import { action } from "@storybook/addon-actions";
 const headerBG = {
   backgroundColor: "#ffa200",
   padding: 40 + "px",
@@ -22,12 +20,13 @@ storiesOf("Search Form", module)
   .add("Search Form", () => {
     return (
       <div style={headerBG}>
-        <SearchField
+        <SearchForm
           id={text("id", "unique_id")}
           name={text("name", "unique_name")}
           value={text("value", "Ara")}
           type={text("type", "search")}
           submitText={text("submit", "🔎")}
+          onClick={action("submit")}
         />
       </div>
     );
