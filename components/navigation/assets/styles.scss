@@ -1,0 +1,14 @@
+@import "../../../globalstyles/styles.scss";
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-item:first-child{
+    margin-left:0px;
+  }
+  &-item{
+    margin-left:16px;
+    line-height: 30px;
+  }
+}
