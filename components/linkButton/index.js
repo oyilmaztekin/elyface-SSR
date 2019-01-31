@@ -16,7 +16,6 @@ class LinkButton extends Component {
         this.props.type === "navBtn",
       "link-bread": this.props.type === "bread",
       "link-tag": this.props.type === "tag",
-      "link-img": this.props.type === "img",
       "link-title":
         this.props.type === "cardTitle",
       "link-carousel-btn":
@@ -28,20 +27,23 @@ class LinkButton extends Component {
       "link-footer-list":
         this.props.type === "footerList"
     });
+    let {
+      type,
+      text,
+      target,
+      href,
+      children
+    } = this.props;
     return (
       <a
-        type={this.props.type}
-        alt={this.props.text}
-        title={this.props.text}
-        target={
-          !this.props.target
-            ? "_self"
-            : this.props.target
-        }
-        href={this.props.href}
+        type={type}
+        alt={text}
+        title={text}
+        target={!target ? "_self" : target}
+        href={href}
         className={conditionalClass}
       >
-        {this.props.children}
+        {children}
       </a>
     );
   }

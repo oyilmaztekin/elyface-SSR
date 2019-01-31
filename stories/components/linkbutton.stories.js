@@ -11,6 +11,8 @@ import {
 import Link from "next/link";
 import LinkButton from "@comp/linkButton/";
 import Image from "@comp/image/";
+import { withReadme } from "storybook-readme";
+import linkReadme from "@comp/linkButton/README.md";
 
 const navStyle = {
   backgroundColor: "#ffa200",
@@ -31,6 +33,7 @@ const footerStyle = {
 storiesOf("SSR Link Buttons", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
+  .addDecorator(withReadme(linkReadme))
   .add("Navigation Buttons", () => {
     return (
       <div style={navStyle}>
@@ -114,7 +117,7 @@ storiesOf("SSR Link Buttons", module)
               "src",
               "http://cdn.haberiyakala.com/assets/uploads/images/content/2019/01/23/cropped_content_enflasyon-2019da-15e-inecek_yB38C62IrIsvF37.jpg"
             )}
-            desc={text(
+            longdesc={text(
               "desc",
               "Enflasyon haberi"
             )}

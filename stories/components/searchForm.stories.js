@@ -8,6 +8,9 @@ import {
 } from "@storybook/addon-knobs";
 import SearchForm from "@comp/searchform/";
 import { action } from "@storybook/addon-actions";
+import { withReadme } from "storybook-readme";
+import SearchFormREADME from "@comp/searchform/README.md";
+
 const headerBG = {
   backgroundColor: "#ffa200",
   padding: 40 + "px",
@@ -17,6 +20,7 @@ const headerBG = {
 storiesOf("Search Form", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
+  .addDecorator(withReadme(SearchFormREADME))
   .add("Search Form", () => {
     return (
       <div style={headerBG}>

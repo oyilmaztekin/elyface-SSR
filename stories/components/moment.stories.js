@@ -7,10 +7,13 @@ import {
   text
 } from "@storybook/addon-knobs";
 import Moment from "@comp/moment/";
+import { withReadme } from "storybook-readme";
+import momentReadme from "@comp/moment/README.md";
 
 storiesOf("Moment", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
+  .addDecorator(withReadme(momentReadme))
   .add("Moment Header", () => {
     return (
       <Moment
