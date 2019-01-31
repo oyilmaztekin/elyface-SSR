@@ -2,12 +2,18 @@ import "@globalstyle";
 import "./assets/styles.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";
+import classNames from "classnames";
 
 class Image extends Component {
+  static displayName = "Image";
   constructor(props) {
     super(props);
   }
   render() {
+    let { responsive } = this.props;
+    let classN = classNames(
+      responsive && "responsive"
+    );
     return (
       <img
         src={this.props.src}
@@ -16,9 +22,10 @@ class Image extends Component {
         longdesc={this.props.longdesc}
         width={this.props.width}
         height={this.props.height}
-        responsive={this.props.responsive}
+        responsive={responsive}
         srcSet={this.props.srcSet}
         sizes={this.props.sizes}
+        className={classN}
       />
     );
   }
