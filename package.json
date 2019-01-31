@@ -24,6 +24,7 @@
   "dependencies": {
     "@storybook/addon-centered": "^4.1.11",
     "@storybook/addon-knobs": "^4.1.11",
+    "@storybook/addon-options": "^4.1.11",
     "@zeit/next-sass": "^1.0.1",
     "autobind-decorator": "^2.4.0",
     "classnames": "^2.2.6",
