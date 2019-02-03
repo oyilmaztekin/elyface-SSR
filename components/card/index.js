@@ -1,6 +1,6 @@
 import "@globalstyle";
 import "./assets/styles.scss";
-import React, { Component } from "react";
+import React from "react";
 import propTypes from "prop-types";
 import classNames from "classnames";
 import Image from "@comp/image/";
