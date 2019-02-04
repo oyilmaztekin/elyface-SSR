@@ -30,7 +30,6 @@ storiesOf("Atomic", module)
         )}
         width={text("width", "240")}
         height={text("height", "")}
-        responsive={boolean("responsive", false)}
       />
     );
   })

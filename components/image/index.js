@@ -18,7 +18,6 @@ class Image extends Component {
       <img
         src={this.props.src}
         alt={this.props.desc}
-        title={this.props.desc}
         longdesc={this.props.longdesc}
         width={this.props.width}
         height={this.props.height}
@@ -33,11 +32,11 @@ class Image extends Component {
 
 Image.propTypes = {
   src: propTypes.string.isRequired,
-  desc: propTypes.string.isRequired,
   responsive: propTypes.bool,
   height: propTypes.string,
   width: propTypes.string,
   longdesc: propTypes.string,
+  desc: propTypes.string,
   srcSet: propTypes.string,
   sizes: propTypes.string
 };
