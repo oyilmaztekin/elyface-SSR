@@ -31,8 +31,8 @@ class LinkButton extends Component {
       type,
       text,
       target,
-      href,
-      children
+      children,
+      ...otherProps
     } = this.props;
     return (
       <a
@@ -40,8 +40,8 @@ class LinkButton extends Component {
         alt={text}
         title={text}
         target={!target ? "_self" : target}
-        href={href}
         className={conditionalClass}
+        {...otherProps}
       >
         {children}
       </a>
@@ -50,9 +50,8 @@ class LinkButton extends Component {
 }
 
 LinkButton.propTypes = {
-  type: propTypes.string.isRequired,
   text: propTypes.string.isRequired,
-  href: propTypes.string,
+  type: propTypes.string,
   alt: propTypes.string,
   title: propTypes.string,
   target: propTypes.string,

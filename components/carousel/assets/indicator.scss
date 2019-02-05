@@ -1,0 +1,93 @@
+@import "../../../globalstyles/styles.scss";
+
+$indNum: 35px;
+
+.carousel__indicators {
+    a:link {
+      text-decoration: none;
+    }
+    li {
+      &:nth-of-type(n + 2) {
+        margin-left: 0px;
+      }
+    }
+  }
+  
+  .carousel__indicators--bottom {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+  
+  .carousel__indicators--left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  a:link {
+    text-decoration: none;
+  }
+  
+  .carousel__indicator {
+    font-size: 18px;
+    cursor: pointer;
+    transition: opacity 0.15s
+      cubic-bezier(0.4, 0, 1, 1);
+  }
+  
+  .indicator__bottom {
+    display: block;
+    width: $indNum;
+    height: $indNum;
+    border-radius: $indNum;
+    border: 2px;
+    text-align: center;
+    line-height: $indNum;
+    &:hover {
+      background-color: $dark;
+      color: $white;
+    }
+    &--active {
+      &,
+      &:hover {
+        background-color: $dark;
+        color: $white;
+      }
+    }
+  }
+  
+  .indicator__left {
+    $w: 13px;
+    position: relative;
+    display: block;
+    width: $indNum + 10;
+    height: $indNum + 15;
+    text-align: center;
+    line-height: $indNum + 15;
+    background-color: $brand;
+    color: $dark;
+    &:hover {
+      background-color: $dark;
+      color: $white;
+    }
+    &--active {
+      &,
+      &:hover {
+        background-color: $dark;
+        color: $white;
+      }
+    }
+  
+    &:hover::before {
+      $w: 11px;
+      width: 0;
+      height: 0;
+      border-top: $w solid transparent;
+      border-bottom: $w solid transparent;
+      border-left: $w solid $dark;
+      content: "";
+      position: absolute;
+      top: ($w / 2) + ($w / 2);
+      right: -$w;
+    }
+  }

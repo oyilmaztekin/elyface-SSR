@@ -1,4 +1,6 @@
 import "./assets/styles.scss";
+import "./assets/indicator.scss";
+import "./assets/slide.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";
 import autobind from "autobind-decorator";
@@ -8,23 +10,21 @@ import Image from "@comp/image/";
 import classNames from "classnames";
 
 const CarouselIndicator = props => {
-  const conditionalClass = classNames({
-    "carousel__indicator carousel__indicator--active":
-      props.index === props.activeIndex,
-    carousel__indicator:
-      props.index !== props.activeIndex,
-    "carousel-orange":
-      props.buttonClass === "orange",
-    "carousel-dark": props.buttonClass === "dark"
+  const indicatorClass = classNames({
+    indicator__bottom: props.layout === "bottom",
+    indicator__left: props.layout === "left"
   });
   return (
     <li>
-      <button
-        className={conditionalClass}
-        onMouseEnter={props.onMouseEnter}
-      >
-        {props.index + 1}
-      </button>
+      <Link href={props.slide.href} passHref>
+        <LinkButton
+          text={props.slide.title}
+          onMouseEnter={props.onMouseEnter}
+          className={indicatorClass}
+        >
+          <span>{props.index + 1}</span>
+        </LinkButton>
+      </Link>
     </li>
   );
 };
@@ -33,43 +33,103 @@ CarouselIndicator.propTypes = {
   index: propTypes.number,
   activeIndex: propTypes.number,
   onMouseEnter: propTypes.func,
-  buttonClass: propTypes.string
+  slide: propTypes.object,
+  layout: propTypes.string
 };
 
 const CarouselSlide = props => {
-  let { slide } = props;
-  return (
-    <li
-      className={
-        props.index === props.activeIndex
-          ? "carousel__slide carousel__slide--active"
-          : "carousel__slide"
-      }
-    >
-      <div
-        className="carousel-slide__content"
-        style={{ width: props.width + "px" }}
-      >
-        <Link href="#" passHref>
-          <LinkButton text="Sample Button">
-            <Image
-              src={slide.src}
-              responsive
-              alt={slide.desc}
-              longdesc={slide.longdesc}
-            />
-          </LinkButton>
-        </Link>
-      </div>
-    </li>
+  const slideClass = classNames({
+    "carousel__slide carousel__slide--active":
+      props.index === props.activeIndex,
+    carousel__slide:
+      props.index !== props.activeIndex
+  });
+
+  const slideDiv = classNames(
+    "carousel-slide__content",
+    {
+      div__left: props.layout === "left"
+    }
   );
+
+  let { slide, layout, index } = props;
+  if (layout && layout === "bottom") {
+    return (
+      <li key={index} className={slideClass}>
+        <div className={slideDiv}>
+          <Link href={slide.href} passHref>
+            <LinkButton text={slide.title}>
+              <Image
+                src={slide.src}
+                alt={slide.desc}
+                longdesc={slide.longdesc}
+                width={props.width}
+              />
+            </LinkButton>
+          </Link>
+
+          <Link href={slide.href} passHref>
+            <LinkButton
+              text={slide.title}
+              className="slide__overlay"
+              style={{
+                top: props.width / 3
+              }}
+            >
+              <span className="slide__desc">
+                {slide.cat}
+              </span>
+              <span className="slide__title">
+                {slide.title}
+              </span>
+            </LinkButton>
+          </Link>
+        </div>
+      </li>
+    );
+  }
+  if (layout && layout === "left") {
+    return (
+      <li key={index} className={slideClass}>
+        <div className={slideDiv}>
+          <Link href={slide.href} passHref>
+            <LinkButton text={slide.title}>
+              <Image
+                src={slide.src}
+                alt={slide.desc}
+                longdesc={slide.longdesc}
+                width={props.width}
+              />
+            </LinkButton>
+          </Link>
+          <Link href={slide.href} passHref>
+            <LinkButton
+              text={slide.title}
+              className="slide__content__item"
+              type="navBtn"
+              style={{
+                width: props.width / 2.3
+              }}
+            >
+              <span className="slide__category">
+                {slide.cat}
+              </span>
+              <span>{slide.title}</span>
+            </LinkButton>
+          </Link>
+        </div>
+      </li>
+    );
+  }
+  return <span>content bulunamadı</span>;
 };
 
 CarouselSlide.propTypes = {
   index: propTypes.number,
   activeIndex: propTypes.number,
   slide: propTypes.object,
-  width: propTypes.string
+  width: propTypes.string,
+  layout: propTypes.string
 };
 
 // Carousel wrapper component
@@ -90,8 +150,28 @@ class Carousel extends Component {
   }
 
   render() {
+    const indicatorContainerClass = classNames(
+      "carousel__indicators",
+      {
+        "carousel__indicators--bottom":
+          this.props.layout === "bottom",
+        "carousel__indicators--left":
+          this.props.layout === "left"
+      }
+    );
+
+    const containerClass = classNames(
+      "carousel",
+      {
+        carousel__bottom:
+          this.props.layout === "bottom",
+        carousel__left:
+          this.props.layout === "left"
+      }
+    );
+
     return (
-      <div className="carousel">
+      <div className={containerClass}>
         <ul className="carousel__slides">
           {this.props.slides.map(
             (slide, index) => (
@@ -103,12 +183,13 @@ class Carousel extends Component {
                 }
                 slide={slide}
                 width={this.props.width}
+                layout={this.props.layout}
               />
             )
           )}
         </ul>
 
-        <ul className="carousel__indicators">
+        <ul className={indicatorContainerClass}>
           {this.props.slides.map(
             (slide, index) => (
               <CarouselIndicator
@@ -124,9 +205,8 @@ class Carousel extends Component {
                 onMouseEnter={e =>
                   this.goToSlide(index)
                 }
-                buttonClass={
-                  this.props.buttonClass
-                }
+                slide={slide}
+                layout={this.props.layout}
               />
             )
           )}
@@ -137,9 +217,10 @@ class Carousel extends Component {
 }
 
 Carousel.propTypes = {
-  slides: propTypes.object,
+  slides: propTypes.array,
   width: propTypes.string,
-  buttonClass: propTypes.string
+  buttonClass: propTypes.string,
+  layout: propTypes.string
 };
 
 export default Carousel;

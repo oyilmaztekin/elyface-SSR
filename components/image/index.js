@@ -11,9 +11,9 @@ class Image extends Component {
   }
   render() {
     let { responsive } = this.props;
-    let classN = classNames(
-      responsive && "responsive"
-    );
+    let classN = classNames({
+      responsive: responsive !== " undefined"
+    });
     return (
       <img
         src={this.props.src}

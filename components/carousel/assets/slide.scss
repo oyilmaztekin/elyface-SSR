@@ -1,0 +1,61 @@
+@import "../../../globalstyles/styles.scss";
+.slide__content{
+}
+
+.carousel__slide{
+
+}
+
+.carousel__slide--active{
+
+}
+.carousel-slide__content{
+    
+}
+
+.slide__overlay{
+    position: absolute;
+    left:0px;
+    display: flex;
+    flex-direction: column;
+}
+.slide__title{
+    background-color:$brand;
+    left:0px;
+    padding:15px;
+    text-align: left;
+    display: block;
+    color:$dark;
+}
+
+.slide__desc{
+    background-color:$dark;
+    padding:15px;
+    color:$white;
+    display: block;
+    margin: auto auto auto 0px;
+}
+
+.div__left{
+    display:flex;
+    box-sizing: border-box;
+}
+
+.slide__content__item{
+    display:block;
+    margin-left:10px;
+    line-height: 22px;
+    font-size: 18px;
+    color:$dark;
+    color:#666;
+    text-align: left;
+}
+
+.slide__category{
+    margin-top:10px;
+    font-weight: bold;
+    font-size: 24px;
+    display:block;
+    color:$dark;
+    margin-bottom:10px;
+}

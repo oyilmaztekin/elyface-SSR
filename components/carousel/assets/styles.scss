@@ -23,6 +23,11 @@ ul {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.carousel__left {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 // Carousel slides
 .carousel__slide {
   margin-right: auto;
@@ -90,55 +95,4 @@ ul {
   &--right {
     right: 32px;
   }
-}
-
-// Carousel indicators
-.carousel__indicators {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-
-  li {
-    &:nth-of-type(n + 2) {
-      margin-left: 0px;
-    }
-  }
-}
-.carousel-dark {
-  &:hover {
-    background-color: $dark;
-    color: $white;
-  }
-  &--active {
-    &,
-    &:hover {
-      background-color: $dark;
-      color: $white;
-    }
-  }
-}
-.carousel-orange {
-  &:hover {
-    background-color: $brand;
-    color: $dark;
-  }
-  &--active {
-    &,
-    &:hover {
-      background-color: $brand;
-      color: $dark;
-    }
-  }
-}
-.carousel__indicator {
-  font-size: 18px;
-  $indNum: 35px;
-  display: block;
-  width: $indNum;
-  height: $indNum;
-  border-radius: $indNum;
-  border: 2px;
-  cursor: pointer;
-  transition: opacity 0.15s
-    cubic-bezier(0.4, 0, 1, 1);
 }
