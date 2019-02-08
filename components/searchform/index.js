@@ -5,18 +5,19 @@ import propTypes from "prop-types";
 import SearchFormHOC from "./lib/searchFormHoc";
 
 class SearchForm extends Component {
+  static displayName = "Search Form";
   constructor(props) {
     super(props);
   }
 
   render() {
-    let { ...inputProps } = this.props;
+    let { className, ...inputProps } = this.props;
     return (
       <input
         ref={r => {
           this.input = r;
         }}
-        className="search-form-input"
+        className={className}
         {...inputProps}
       />
     );
@@ -32,7 +33,8 @@ SearchForm.propTypes = {
   placeholder: propTypes.string,
   type: propTypes.string,
   loading: propTypes.bool,
-  submitText: propTypes.string
+  submitText: propTypes.string,
+  className: propTypes.string
 };
 
 export default SearchFormHOC(SearchForm);

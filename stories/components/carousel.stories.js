@@ -2,6 +2,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import centered from "@storybook/addon-centered";
+import { action } from "@storybook/addon-actions";
 import {
   withKnobs,
   object,
@@ -10,39 +11,7 @@ import {
 import Carousel from "@comp/carousel/";
 import { withReadme } from "storybook-readme";
 import carouselReadme from "@comp/carousel/README.md";
-
-const carouselSlidesData = [
-  {
-    src:
-      "http://cdn.haberiyakala.com/assets/uploads/images/content/2019/01/23/cropped_content_enflasyon-2019da-15e-inecek_yB38C62IrIsvF37.jpg",
-    desc: "Ekonomi haberi",
-    longdesc: "Enflasyon haberi",
-    href:
-      "http://www.haberiyakala.com/is-bankasi-hazinenin-mali-olacak-564202-haber",
-    title: "Sen milliyetçi olamazsın",
-    cat: "Spor"
-  },
-  {
-    src:
-      "http://cdn.haberiyakala.com/assets/uploads/images/manset/2019/02/04/manset_papanin-karsisinda-el-pence_0xooUF0U43d3GHM.jpg",
-    desc: "Ekonomi haberi",
-    longdesc: "Ekonomi haberi",
-    href:
-      "http://www.haberiyakala.com/is-bankasi-hazinenin-mali-olacak-564202-haber",
-    title: "Bunlar hep tırı vırı",
-    cat: "Gündem"
-  },
-  {
-    src:
-      "http://cdn.haberiyakala.com/assets/uploads/images/manset/2019/02/04/manset_papanin-karsisinda-el-pence_0xooUF0U43d3GHM.jpg",
-    desc: "Spor Haberi",
-    longdesc: "Spor haberi",
-    href:
-      "http://www.haberiyakala.com/is-bankasi-hazinenin-mali-olacak-564202-haber",
-    title: "Adam olun canımı yiyin",
-    cat: "Ekonomi"
-  }
-];
+import mockData from "@mock/carouselMocks.json";
 
 storiesOf("Carousel", module)
   .addDecorator(withKnobs)
@@ -51,12 +20,10 @@ storiesOf("Carousel", module)
   .add("Simple Carousel", () => {
     return (
       <Carousel
-        slides={object(
-          "slides",
-          carouselSlidesData
-        )}
+        slides={object("slides", mockData)}
         width={text("width", "600")}
         layout={text("layout", "bottom")}
+        onMouseEnter={action("mouse entered")}
       />
     );
   });

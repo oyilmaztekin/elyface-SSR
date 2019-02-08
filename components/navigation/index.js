@@ -6,21 +6,28 @@ import LinkButton from "@comp/linkButton/";
 import "./assets/styles.scss";
 
 const Navigation = props => {
+  const navClass = `nav ${props.className}`;
   const navData = props.navElements;
   const navEls = navData.map((el, idx) => (
     <li key={idx} className="nav-item">
       <Link href={el.href} passHref>
-        <LinkButton type="nav" text={el.key}>
+        <LinkButton
+          type="nav"
+          text={el.key}
+          onMouseEnter={props.onMouseEnter}
+        >
           <span>{el.key}</span>
         </LinkButton>
       </Link>
     </li>
   ));
-  return <ul className="nav">{navEls}</ul>;
+  return <ul className={navClass}>{navEls}</ul>;
 };
 
 Navigation.propTypes = {
-  navElements: propTypes.object.isRequired
+  navElements: propTypes.array.isRequired,
+  onMouseEnter: propTypes.func,
+  className: propTypes.string
 };
 
 export default Navigation;

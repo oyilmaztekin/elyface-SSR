@@ -22,6 +22,7 @@
     }
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autobind-decorator": "^2.4.0",
     "classnames": "^2.2.6",
@@ -33,18 +34,20 @@
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-dom": "^16.7.0",
+    "react-stickynode": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@storybook/addon-actions": "^4.1.11",
-    "@storybook/addon-links": "^4.1.11",
-    "@storybook/addons": "^4.1.11",
-    "@storybook/react": "^4.1.11",
     "@storybook/addon-centered": "^4.1.11",
     "@storybook/addon-knobs": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
     "@storybook/addon-options": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
+    "@storybook/react": "^4.1.11",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-module-resolver": "^3.1.3",

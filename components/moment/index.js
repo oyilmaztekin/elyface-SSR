@@ -10,16 +10,17 @@ const Moment = props => {
     props.format
   );
   return (
-    <React.Fragment>
+    <div className={props.className}>
       {props.children}
       <span>{momentFormat}</span>
-    </React.Fragment>
+    </div>
   );
 };
 
 Moment.propTypes = {
   format: propTypes.string.isRequired,
-  children: propTypes.node
+  children: propTypes.node,
+  className: propTypes.string
 };
 
 export default Moment;

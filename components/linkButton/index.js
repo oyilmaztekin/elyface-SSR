@@ -1,12 +1,20 @@
 import "@globalstyle";
 import React, { Component } from "react";
 import propTypes from "prop-types";
+import autobind from "autobind-decorator";
 import classNames from "classnames";
 import "./assets/styles.scss";
 
 class LinkButton extends Component {
   constructor(props) {
     super(props);
+  }
+  @autobind
+  onMouseEnter(e) {
+    if (this.props.onMouseEnter) {
+      this.props.onMouseEnter(e);
+      return;
+    }
   }
 
   render() {
@@ -41,6 +49,7 @@ class LinkButton extends Component {
         title={text}
         target={!target ? "_self" : target}
         className={conditionalClass}
+        onMouseEnter={e => this.onMouseEnter(e)}
         {...otherProps}
       >
         {children}
@@ -55,7 +64,9 @@ LinkButton.propTypes = {
   alt: propTypes.string,
   title: propTypes.string,
   target: propTypes.string,
-  children: propTypes.node
+  children: propTypes.node,
+  className: propTypes.string,
+  onMouseEnter: propTypes.func
 };
 
 export default LinkButton;

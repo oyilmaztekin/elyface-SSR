@@ -2,6 +2,7 @@
 const withPlugins = require("next-compose-plugins");
 const size = require("next-size");
 const sass = require("@zeit/next-sass");
+const css = require("@zeit/next-css");
 const images = require("next-images");
 
 const {
@@ -19,6 +20,7 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
+    css,
     [
       sass,
       {
@@ -33,7 +35,6 @@ module.exports = withPlugins(
         }
       }
     ],
-
     images,
     size,
     [

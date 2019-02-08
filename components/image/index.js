@@ -10,21 +10,14 @@ class Image extends Component {
     super(props);
   }
   render() {
-    let { responsive } = this.props;
     let classN = classNames({
-      responsive: responsive !== " undefined"
+      responsive: this.props.responsive
     });
     return (
       <img
-        src={this.props.src}
         alt={this.props.desc}
-        longdesc={this.props.longdesc}
-        width={this.props.width}
-        height={this.props.height}
-        responsive={responsive}
-        srcSet={this.props.srcSet}
-        sizes={this.props.sizes}
         className={classN}
+        {...this.props}
       />
     );
   }

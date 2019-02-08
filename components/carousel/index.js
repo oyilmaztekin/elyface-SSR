@@ -19,8 +19,8 @@ const CarouselIndicator = props => {
       <Link href={props.slide.href} passHref>
         <LinkButton
           text={props.slide.title}
-          onMouseEnter={props.onMouseEnter}
           className={indicatorClass}
+          onMouseEnter={props.onMouseEnter}
         >
           <span>{props.index + 1}</span>
         </LinkButton>

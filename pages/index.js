@@ -4,6 +4,7 @@ import Logo from "@comp/logo/";
 import LogoImage from "@static/logo.png";
 import Link from "next/link";
 import LinkButton from "../components/linkButton";
+import Header from "@nest/header/";
 
 const IndexPage = () => (
   <React.Fragment>
@@ -16,6 +17,7 @@ const IndexPage = () => (
     <Link href="/about" passHref>
       <LinkButton text="Deneme" type="nav" />
     </Link>
+    <Header />
   </React.Fragment>
 );
 
