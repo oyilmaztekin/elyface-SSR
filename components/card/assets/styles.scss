@@ -1,17 +1,29 @@
 @import "../../../globalstyles/styles.scss";
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    @include create-shadow(0, 4px, 8px, 0, "false");
     transition: 0.3s;
     width: 100%;
-    .card-title {
+    position: relative;
+    &-icon{
+        position: absolute;
+        top:0px;
+        left:0px;
+        background: url("./bg.svg") no-repeat;
+        width:61px;
+        height: 61px;
+        padding-left:10px;
+        line-height: 40px;
+        font-size: 28px;
+    }
+    &-title {
         padding: 20px 20px;
         display:block;
     }
-    .card-img{
+    &-img{
         display:block;
     }
-    .card-divider{
+    &-divider{
         width:100%;
         display:block;
         height: 5px;
@@ -19,5 +31,5 @@
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    @include create-shadow(0, 4px, 8px, 0, "true");
   }

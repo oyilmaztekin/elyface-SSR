@@ -4,7 +4,8 @@ import { storiesOf } from "@storybook/react";
 import centered from "@storybook/addon-centered";
 import {
   withKnobs,
-  text
+  text,
+  boolean
 } from "@storybook/addon-knobs";
 import Card from "@comp/card/";
 import { withReadme } from "storybook-readme";
@@ -24,6 +25,7 @@ storiesOf("Card", module)
         <Card
           id={text("id", "unique_id")}
           bg={text("bg", "#ffffff")}
+          gallery={boolean("gallery", true)}
         >
           <Card.IMG
             src={text(
