@@ -13,6 +13,7 @@ const Card = props => {
     bg,
     className,
     loading,
+    gallery,
     children
   } = props;
   return (
@@ -25,6 +26,16 @@ const Card = props => {
       )}
       style={{ backgroundColor: bg }}
     >
+      {gallery ? (
+        <span
+          aria-label="kamera emoji"
+          role="img"
+          className="card-icon"
+        >
+          {" "}
+          📷{" "}
+        </span>
+      ) : null}
       {children}
     </div>
   );
@@ -37,7 +48,8 @@ Card.propTypes = {
   bg: propTypes.string,
   className: propTypes.string,
   loading: propTypes.bool,
-  children: propTypes.node
+  children: propTypes.node,
+  gallery: propTypes.bool
 };
 
 Card.IMG = props => {

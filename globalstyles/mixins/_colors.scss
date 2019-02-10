@@ -1,0 +1,19 @@
+@mixin create-shadow(
+  $left,
+  $right,
+  $blur-radius,
+  $spread-radius,
+  $hover
+) {
+  box-shadow: $left $right $blur-radius
+    $spread-radius rgba(0, 0, 0, 0.2);
+  @if $hover == "true" {
+    box-shadow: $left
+      $right *
+      2
+      $blur-radius *
+      2
+      $spread-radius
+      rgba(0, 0, 0, 0.2);
+  }
+}
