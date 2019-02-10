@@ -12,6 +12,8 @@ One of the layout component.
   - A Custom classname
 - **_`loading`_** : bool
   - Card loading state
+- **_`gallery`_** : bool
+  - for gallery icon
 - **_`children`_** : node
   - Sub Components of the Card such as `Card.IMG` and `Card.Title`
 
@@ -30,7 +32,7 @@ a representation of image of the card
 - **_`className`_**: string
   - Specifies the width of an image
 - **_`border`_**: string
-  - border color of the image placed at below of the image
+  - border color of the image placed at the below
 
 ### Card.Title
 
@@ -48,6 +50,8 @@ Respresents a title of the news
   - For custom styling
 - **_`type`_**: string
   - changes its styles regarding this props
+
+_check out for acceptable type of this props on the `LinkButton` component_
 
 ### Usage
 
