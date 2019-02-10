@@ -24,7 +24,7 @@
 - **_`cardTitle`_** ✅
 - **_`carouselBtn`_** ⁉️
 - **_`catTitle`_** - clickable category titles ✅
-- **_`footerCategory`_** ✅
+- **_`footerCat`_** ✅
 - **_`footerList`_** - a list that stands above of footer ✅
 
 ### How to use
