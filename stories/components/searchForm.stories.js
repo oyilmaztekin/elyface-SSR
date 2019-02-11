@@ -29,8 +29,11 @@ storiesOf("Search Form", module)
           name={text("name", "unique_name")}
           value={text("value", "Ara")}
           type={text("type", "search")}
-          submitText={text("submit", "🔎")}
           onClick={action("submit")}
+          className={text(
+            "class",
+            "search-form-input"
+          )}
         />
       </div>
     );

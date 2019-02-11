@@ -18,6 +18,15 @@ module.exports = {
         include: path.resolve(__dirname, "../")
       },
       {
+        test: /\.(eot|ttf|woff|pdf|woff2?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "url-loader"
+          }
+        ]
+      },
+      {
         test: /\.svg$/,
         loaders: "svg-url-loader"
         //loaders: ["svg-url-loader", "svg-inline-loader"]

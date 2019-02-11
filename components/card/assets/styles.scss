@@ -12,9 +12,9 @@
         background: url("./bg.svg") no-repeat;
         width:61px;
         height: 61px;
-        padding-left:10px;
-        line-height: 40px;
-        font-size: 28px;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing:border-box;
     }
     &-title {
         padding: 20px 20px;

@@ -22,6 +22,9 @@
     }
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.14",
+    "@fortawesome/free-solid-svg-icons": "^5.7.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autobind-decorator": "^2.4.0",
@@ -67,6 +70,7 @@
     "storybook-readme": "^4.0.5",
     "svg-inline-loader": "^0.8.0",
     "svg-url-loader": "^2.3.2",
+    "url-loader": "^1.1.2",
     "yarn": "^1.13.0"
   }
 }

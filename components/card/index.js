@@ -6,6 +6,8 @@ import classNames from "classnames";
 import Image from "@comp/image/";
 import LinkButton from "@comp/linkButton/";
 import Link from "next/link";
+import Icon from "@comp/icon/";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const Card = props => {
   let {
@@ -14,6 +16,8 @@ const Card = props => {
     className,
     loading,
     gallery,
+    iconSize,
+    iconTop,
     children
   } = props;
   return (
@@ -27,14 +31,12 @@ const Card = props => {
       style={{ backgroundColor: bg }}
     >
       {gallery ? (
-        <span
-          aria-label="kamera emoji"
-          role="img"
+        <Icon
+          icon={faCamera}
+          size={iconSize}
+          iconTop={iconTop}
           className="card-icon"
-        >
-          {" "}
-          📷{" "}
-        </span>
+        />
       ) : null}
       {children}
     </div>
@@ -49,7 +51,9 @@ Card.propTypes = {
   className: propTypes.string,
   loading: propTypes.bool,
   children: propTypes.node,
-  gallery: propTypes.bool
+  gallery: propTypes.bool,
+  iconSize: propTypes.string,
+  iconTop: propTypes.string
 };
 
 Card.IMG = props => {
