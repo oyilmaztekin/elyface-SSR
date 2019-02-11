@@ -9,7 +9,13 @@ import Navigation from "@comp/navigation/";
 import Moment from "@comp/moment/";
 import SearchForm from "@comp/searchform/";
 import LinkButton from "@comp/linkButton/";
-import classNames from "classnames";
+import Icon from "@comp/icon/";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faCamera,
+  faVideo
+} from "@fortawesome/free-solid-svg-icons";
 
 class Header extends Component {
   static displayName = "Header";
@@ -66,12 +72,7 @@ class Header extends Component {
               format="Do MMMM YYYY, dddd"
               className="header__row-two-moment"
             >
-              <span
-                role="img"
-                aria-label="saat emoji"
-              >
-                ⏰{" "}
-              </span>
+              <Icon icon={faClock} />{" "}
             </Moment>
             <div className="header__row-two-input-buttons-container">
               <SearchForm
@@ -79,7 +80,6 @@ class Header extends Component {
                 name="searh_form"
                 value="Ara"
                 type="search"
-                submitText="🔎"
                 className="search-form-input header__row-two-input-buttons-container-form"
               />
 
@@ -89,11 +89,9 @@ class Header extends Component {
                   type="navBtn"
                   href="#"
                 >
-                  <span
-                    role="img"
-                    aria-label="Foto emoji"
-                  >
-                    📷 Galeriler
+                  <span>
+                    <Icon icon={faCamera} />{" "}
+                    Galeriler
                   </span>
                 </LinkButton>
               </div>
@@ -103,11 +101,9 @@ class Header extends Component {
                   type="navBtn"
                   href="#"
                 >
-                  <span
-                    role="img"
-                    aria-label="Video emoji"
-                  >
-                    📷 Videolar
+                  <span>
+                    <Icon icon={faVideo} />{" "}
+                    Videolar
                   </span>
                 </LinkButton>
               </div>

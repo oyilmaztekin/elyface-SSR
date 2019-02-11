@@ -33,7 +33,6 @@ SearchForm.propTypes = {
   placeholder: propTypes.string,
   type: propTypes.string,
   loading: propTypes.bool,
-  submitText: propTypes.string,
   className: propTypes.string
 };
 

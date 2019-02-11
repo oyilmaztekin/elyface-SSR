@@ -5,13 +5,16 @@ import centered from "@storybook/addon-centered";
 import {
   withKnobs,
   text,
-  boolean
+  object
 } from "@storybook/addon-knobs";
 import Image from "@comp/image/";
 import Logo from "@comp/logo/";
 import { withReadme } from "storybook-readme";
 import ImageReadme from "@comp/image/README.md";
 import LogoReadme from "@comp/logo/README.md";
+import IconReadme from "@comp/icon/README.md";
+import Icon from "@comp/icon/";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 storiesOf("Atomic", module)
   .addDecorator(withKnobs)
@@ -45,6 +48,15 @@ storiesOf("Atomic", module)
           "title",
           "Haberi Yakala Logosu"
         )}
+      />
+    );
+  })
+  .addDecorator(withReadme(IconReadme))
+  .add("Icon", () => {
+    return (
+      <Icon
+        icon={object("icon", faCoffee)}
+        size={text("size", "24")}
       />
     );
   });
