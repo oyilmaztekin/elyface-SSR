@@ -2,7 +2,7 @@ import "@globalstyle";
 import "./assets/styles.scss";
 import React from "react";
 import propTypes from "prop-types";
-import * as moment from "moment";
+import moment from "moment";
 import "moment/locale/tr";
 
 const Moment = props => {
@@ -12,7 +12,9 @@ const Moment = props => {
   return (
     <div className={props.className}>
       {props.children}
-      <span>{momentFormat}</span>
+      <span data-test="moment-format">
+        {momentFormat}
+      </span>
     </div>
   );
 };
