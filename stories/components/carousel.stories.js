@@ -20,9 +20,9 @@ storiesOf("Carousel", module)
   .add("Simple Carousel", () => {
     return (
       <Carousel
-        slides={object("slides", mockData)}
         width={text("width", "600")}
         layout={text("layout", "bottom")}
+        slides={object("slides", mockData)}
         onMouseEnter={action("mouse entered")}
       />
     );

@@ -27,7 +27,7 @@ storiesOf("Card", module)
           bg={text("bg", "#ffffff")}
           gallery={boolean("gallery", true)}
           iconSize={text("iconSize", "24")}
-          iconTop={text("iconTop", "24")}
+          iconTop={text("iconTop", "15")}
         >
           <Card.IMG
             src={text(
@@ -39,7 +39,6 @@ storiesOf("Card", module)
               "Enflasyon haberi"
             )}
             alt={text("alt", "Enflasyon haberi")}
-            className={text("class", "card-img")}
             border={text("border", "#ffa200")}
           />
           <Card.Title
@@ -47,9 +46,9 @@ storiesOf("Card", module)
               "title",
               "Merkez Bankası'ndan Hükümete Açık Metkup"
             )}
-            color={text("color", "")}
-            fontSize={text("fontSize", "")}
-            type={text("type", "cardTitle")}
+            color={text("color", "#323232")}
+            fontSize={text("fontSize", "20")}
+            lineHeight={text("line-height", "28")}
           />
         </Card>
       </div>

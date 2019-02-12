@@ -21,13 +21,13 @@ storiesOf("Templates", module)
           "LogoImage",
           "http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
         )}
-        navElements={object(
-          "navElements",
-          mockData
-        )}
         stickyClassName={text(
           "className",
           "orange-bg container"
+        )}
+        navElements={object(
+          "navElements",
+          mockData
         )}
       />
     );

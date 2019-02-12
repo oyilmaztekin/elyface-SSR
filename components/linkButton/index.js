@@ -2,7 +2,6 @@ import "@globalstyle";
 import React, { Component } from "react";
 import propTypes from "prop-types";
 import autobind from "autobind-decorator";
-import classNames from "classnames";
 import "./assets/styles.scss";
 
 class LinkButton extends Component {
@@ -18,28 +17,12 @@ class LinkButton extends Component {
   }
 
   render() {
-    const conditionalClass = classNames({
-      "link-nav": this.props.type === "nav",
-      "link-nav-btn":
-        this.props.type === "navBtn",
-      "link-bread": this.props.type === "bread",
-      "link-tag": this.props.type === "tag",
-      "link-title":
-        this.props.type === "cardTitle",
-      "link-carousel-btn":
-        this.props.type === "carouselBtn",
-      "link-category-title":
-        this.props.type === "catTitle",
-      "link-footer-category":
-        this.props.type === "footerCat",
-      "link-footer-list":
-        this.props.type === "footerList"
-    });
     let {
       type,
       text,
       target,
       children,
+      className,
       ...otherProps
     } = this.props;
     return (
@@ -48,7 +31,7 @@ class LinkButton extends Component {
         alt={text}
         title={text}
         target={!target ? "_self" : target}
-        className={conditionalClass}
+        className={className}
         onMouseEnter={e => this.onMouseEnter(e)}
         {...otherProps}
       >

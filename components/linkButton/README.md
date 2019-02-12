@@ -4,8 +4,8 @@
 
 ### Props
 
-- **_`type`_**: string
-  - type property
+- **_`className`_**: string
+  - custom className
 - **_`href`_**: string
   - url - Specifies the URL of the page the link goes to
 - **_`text`_**: string
@@ -15,17 +15,16 @@
 - **_`target`_**: string
   - Specifies where to open the linked document
 
-#### Acceptable props for `type`
-
-- **_`nav`_** : navigation link ✅
-- **_`navBtn`_** : for galeriler and video ✅
-- **_`bread`_** : for breadcrumb ✅
-- **_`tag`_** : for news ✅
-- **_`cardTitle`_** ✅
+#### Acceptable classes for `className`
+- **_`link-nav`_** : navigation link ✅
+- **_`link-nav-btn`_** : for galeriler and video ✅
+- **_`link-bread`_** : for breadcrumb ✅
+- **_`link-tag`_** : for news ✅
+- **_`link-title`_** ✅
 - **_`carouselBtn`_** ⁉️
-- **_`catTitle`_** - clickable category titles ✅
-- **_`footerCat`_** ✅
-- **_`footerList`_** - a list that stands above of footer ✅
+- **_`link-category-title`_** - clickable category titles ✅
+- **_`link-footer-category`_** ✅
+- **_`link-footer-list`_** - a list that stands above of footer ✅
 
 ### How to use
 

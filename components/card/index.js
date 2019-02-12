@@ -65,12 +65,9 @@ Card.IMG = props => {
     </div>
   );
   return (
-    <React.Fragment className={props.className}>
+    <div className={props.className}>
       <Link href="#" passHref>
-        <LinkButton
-          text="Sample Button"
-          type={props.type}
-        >
+        <LinkButton text="Sample Button">
           <Image
             src={props.src}
             responsive
@@ -80,7 +77,7 @@ Card.IMG = props => {
         </LinkButton>
       </Link>
       {props.border && ImgDivider}
-    </React.Fragment>
+    </div>
   );
 };
 
@@ -91,7 +88,6 @@ Card.IMG.propTypes = {
   alt: propTypes.string,
   longdesc: propTypes.string,
   className: propTypes.string,
-  type: propTypes.string,
   border: propTypes.string
 };
 
@@ -104,16 +100,12 @@ Card.Title = props => (
     )}
   >
     <Link href="#" passHref>
-      <LinkButton
-        text="Sample Button"
-        type={props.type}
-      >
+      <LinkButton text="Sample Button">
         <span
           style={{
             color: props.color && props.color,
-            fontSize:
-              props.fontSize &&
-              props.fontSize + "px"
+            fontSize: props.fontSize + "px",
+            lineHeight: props.lineHeight + "px"
           }}
         >
           {props.title}
@@ -129,8 +121,8 @@ Card.Title.propTypes = {
   title: propTypes.string.isRequired,
   color: propTypes.string,
   fontSize: propTypes.string,
-  className: propTypes.string,
-  type: propTypes.string
+  lineHeight: propTypes.string,
+  className: propTypes.string
 };
 
 export default Card;

@@ -36,6 +36,32 @@ storiesOf("SSR Link Buttons", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .addDecorator(withReadme(linkReadme))
+  .add("Link Nav Button", () => {
+    return (
+      <div style={navStyle}>
+        <Link
+          href={text("href", "#")}
+          passHref={boolean("passHref", true)}
+        >
+          <LinkButton
+            text={text(
+              "text for title and alt",
+              "Sample Button"
+            )}
+            className={text(
+              "class",
+              "link-nav-btn"
+            )}
+          >
+            <span>
+              <Icon icon={faCamera} /> Sample
+              Button
+            </span>
+          </LinkButton>
+        </Link>
+      </div>
+    );
+  })
   .add("Navigation Buttons", () => {
     return (
       <div style={navStyle}>
@@ -48,12 +74,9 @@ storiesOf("SSR Link Buttons", module)
               "text for title and alt",
               "Sample Button"
             )}
-            type={text("type", "navBtn")}
+            className={text("class", "link-nav")}
           >
-            <span>
-              <Icon icon={faCamera} /> Sample
-              Button
-            </span>
+            <span>Sample Button</span>
           </LinkButton>
         </Link>
       </div>
@@ -73,7 +96,10 @@ storiesOf("SSR Link Buttons", module)
                 "text for title and alt",
                 "Sample Button"
               )}
-              type={text("type", "bread")}
+              className={text(
+                "class",
+                "link-bread"
+              )}
             >
               <span>Sample Button</span>
             </LinkButton>
@@ -95,7 +121,10 @@ storiesOf("SSR Link Buttons", module)
               "text for title and alt",
               "Sample Button"
             )}
-            type={text("type", "footerList")}
+            class={text(
+              "class",
+              "link-footer-list"
+            )}
           >
             <span>Sample Button</span>
           </LinkButton>

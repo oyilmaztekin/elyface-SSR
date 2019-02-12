@@ -86,7 +86,7 @@ class Header extends Component {
               <div className="header__row-two-input-buttons-container-btn">
                 <LinkButton
                   text="Galeriler"
-                  type="navBtn"
+                  className="link-nav-btn"
                   href="#"
                 >
                   <span>
@@ -98,7 +98,7 @@ class Header extends Component {
               <div className="header__row-two-input-buttons-container-btn">
                 <LinkButton
                   text="Videolar"
-                  type="navBtn"
+                  className="link-nav-btn"
                   href="#"
                 >
                   <span>
