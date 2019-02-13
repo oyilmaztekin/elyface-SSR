@@ -91,29 +91,37 @@ Card.IMG.propTypes = {
   border: propTypes.string
 };
 
-Card.Title = props => (
-  <div
-    className={classNames(
-      "card-title",
-      props.className &&
-        `card-title-${props.className}`
-    )}
-  >
-    <Link href="#" passHref>
-      <LinkButton text="Sample Button">
-        <span
-          style={{
-            color: props.color && props.color,
-            fontSize: props.fontSize + "px",
-            lineHeight: props.lineHeight + "px"
-          }}
-        >
-          {props.title}
-        </span>
-      </LinkButton>
-    </Link>
-  </div>
-);
+Card.Title = props => {
+  let {
+    className,
+    color,
+    fontSize,
+    lineHeight,
+    title
+  } = props;
+  return (
+    <div
+      className={classNames(
+        "card-title",
+        className && `card-title-${className}`
+      )}
+    >
+      <Link href="#" passHref>
+        <LinkButton text="Sample Button">
+          <span
+            style={{
+              color: color && color,
+              fontSize: fontSize + "px",
+              lineHeight: lineHeight + "px"
+            }}
+          >
+            {title}
+          </span>
+        </LinkButton>
+      </Link>
+    </div>
+  );
+};
 
 Card.Title.displayName = "Card.Title";
 
