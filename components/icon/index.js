@@ -25,7 +25,7 @@ class Icon extends Component {
 }
 
 Icon.propTypes = {
-  icon: propTypes.string.isRequired,
+  icon: propTypes.object.isRequired,
   size: propTypes.string,
   className: propTypes.string,
   iconTop: propTypes.string
