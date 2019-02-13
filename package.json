@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "test": "jest --watch",
+    "test": "jest --watch --coverage",
+    "test-debug":"CI=vscode-jest-tests /usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand card.test.js --testNamePattern 'should returns a valid DOM'",
     "story": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "esw ."
