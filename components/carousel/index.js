@@ -106,7 +106,6 @@ const CarouselSlide = props => {
             <LinkButton
               text={slide.title}
               className="slide__content__item"
-              type="navBtn"
               style={{
                 width: props.width / 2.3
               }}

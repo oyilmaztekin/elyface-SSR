@@ -40,7 +40,7 @@ import Image from "@comp/image/";
 >
   <LinkButton
     text="Sample Button"
-    type={"navBtn")
+    className="link-bread"
   >
     <span>📷 Sample Button</span>
   </LinkButton>
@@ -53,7 +53,6 @@ import Image from "@comp/image/";
 <Link href="#" passHref>
   <LinkButton
     text="Sample Button"
-    type="footerList"
   >
     <Image
       src="http://cdn.haberiyakala.com/assets/uploads/images/content/2019/01/23/cropped_content_enflasyon-2019da-15e-inecek_yB38C62IrIsvF37.jpg"

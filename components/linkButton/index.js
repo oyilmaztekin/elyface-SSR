@@ -7,18 +7,32 @@ import "./assets/styles.scss";
 class LinkButton extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      hovered: false
+    };
   }
   @autobind
   onMouseEnter(e) {
-    if (this.props.onMouseEnter) {
+    e.preventDefault();
+    this.setState({
+      hovered: true
+    });
+    this.props.onMouseEnter &&
       this.props.onMouseEnter(e);
-      return;
-    }
+  }
+
+  @autobind
+  onMouseLeave(e) {
+    e.preventDefault();
+    this.setState({
+      hovered: false
+    });
+    this.props.onMouseLeave &&
+      this.props.onMouseLeave(e);
   }
 
   render() {
     let {
-      type,
       text,
       target,
       children,
@@ -27,12 +41,12 @@ class LinkButton extends Component {
     } = this.props;
     return (
       <a
-        type={type}
         alt={text}
         title={text}
         target={!target ? "_self" : target}
         className={className}
-        onMouseEnter={e => this.onMouseEnter(e)}
+        onMouseEnter={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
         {...otherProps}
       >
         {children}
@@ -49,7 +63,8 @@ LinkButton.propTypes = {
   target: propTypes.string,
   children: propTypes.node,
   className: propTypes.string,
-  onMouseEnter: propTypes.func
+  onMouseEnter: propTypes.func,
+  onMouseLeave: propTypes.func
 };
 
 export default LinkButton;

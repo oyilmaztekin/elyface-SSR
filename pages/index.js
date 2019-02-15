@@ -15,7 +15,10 @@ const IndexPage = () => (
       title="Haberi Yakala Logosu"
     />
     <Link href="/about" passHref>
-      <LinkButton text="Deneme" type="nav" />
+      <LinkButton
+        text="Deneme"
+        className="link-nav"
+      />
     </Link>
     <Header />
   </React.Fragment>
