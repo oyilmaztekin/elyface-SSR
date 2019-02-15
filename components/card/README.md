@@ -48,7 +48,7 @@ Respresents a title of the news
   - If you want to override font size that come from `type` prop use this
 - **_`className`_**: string
   - For custom styling
-- **_`type`_**: string
+- **_`className`_**: string
   - changes its styles regarding this props
 
 _check out for acceptable type of this props on the `LinkButton` component_
@@ -70,7 +70,7 @@ import Card from "@comp/card/";
     title="Merkez Bankası'ndan Hükümete Açık Metkup"
     color="#efefef"
     fontSize="24"
-    type="cardTitle"
+    className="link-footer-list"
   />
 </Card>;
 ```

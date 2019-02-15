@@ -144,7 +144,10 @@ storiesOf("SSR Link Buttons", module)
             "text for title and alt",
             "Sample Button"
           )}
-          type={text("type", "footerList")}
+          className={text(
+            "type",
+            "link-footer-list"
+          )}
         >
           <Image
             src={text(

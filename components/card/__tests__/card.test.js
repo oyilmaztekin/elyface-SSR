@@ -5,40 +5,40 @@ import Adapter from "enzyme-adapter-react-16";
 import Card from "@comp/card/";
 Enzyme.configure({ adapter: new Adapter() });
 
-const comp = (
-  <Card
-    id="unique_id"
-    bg="#ffffff"
-    gallery={true}
-    iconSize="24"
-    iconTop="24"
-    className="example_class"
-    loading
-  >
-    <Card.IMG
-      src="https://via.placeholder.com/200"
-      longdesc="Enflasyon haberi"
-      alt="Enflasyon haberi"
-      className="card-img"
-      border="#ffa200"
-    />
-    <Card.Title
-      title="Merkez Bankası'ndan Hükümete Açık Metkup"
-      color="#323232"
-      fontSize="18"
-      type="cardTitle"
-      className="example-classname"
-    />
-  </Card>
-);
-
 describe("Card Component Test", () => {
-  const wrapper = mount(comp);
-  test("should rendered without crashing ", () => {
-    wrapper;
+  let comp;
+  let wrapper;
+  beforeAll(() => {
+    comp = (
+      <Card
+        id="unique_id"
+        bg="#ffffff"
+        gallery={true}
+        iconSize="24"
+        iconTop="24"
+        className="example_class"
+        loading
+      >
+        <Card.IMG
+          src="https://via.placeholder.com/200"
+          longdesc="Enflasyon haberi"
+          alt="Enflasyon haberi"
+          className="card-img"
+          border="#ffa200"
+        />
+        <Card.Title
+          title="Merkez Bankası'ndan Hükümete Açık Metkup"
+          color="#323232"
+          fontSize="18"
+          className="example-classname"
+        />
+      </Card>
+    );
+    wrapper = mount(comp);
   });
-  test("should returns something ", () => {
-    expect(wrapper).toBeTruthy();
+
+  test("should rendered without crashing ", () => {
+    expect(wrapper).toBeDefined();
   });
   test("testing card component props", () => {
     expect(wrapper.props().id).toBe("unique_id");
@@ -98,9 +98,6 @@ describe("Card Component Test", () => {
     expect(cardTitle.props.fontSize).toBe("18");
     expect(cardTitle.props.title).toBe(
       "Merkez Bankası'ndan Hükümete Açık Metkup"
-    );
-    expect(cardTitle.props.type).toBe(
-      "cardTitle"
     );
     expect(cardTitle.props.className).toEqual(
       "example-classname"
