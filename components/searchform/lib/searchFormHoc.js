@@ -16,8 +16,10 @@ function SearchFormHOC(SearchFieldComponent) {
     @autobind
     handleSubmit(e) {
       //eslint-disable-next-line
-      console.log(this.state);
       e.preventDefault();
+      this.setState({
+        value: e.target.value
+      });
     }
 
     @autobind
