@@ -12,9 +12,7 @@
           "@nest": "./nested",
           "@globalstyle": "./globalstyles/styles.scss",
           "@mock": "./mocks",
-          "@static": "./static",
-          "@utils/context": "./utils/context/consumerHOC",
-          "@utils/provider": "./utils/context/providerHOC"
+          "@static": "./static"
         }
       }
     ]

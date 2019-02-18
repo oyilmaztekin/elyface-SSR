@@ -13,7 +13,6 @@ const Navigation = props => {
         <LinkButton
           className="link-nav"
           text={el.key}
-          onMouseEnter={props.onMouseEnter}
         >
           <span>{el.key}</span>
         </LinkButton>
@@ -24,8 +23,7 @@ const Navigation = props => {
 };
 
 Navigation.propTypes = {
-  navElements: propTypes.array.isRequired,
-  onMouseEnter: propTypes.func
+  navElements: propTypes.array.isRequired
 };
 
 export default Navigation;

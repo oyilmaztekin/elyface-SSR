@@ -11,22 +11,28 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "test": "jest --watch --coverage",
-    "test-debug":"/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand linkbutton.test.js",
-    "test-debug-scope":"/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand linkbutton.test.js --testNamePattern='testing title and alt props'",
+    "test": "jest --no-cache --watch --coverage",
+    "test-debug": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand nav.test.js",
+    "test-debug-scope": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand linkbutton.test.js --testNamePattern='testing title and alt props'",
     "story": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "esw ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "esw . && prettier --check components/**/*.js && prettier --check pages/**/*.js"
+      "pre-commit": "esw . && prettier --check components/**/*.js && prettier --check pages/**/*.js",
+      "pre-push": "jest --no-cache --coverage"
     }
   },
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
-      "\\.(css|scss|sass|less)$": "<rootDir>/mocks/styleMock.js"
+      "\\.(css|scss|sass|less)$": "<rootDir>/mocks/styleMock.js",
+      "transformIgnorePatterns": [
+        "<rootDir>/node_modules/",
+        "<rootDir>/*.json",
+        "<rootDir>/stories/"
+      ]
     }
   },
   "dependencies": {

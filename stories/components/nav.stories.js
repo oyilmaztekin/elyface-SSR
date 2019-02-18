@@ -25,7 +25,6 @@ storiesOf("Navigation", module)
           "navElements",
           mockData
         )}
-        onMouseEnter={action("entered")}
       />
     );
   });
