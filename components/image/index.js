@@ -2,23 +2,22 @@ import "@globalstyle";
 import "./assets/styles.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";
+import classNames from "classnames";
 
 class Image extends Component {
+  static displayName = "Image";
   constructor(props) {
     super(props);
   }
   render() {
+    let classN = classNames({
+      responsive: this.props.responsive
+    });
     return (
       <img
-        src={this.props.src}
         alt={this.props.desc}
-        title={this.props.desc}
-        longdesc={this.props.longdesc}
-        width={this.props.width}
-        height={this.props.height}
-        responsive={this.props.responsive}
-        srcSet={this.props.srcSet}
-        sizes={this.props.sizes}
+        className={classN}
+        {...this.props}
       />
     );
   }
@@ -26,11 +25,11 @@ class Image extends Component {
 
 Image.propTypes = {
   src: propTypes.string.isRequired,
-  desc: propTypes.string.isRequired,
   responsive: propTypes.bool,
   height: propTypes.string,
   width: propTypes.string,
   longdesc: propTypes.string,
+  desc: propTypes.string,
   srcSet: propTypes.string,
   sizes: propTypes.string
 };

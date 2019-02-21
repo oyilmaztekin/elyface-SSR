@@ -2,7 +2,7 @@ import "@globalstyle";
 import "./assets/styles.scss";
 import React from "react";
 import propTypes from "prop-types";
-import * as moment from "moment";
+import moment from "moment";
 import "moment/locale/tr";
 
 const Moment = props => {
@@ -10,16 +10,19 @@ const Moment = props => {
     props.format
   );
   return (
-    <React.Fragment>
+    <div className={props.className}>
       {props.children}
-      <span>{momentFormat}</span>
-    </React.Fragment>
+      <span data-test="moment-format">
+        {momentFormat}
+      </span>
+    </div>
   );
 };
 
 Moment.propTypes = {
   format: propTypes.string.isRequired,
-  children: propTypes.node
+  children: propTypes.node,
+  className: propTypes.string
 };
 
 export default Moment;

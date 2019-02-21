@@ -11,6 +11,10 @@ import {
 import Link from "next/link";
 import LinkButton from "@comp/linkButton/";
 import Image from "@comp/image/";
+import { withReadme } from "storybook-readme";
+import linkReadme from "@comp/linkButton/README.md";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import Icon from "@comp/icon/";
 
 const navStyle = {
   backgroundColor: "#ffa200",
@@ -31,6 +35,33 @@ const footerStyle = {
 storiesOf("SSR Link Buttons", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
+  .addDecorator(withReadme(linkReadme))
+  .add("Link Nav Button", () => {
+    return (
+      <div style={navStyle}>
+        <Link
+          href={text("href", "#")}
+          passHref={boolean("passHref", true)}
+        >
+          <LinkButton
+            text={text(
+              "text for title and alt",
+              "Sample Button"
+            )}
+            className={text(
+              "class",
+              "link-nav-btn"
+            )}
+          >
+            <span>
+              <Icon icon={faCamera} /> Sample
+              Button
+            </span>
+          </LinkButton>
+        </Link>
+      </div>
+    );
+  })
   .add("Navigation Buttons", () => {
     return (
       <div style={navStyle}>
@@ -43,9 +74,9 @@ storiesOf("SSR Link Buttons", module)
               "text for title and alt",
               "Sample Button"
             )}
-            type={text("type", "navBtn")}
+            className={text("class", "link-nav")}
           >
-            <span>📷 Sample Button</span>
+            <span>Sample Button</span>
           </LinkButton>
         </Link>
       </div>
@@ -65,7 +96,10 @@ storiesOf("SSR Link Buttons", module)
                 "text for title and alt",
                 "Sample Button"
               )}
-              type={text("type", "bread")}
+              className={text(
+                "class",
+                "link-bread"
+              )}
             >
               <span>Sample Button</span>
             </LinkButton>
@@ -87,7 +121,10 @@ storiesOf("SSR Link Buttons", module)
               "text for title and alt",
               "Sample Button"
             )}
-            type={text("type", "footerList")}
+            class={text(
+              "class",
+              "link-footer-list"
+            )}
           >
             <span>Sample Button</span>
           </LinkButton>
@@ -107,14 +144,17 @@ storiesOf("SSR Link Buttons", module)
             "text for title and alt",
             "Sample Button"
           )}
-          type={text("type", "footerList")}
+          className={text(
+            "type",
+            "link-footer-list"
+          )}
         >
           <Image
             src={text(
               "src",
               "http://cdn.haberiyakala.com/assets/uploads/images/content/2019/01/23/cropped_content_enflasyon-2019da-15e-inecek_yB38C62IrIsvF37.jpg"
             )}
-            desc={text(
+            longdesc={text(
               "desc",
               "Enflasyon haberi"
             )}

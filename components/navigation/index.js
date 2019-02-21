@@ -10,7 +10,10 @@ const Navigation = props => {
   const navEls = navData.map((el, idx) => (
     <li key={idx} className="nav-item">
       <Link href={el.href} passHref>
-        <LinkButton type="nav" text={el.key}>
+        <LinkButton
+          className="link-nav"
+          text={el.key}
+        >
           <span>{el.key}</span>
         </LinkButton>
       </Link>
@@ -20,7 +23,7 @@ const Navigation = props => {
 };
 
 Navigation.propTypes = {
-  navElements: propTypes.object.isRequired
+  navElements: propTypes.array.isRequired
 };
 
 export default Navigation;

@@ -1,24 +1,37 @@
-# Link Button Component
+# Navigation Component
 
-`passHref` must be passed by Link component.
+A navigation component replaced in the header component
 
 ## props
-- `type`: for class conditions
-- `href` 
-- `text`
-- `alt`
-- `title`
-- `target`
 
-### Acceptable props for `type`
-- `nav` : navigation link ✅
-- `navBtn` : for galeriler and video ✅
-- `bread` : for breadcrumb ✅
-- `tag` : for news ✅
-- `img` 
-- `cardTitle` ✅
-- `carouselBtn` ⁉️
-- `catTitle` - clickable category titles ✅
-- `footerCategory` ✅
-- `footerList` - a list that stands above of footer ✅
+- **_`navElements`_**: object
+  - all navigation items are created by this JSON object
 
+### Usage
+
+```javascript
+import Navigation from "@comp/navigation/";
+```
+
+```javascript
+
+const mockData = [
+  {
+    "key": "Gündem",
+    "href": "/gundem"
+  },
+  {
+    "key": "Siyaset",
+    "href": "/siyaset"
+  },
+  {
+    "key": "Ekonomi",
+    "href": "/ekonomi"
+  },
+  ...
+]
+
+<Navigation
+  navElements={mockData}
+/>
+```

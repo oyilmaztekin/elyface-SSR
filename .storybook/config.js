@@ -1,7 +1,20 @@
-import { configure } from '@storybook/react';
+import { configure } from "@storybook/react";
+import { setOptions } from "@storybook/addon-options";
 
-// automatically import all files ending in *.stories.js
-const req = require.context('../stories', true, /.stories.js$/);
+setOptions({
+  name: "Common Components",
+  goFullScreen: false,
+  showLeftPanel: true,
+  showSearchBox: false,
+  downPanelInRight: true,
+  sortStoriesByKind: true
+});
+
+const req = require.context(
+  "../stories",
+  true,
+  /.stories.js$/
+);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
 }

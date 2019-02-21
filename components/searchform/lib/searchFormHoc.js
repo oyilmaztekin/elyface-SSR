@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import autobind from "autobind-decorator";
+import Icon from "@comp/icon/";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function SearchFormHOC(SearchFieldComponent) {
   return class SearchForm extends Component {
@@ -14,8 +16,10 @@ function SearchFormHOC(SearchFieldComponent) {
     @autobind
     handleSubmit(e) {
       //eslint-disable-next-line
-      console.log(this.state);
       e.preventDefault();
+      this.setState({
+        value: e.target.value
+      });
     }
 
     @autobind
@@ -35,7 +39,7 @@ function SearchFormHOC(SearchFieldComponent) {
         //eslint-disable-next-line
         value,
         //eslint-disable-next-line
-        submitText,
+        submitIcon,
         //eslint-disable-next-line
         onClick,
         ...searchProps
@@ -50,12 +54,13 @@ function SearchFormHOC(SearchFieldComponent) {
             onChange={this.handleChange}
             {...searchProps}
           />
-          <input
+          <button
             type="submit"
-            value={submitText}
             className="search-form-submit"
             onClick={onClick}
-          />
+          >
+            <Icon icon={faSearch} size="16" />
+          </button>
         </form>
       );
     }
