@@ -12,7 +12,9 @@
           "@nest": "./nested",
           "@globalstyle": "./globalstyles/styles.scss",
           "@mock": "./mocks",
-          "@static": "./static"
+          "@static": "./static",
+          "@apis": "./configs/index.js",
+          "@utils": "./utils/index.js",
         }
       }
     ]
