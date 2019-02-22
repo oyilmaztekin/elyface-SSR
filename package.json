@@ -33,6 +33,11 @@
         "<rootDir>/node_modules/",
         "<rootDir>/*.json",
         "<rootDir>/stories/"
+      ],
+      "testPathIgnorePatterns": [
+        "<rootDir>/node_modules/",
+        "<rootDir>/*.json",
+        "<rootDir>/stories/"
       ]
     }
   },
