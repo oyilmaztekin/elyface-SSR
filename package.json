@@ -10,7 +10,7 @@
     "dev": " esw . && next",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export",
+    "export": "next export",
     "test": "jest --no-cache",
     "test-coverage": "jest --no-cache --watch --coverage",
     "test-debug": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
