@@ -1,1 +1,4 @@
-export { getDataset } from "./axios/index";
+export {
+  getDataset,
+  getContent
+} from "./axios/index";
