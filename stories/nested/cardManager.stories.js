@@ -8,7 +8,7 @@ import {
   number,
   boolean
 } from "@storybook/addon-knobs";
-import CardManager from "@nest/cardmanager/";
+import CardManager from "@nest/cardManager/";
 
 storiesOf("Card", module)
   .addDecorator(withKnobs)
