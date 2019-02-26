@@ -1,8 +1,14 @@
 {
   "presets": ["next/babel"],
   "plugins": [
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    [
+      "@babel/plugin-proposal-decorators",
+      { "legacy": true }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      { "loose": true }
+    ],
     [
       "module-resolver",
       {
@@ -14,7 +20,7 @@
           "@mock": "./mocks",
           "@static": "./static",
           "@apis": "./configs/index.js",
-          "@utils": "./utils/index.js",
+          "@utils": "./utils/index.js"
         }
       }
     ]
