@@ -1,0 +1,18 @@
+@import "../../../globalstyles/styles.scss";
+
+// Fix for jumping arrows
+.card-manager {
+  display: flex;
+
+  &-vertical {
+      flex-direction: column;
+  }
+  &-horizontal {
+      flex-direction: row;
+  }
+  &_item{
+      margin-left:40px;
+  }
+
+  &_item:first-child{margin-left: 0px;}
+}
