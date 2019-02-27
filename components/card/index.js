@@ -14,11 +14,9 @@ const Card = props => {
     bg,
     className,
     loading,
-    gallery,
-    iconSize,
-    iconTop,
     children,
-    height
+    height,
+    gallery
   } = props;
   return (
     <div
@@ -36,8 +34,6 @@ const Card = props => {
       {gallery ? (
         <Icon
           icon={faCamera}
-          size={iconSize}
-          iconTop={iconTop}
           className="card-icon"
         />
       ) : null}
@@ -55,8 +51,6 @@ Card.propTypes = {
   loading: propTypes.bool,
   children: propTypes.node,
   gallery: propTypes.bool,
-  iconSize: propTypes.string,
-  iconTop: propTypes.string,
   height: propTypes.number
 };
 
