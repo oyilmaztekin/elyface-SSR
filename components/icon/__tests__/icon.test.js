@@ -24,6 +24,5 @@ describe("Icon Component Testing", () => {
 
   it("should have correct props ", () => {
     expect(wrapper.props().icon).toBe(faCoffee);
-    expect(wrapper.props().size).toBe("24");
   });
 });

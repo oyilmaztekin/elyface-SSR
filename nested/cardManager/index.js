@@ -13,7 +13,7 @@ import { CardContext } from "./lib/cardcontext";
  * @prop {limit} number - determines limitation of the item. Slices array according to the given limit
  *
  * ---- can be gave by users -----
- * @prop {direction} string - determines direction of the columns horizontal or vertical
+ * @prop {horizontal} boolean - determines direction of the columns horizontal or vertical
  * @prop {bg} string - background color of the wrapper
  * @prop {cardBg} string - background color of the Card Component
  * @prop {gallery} boolean - if its true gallery icon will be displayed
@@ -70,7 +70,8 @@ class CardManager extends Component {
       vertical,
       dataset,
       limit,
-      containerBG
+      containerBG,
+      gallery
     } = this.props;
 
     return (
@@ -89,6 +90,7 @@ class CardManager extends Component {
         lineHeight={lineHeight}
         limit={limit}
         containerBG={containerBG}
+        gallery={gallery}
       />
     );
   }

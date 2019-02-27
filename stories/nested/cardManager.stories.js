@@ -8,11 +8,14 @@ import {
   number,
   boolean
 } from "@storybook/addon-knobs";
+import readmeDOC from "@nest/cardManager/README.md";
+import { withReadme } from "storybook-readme";
 import CardManager from "@nest/cardManager/";
 
 storiesOf("Card", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
+  .addDecorator(withReadme(readmeDOC))
   .add("Card Manager", () => {
     return (
       <CardManager

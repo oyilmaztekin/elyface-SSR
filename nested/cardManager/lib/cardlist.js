@@ -45,7 +45,8 @@ class Cardlist extends Component {
           fontSize,
           width,
           height,
-          lineHeight
+          lineHeight,
+          gallery
         } = this.props;
 
         let gorsel = haber_gorsel[0]._id;
@@ -63,6 +64,7 @@ class Cardlist extends Component {
               bg={cardBg}
               height={height}
               id={_id}
+              gallery={gallery}
             >
               <Card.IMG
                 src={`http://assets.blupoint.io/img/75/600x340/${gorsel}`}
@@ -140,7 +142,8 @@ Cardlist.propTypes = {
   lineHeight: propTypes.string,
   vertical: propTypes.bool,
   limit: propTypes.number,
-  containerBG: propTypes.string
+  containerBG: propTypes.string,
+  gallery: propTypes.bool
 };
 
 export default Cardlist;

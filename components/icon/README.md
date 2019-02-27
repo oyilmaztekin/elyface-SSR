@@ -4,8 +4,8 @@ A simple component that wraps <FontAwesomeIcon> component.
 ### props
 - **_`icon`_**: string
   - Specifies the icon
-- **_`size`_**: string
-  - Specifies the fontsize of the icon
+- **_`className`_**: string
+  - custom classname
 
  
 ### Usage

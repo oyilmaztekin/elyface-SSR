@@ -26,8 +26,6 @@ storiesOf("Card", module)
           id={text("id", "unique_id")}
           bg={text("bg", "#ffffff")}
           gallery={boolean("gallery", true)}
-          iconSize={text("iconSize", "24")}
-          iconTop={text("iconTop", "15")}
         >
           <Card.IMG
             href="#"
