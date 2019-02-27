@@ -7,75 +7,91 @@ class Cardlist extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      changed: 0
+      limit: this.props.limit
     };
   }
-  componentDidUpdate(prevProps) {
-    let st = this.state.changed;
-    if (
-      prevProps.registry !==
-        this.props.registry ||
-      prevProps.dataset !== this.props.dataset
-    ) {
+
+  UNSAFE_componentWillReceiveProps(props) {
+    if (props.dataset !== this.props.dataset) {
+      props.inherit.sendRequest(props.dataset);
+    }
+
+    if (props.limit !== this.props.limit) {
       this.setState({
-        changed: ++st
+        limit: props.limit
       });
     }
   }
+
   createCardComponent(registry) {
-    return registry.map((item, ind) => {
-      const {
-        _id,
-        description,
-        title,
-        self_path,
-        haber_gorsel
-      } = item;
-      const {
-        cardBg,
-        imgClassName,
-        border,
-        textColor,
-        fontSize,
-        width,
-        height,
-        lineHeight
-      } = this.props;
+    if (registry.error) {
+      return <div>{registry.error}</div>;
+    }
+    const reg = registry.data.data.items;
+    return reg
+      .map((item, ind) => {
+        const {
+          _id,
+          description,
+          title,
+          self_path,
+          haber_gorsel
+        } = item;
+        const {
+          cardBg,
+          imgClassName,
+          border,
+          textColor,
+          fontSize,
+          width,
+          height,
+          lineHeight
+        } = this.props;
 
-      let gorsel = haber_gorsel[0]._id;
+        let gorsel = haber_gorsel[0]._id;
 
-      return (
-        <li
-          key={ind}
-          id={_id}
-          style={{
-            width: width + "px"
-          }}
-          className="card-manager_item"
-        >
-          <Card bg={cardBg} height={height}>
-            <Card.IMG
-              src={`http://assets.blupoint.io/img/75/600x340/${gorsel}`}
-              longdesc={description}
-              alt={title}
-              className={`card-img ${imgClassName}`}
-              border={border}
-              href={self_path}
-            />
-            <Card.Title
-              title={title}
-              color={textColor}
-              fontSize={fontSize}
-              lineHeight={lineHeight}
-              href={self_path}
-            />
-          </Card>
-        </li>
-      );
-    });
+        return (
+          <li
+            key={ind}
+            id={_id}
+            style={{
+              width: width + "px"
+            }}
+            className="card-manager_item"
+          >
+            <Card
+              bg={cardBg}
+              height={height}
+              id={_id}
+            >
+              <Card.IMG
+                src={`http://assets.blupoint.io/img/75/600x340/${gorsel}`}
+                longdesc={description}
+                alt={title}
+                className={`card-img ${imgClassName}`}
+                border={border}
+                href={self_path}
+              />
+              <Card.Title
+                title={title}
+                color={textColor}
+                fontSize={fontSize}
+                lineHeight={lineHeight}
+                href={self_path}
+              />
+            </Card>
+          </li>
+        );
+      })
+      .slice(0, this.state.limit);
   }
   render() {
-    const { registry, direction } = this.props;
+    const {
+      registry,
+      vertical,
+      dataset,
+      containerBG
+    } = this.props;
     let items;
     registry
       ? (items = this.createCardComponent(
@@ -84,25 +100,36 @@ class Cardlist extends Component {
       : (items = "loading...");
 
     return (
-      <React.Fragment>
+      <section
+        data-dataset={dataset}
+        data-dataset-id={
+          registry &&
+          registry.hasOwnProperty("data") &&
+          registry.data._id
+        }
+        className="card-dataset"
+        style={{
+          backgroundColor: containerBG
+        }}
+      >
         <ul
           className={classNames(
             "card-manager",
-            direction &&
-              `card-manager-${direction}`
+            vertical && `card-manager-vertical`,
+            !vertical && `card-manager-horizontal`
           )}
         >
           {items}
         </ul>
-      </React.Fragment>
+      </section>
     );
   }
 }
 
 Cardlist.propTypes = {
-  registry: propTypes.array,
+  registry: propTypes.object,
   inherit: propTypes.object,
-  dataset: propTypes.dataset,
+  dataset: propTypes.string,
   cardBg: propTypes.string,
   imgClassName: propTypes.string,
   border: propTypes.string,
@@ -111,7 +138,9 @@ Cardlist.propTypes = {
   width: propTypes.number,
   height: propTypes.number,
   lineHeight: propTypes.string,
-  direction: propTypes.string
+  vertical: propTypes.bool,
+  limit: propTypes.number,
+  containerBG: propTypes.string
 };
 
 export default Cardlist;

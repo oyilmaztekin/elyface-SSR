@@ -1,18 +1,31 @@
 @import "../../../globalstyles/styles.scss";
 
 // Fix for jumping arrows
+.card-dataset{
+    padding:40px;
+}
 .card-manager {
   display: flex;
 
   &-vertical {
-      flex-direction: column;
+    flex-direction: column;
+    li {
+      margin-top: 40px;
+    }
+    li:first-child {
+      margin-top: 0px;
+    }
   }
   &-horizontal {
-      flex-direction: row;
+    flex-direction: row;
+    li {
+      margin-left: 40px;
+    }
+    li:first-child {
+      margin-left: 0px;
+    }
   }
-  &_item{
-      margin-left:40px;
+  &_item {
   }
 
-  &_item:first-child{margin-left: 0px;}
 }
