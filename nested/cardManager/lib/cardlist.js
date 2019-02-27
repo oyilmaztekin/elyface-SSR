@@ -11,6 +11,7 @@ class Cardlist extends Component {
     };
   }
 
+  // ONLY FOR STORYBOOK - knobs of storybook can be reflected changed props...
   UNSAFE_componentWillReceiveProps(props) {
     if (props.dataset !== this.props.dataset) {
       props.inherit.sendRequest(props.dataset);
