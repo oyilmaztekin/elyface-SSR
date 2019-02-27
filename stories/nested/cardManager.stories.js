@@ -18,11 +18,11 @@ storiesOf("Card", module)
       <CardManager
         dataset={text("dataset", "cat-gundem")}
         limit={number("limit", 5)}
-        direction={text(
-          "direction",
-          "horizontal"
+        vertical={boolean("vertical", false)}
+        containerBG={text(
+          "containerBG",
+          "#ffffff"
         )}
-        bg={text("bg", "#323232")}
         cardBg={text("cardBg", "#fff")}
         textColor={text("textColor", "#323232")}
         fontSize={text("fontSize", "18")}

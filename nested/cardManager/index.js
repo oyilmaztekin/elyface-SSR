@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import propTypes from "prop-types";
 import CardList from "./lib/cardlist";
 import { getDataset } from "@utils";
+import { CardContext } from "./lib/cardcontext";
 
 /**
  * @author Özer Yılmaztekin
@@ -26,6 +27,7 @@ import { getDataset } from "@utils";
  */
 
 class CardManager extends Component {
+  static displayName = "CardManager";
   constructor(props) {
     super(props);
     this.state = {
@@ -36,17 +38,13 @@ class CardManager extends Component {
 
   sendRequest() {
     // imajlar için ayrı request atmak gerekiyor.
-    return getDataset(this.props.dataset).then(
-      data => {
-        if (this.props.limit) {
-          return data.data.data.items.slice(
-            0,
-            this.props.limit
-          );
-        }
-        return data.data.data.items;
-      }
-    );
+    return getDataset(this.props.dataset)
+      .then(data => {
+        return data;
+      })
+      .catch(err => {
+        return { error: err.message };
+      });
   }
 
   async componentDidMount() {
@@ -69,8 +67,10 @@ class CardManager extends Component {
       width,
       height,
       lineHeight,
-      direction,
-      dataset
+      vertical,
+      dataset,
+      limit,
+      containerBG
     } = this.props;
 
     return (
@@ -85,8 +85,10 @@ class CardManager extends Component {
         fontSize={fontSize}
         width={width}
         height={height}
-        direction={direction}
+        vertical={vertical}
         lineHeight={lineHeight}
+        limit={limit}
+        containerBG={containerBG}
       />
     );
   }
@@ -95,8 +97,8 @@ class CardManager extends Component {
 CardManager.propTypes = {
   dataset: propTypes.string.isRequired,
   limit: propTypes.number,
-  direction: propTypes.string,
-  bg: propTypes.string,
+  vertical: propTypes.bool,
+  containerBG: propTypes.string,
   cardBg: propTypes.string,
   gallery: propTypes.bool,
   textColor: propTypes.string,
