@@ -1,8 +1,7 @@
 import React from "react";
 import "@globalstyle";
-
 const IndexPage = () => (
-  <div>Welcome to next.js!</div>
+  <div>haberiyakala ssr </div>
 );
 
 export default IndexPage;

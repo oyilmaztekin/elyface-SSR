@@ -11,8 +11,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "test": "jest --no-cache",
-    "test-coverage": "jest --no-cache --watch --coverage",
+    "test": "jest --no-cache --verbose --coverage",
     "test-debug": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
     "test-debug-scope": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand linkbutton.test.js --testNamePattern='testing title and alt props'",
     "story": "start-storybook -p 6006",
@@ -21,8 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "esw . && prettier --check components/**/*.js && prettier --check pages/**/*.js",
-      "pre-push": "jest --no-cache --coverage"
+      "pre-commit": "esw . && prettier --check components/**/*.js && prettier --check pages/**/*.js && jest --no-cache"
     }
   },
   "jest": {
@@ -65,6 +63,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-proposal-private-methods": "^7.3.2",
     "@storybook/addon-actions": "^4.1.11",
     "@storybook/addon-centered": "^4.1.11",
     "@storybook/addon-knobs": "^4.1.11",

@@ -14,8 +14,6 @@ describe("Card Component Test", () => {
         id="unique_id"
         bg="#ffffff"
         gallery={true}
-        iconSize="24"
-        iconTop="24"
         className="example_class"
         loading
       >
@@ -53,8 +51,6 @@ describe("Card Component Test", () => {
         .backgroundColor
     ).toBe("#ffffff");
     expect(wrapper.props().gallery).toBe(true);
-    expect(wrapper.props().iconTop).toBe("24");
-    expect(wrapper.props().iconSize).toBe("24");
     expect(wrapper.props().children).toHaveLength(
       2
     );
@@ -112,8 +108,6 @@ describe("Card Component Test", () => {
     expect(icon.props.className).toBe(
       "card-icon"
     );
-    expect(icon.props.iconTop).toBe("24");
-    expect(icon.props.size).toBe("24");
     expect(typeof icon.props.icon).toEqual(
       "object"
     );

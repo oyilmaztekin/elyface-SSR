@@ -14,10 +14,9 @@ const Card = props => {
     bg,
     className,
     loading,
-    gallery,
-    iconSize,
-    iconTop,
-    children
+    children,
+    height,
+    gallery
   } = props;
   return (
     <div
@@ -27,13 +26,14 @@ const Card = props => {
         className && `card-${className}`,
         loading && `card-loading`
       )}
-      style={{ backgroundColor: bg }}
+      style={{
+        backgroundColor: bg,
+        height: height
+      }}
     >
       {gallery ? (
         <Icon
           icon={faCamera}
-          size={iconSize}
-          iconTop={iconTop}
           className="card-icon"
         />
       ) : null}
@@ -51,8 +51,7 @@ Card.propTypes = {
   loading: propTypes.bool,
   children: propTypes.node,
   gallery: propTypes.bool,
-  iconSize: propTypes.string,
-  iconTop: propTypes.string
+  height: propTypes.number
 };
 
 Card.IMG = props => {
@@ -66,8 +65,8 @@ Card.IMG = props => {
   );
   return (
     <div className={props.className}>
-      <Link href="#" passHref>
-        <LinkButton text="Sample Button">
+      <Link href={props.href} passHref>
+        <LinkButton text={props.alt}>
           <Image
             src={props.src}
             responsive
@@ -88,7 +87,8 @@ Card.IMG.propTypes = {
   alt: propTypes.string,
   longdesc: propTypes.string,
   className: propTypes.string,
-  border: propTypes.string
+  border: propTypes.string,
+  href: propTypes.string
 };
 
 Card.Title = props => {
@@ -97,7 +97,8 @@ Card.Title = props => {
     color,
     fontSize,
     lineHeight,
-    title
+    title,
+    href
   } = props;
   return (
     <div
@@ -106,7 +107,7 @@ Card.Title = props => {
         className && `card-title-${className}`
       )}
     >
-      <Link href="#" passHref>
+      <Link href={href} passHref>
         <LinkButton text="Sample Button">
           <span
             style={{
@@ -130,7 +131,8 @@ Card.Title.propTypes = {
   color: propTypes.string,
   fontSize: propTypes.string,
   lineHeight: propTypes.string,
-  className: propTypes.string
+  className: propTypes.string,
+  href: propTypes.string
 };
 
 export default Card;

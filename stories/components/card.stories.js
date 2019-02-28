@@ -26,10 +26,9 @@ storiesOf("Card", module)
           id={text("id", "unique_id")}
           bg={text("bg", "#ffffff")}
           gallery={boolean("gallery", true)}
-          iconSize={text("iconSize", "24")}
-          iconTop={text("iconTop", "15")}
         >
           <Card.IMG
+            href="#"
             src={text(
               "src",
               "http://cdn.haberiyakala.com/assets/uploads/images/content/2019/01/23/cropped_content_enflasyon-2019da-15e-inecek_yB38C62IrIsvF37.jpg"
@@ -42,6 +41,7 @@ storiesOf("Card", module)
             border={text("border", "#ffa200")}
           />
           <Card.Title
+            href="#"
             title={text(
               "title",
               "Merkez Bankası'ndan Hükümete Açık Metkup"

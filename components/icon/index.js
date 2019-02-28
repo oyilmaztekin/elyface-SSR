@@ -11,13 +11,7 @@ class Icon extends Component {
   }
   render() {
     return (
-      <span
-        className={this.props.className}
-        style={{
-          fontSize: this.props.size + "px",
-          paddingTop: this.props.iconTop + "px"
-        }}
-      >
+      <span className={this.props.className}>
         <FontAwesomeIcon icon={this.props.icon} />
       </span>
     );
@@ -26,9 +20,7 @@ class Icon extends Component {
 
 Icon.propTypes = {
   icon: propTypes.object.isRequired,
-  size: propTypes.string,
-  className: propTypes.string,
-  iconTop: propTypes.string
+  className: propTypes.string
 };
 
 export default Icon;
