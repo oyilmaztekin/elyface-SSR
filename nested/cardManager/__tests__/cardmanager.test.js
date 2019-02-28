@@ -5,31 +5,28 @@ import Adapter from "enzyme-adapter-react-16";
 import CardManager from "@nest/cardManager/";
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("Card Manager Component Testing", () => {
+describe("Cardmanager errors", () => {
   let comp;
   let wrapper;
-  beforeAll(() => {
-    comp = (
-      <CardManager
-        dataset="cat-gundem"
-        limit={5}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        height={320}
-        lineHeight="24"
-      />
-    );
+  let spy;
+  beforeAll(async () => {
+    comp = <CardManager dataset="cat-gundem" />;
     wrapper = mount(comp);
   });
 
-  test("should rendered without crashing ", () => {
-    expect(wrapper).toBeDefined();
+  afterAll(() => {
+    wrapper.unmount();
+  });
+  test("testing errors - componentDidMount", async () => {
+    const wrapper = mount(
+      <CardManager dataset="asdasd" />
+    );
+
+    await wrapper.instance().componentDidMount();
+    expect(
+      wrapper
+        .state()
+        .cardRegistry.hasOwnProperty("error")
+    ).toBe(true);
   });
 });

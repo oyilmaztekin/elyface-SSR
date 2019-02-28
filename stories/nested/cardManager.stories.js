@@ -35,6 +35,7 @@ storiesOf("Card", module)
         width={number("width", 400)}
         height={number("height", 320)}
         lineHeight={text("lineHeight", "24")}
+        border={text("border", "#ffa200")}
       />
     );
   });
