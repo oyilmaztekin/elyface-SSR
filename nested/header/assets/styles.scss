@@ -9,38 +9,40 @@
 }
 
 .header {
-    padding:10px 0px;
+  max-width:1000px;
+  margin:auto;
+  padding: 10px 0px;
   &__row-one {
-    justify-content: space-around;
+    width: 100%;
     flex-wrap: wrap;
     &-logo {
-        margin-top: 20px;
-      }
-      &-nav {
-        margin-top: 20px;
-        right: 0px;
-      }
+      margin-top: 20px;
+    }
+    &-nav {
+      margin-top: 20px;
+      right: 0px;
+    }
   }
-  
+
   &__row-two {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top:30px;
+    margin-top: 30px;
     &-moment {
-        line-height:33px;
-        font-size:13px;
+      line-height: 33px;
+      font-size: 13px;
     }
     &-input-buttons-container {
-        display: flex;
-        &-form{
-            width:200px;
-        }
-        &-btn{
-            margin-left:15px;
-            margin-top:13px;
-            font-size: 14px;
-        }
+      display: flex;
+      &-form {
+        width: 200px;
+      }
+      &-btn {
+        margin-left: 15px;
+        margin-top: 13px;
+        font-size: 14px;
+      }
     }
   }
 }
