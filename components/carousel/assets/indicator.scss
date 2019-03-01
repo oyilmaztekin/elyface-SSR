@@ -43,6 +43,7 @@ $indNum: 35px;
     border: 2px;
     text-align: center;
     line-height: $indNum;
+    color:$dark;
     &:hover {
       background-color: $dark;
       color: $white;
