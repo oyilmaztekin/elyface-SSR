@@ -3,6 +3,9 @@
 // Fix for jumping arrows
 .section-cards{
     padding:40px;
+    &__heading{
+      padding-bottom:20px;
+    }   
 }
 .card-lists {
   display: flex;
