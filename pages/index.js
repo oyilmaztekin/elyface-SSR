@@ -55,6 +55,133 @@ const IndexPage = props => {
           lineHeight="24"
         />
       </Container>
+      <Cards
+        dataset={props.dataset.mansetalti}
+        registry={props.registry.mansetalti}
+        limit={5}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+      />
+      <Container>
+        <Carousel
+          width="440"
+          height="250"
+          layout="left"
+          slides={props.registry.cokokunanlar}
+          className="manset-alti-slider"
+        />
+      </Container>
+
+      {/* GALERİ */}
+
+      <Cards
+        dataset={props.dataset.gundem}
+        registry={props.registry.gundem}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
+
+      <Cards
+        dataset={props.dataset.ekonomi}
+        registry={props.registry.ekonomi}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
+
+      {/* MAGAZİN */}
+
+      <Cards
+        dataset={props.dataset.siyaset}
+        registry={props.registry.siyaset}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
+
+      <Cards
+        dataset={props.dataset.yasam}
+        registry={props.registry.yasam}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
+
+      <Cards
+        dataset={props.dataset.teknoloji}
+        registry={props.registry.teknoloji}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
+
+      <Cards
+        dataset={props.dataset.dunya}
+        registry={props.registry.dunya}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
+
+      {/* SAĞLIK */}
+      {/* EĞİTİM */}
     </Fragment>
   );
 };
@@ -65,9 +192,21 @@ IndexPage.propTypes = {
 };
 
 IndexPage.getInitialProps = async () => {
+  /**
+   * TODO: galeri, magazin, sağlık, eğitim
+   */
   const surmansetdataset = "sur-manset";
   const mansetdataset = "manset";
   const sagmansetdataset = "sag-manset";
+  const mansetaltidataset = "manset-alti";
+  const cokokunanlardataset = "cok-okunanlar";
+  const gundemdataset = "cat-gundem";
+  const ekonomidataset = "cat-ekonomi";
+  const siyasetdataset = "cat-siyaset";
+  const yasamdataset = "cat-yasam";
+  const teknolojidataset = "cat-teknoloji";
+  const dunyadataset = "cat-dunya";
+
   const surmanset = await getDataset(
     surmansetdataset
   )
@@ -82,16 +221,71 @@ IndexPage.getInitialProps = async () => {
   )
     .then(data => data.data)
     .catch(err => err.response.data);
+
+  const mansetalti = await getDataset(
+    mansetaltidataset
+  )
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const cokokunanlar = await getDataset(
+    cokokunanlardataset
+  )
+    .then(data => data.data.data.items)
+    .catch(err => err.response.data);
+
+  const gundem = await getDataset(gundemdataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const ekonomi = await getDataset(ekonomidataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const siyaset = await getDataset(siyasetdataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const yasam = await getDataset(yasamdataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const teknoloji = await getDataset(
+    teknolojidataset
+  )
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const dunya = await getDataset(dunyadataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
   return {
     registry: {
       surmanset: surmanset,
       manset: manset,
-      sagmanset: sagmanset
+      sagmanset: sagmanset,
+      mansetalti: mansetalti,
+      cokokunanlar: cokokunanlar,
+      gundem: gundem,
+      ekonomi: ekonomi,
+      siyaset: siyaset,
+      yasam: yasam,
+      teknoloji: teknoloji,
+      dunya: dunya
     },
     dataset: {
       surmanset: surmansetdataset,
       manset: mansetdataset,
-      sagmanset: sagmanset
+      sagmanset: sagmansetdataset,
+      mansetalti: mansetaltidataset,
+      cokokunanlar: cokokunanlardataset,
+      gundem: gundemdataset,
+      ekonomi: ekonomidataset,
+      siyaset: siyasetdataset,
+      yasam: yasamdataset,
+      teknoloji: teknolojidataset,
+      dunya: dunyadataset
     }
   };
 };

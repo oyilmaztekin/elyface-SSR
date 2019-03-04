@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import propTypes from "prop-types";
+import Link from "next/link";
+import LinkButton from "@comp/linkButton/";
+import autobind from "autobind-decorator";
 import Card from "@comp/card/";
 import classNames from "classnames";
 import "./assets/styles.scss";
@@ -8,8 +11,24 @@ class Cards extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      limit: this.props.limit
+      limit: this.props.limit,
+      catTitle: "",
+      catSlug: ""
     };
+  }
+
+  componentDidMount() {
+    if (this.props.heading) {
+      const liElement = document.querySelector(
+        ".card-lists_item"
+      );
+      const title = liElement.dataset.catTitle;
+      const slug = liElement.dataset.catSlug;
+      this.setState({
+        catTitle: title,
+        catSlug: slug
+      });
+    }
   }
 
   createCardComponent(registry) {
@@ -17,6 +36,9 @@ class Cards extends Component {
       return <div>{registry.error}</div>;
     }
     const reg = registry.data.items;
+    const catTitle = reg[0].ancestors[0].title;
+    const catSlug = reg[0].ancestors[0].slug;
+
     return reg
       .map((item, ind) => {
         const {
@@ -49,6 +71,8 @@ class Cards extends Component {
               width: width + "px"
             }}
             className="card-lists_item"
+            data-cat-title={catTitle}
+            data-cat-slug={catSlug}
           >
             <Card
               bg={cardBg}
@@ -77,6 +101,23 @@ class Cards extends Component {
       })
       .slice(0, this.state.limit);
   }
+
+  @autobind
+  createHeading(title, slug) {
+    return (
+      <h3 className="section-cards__heading">
+        <Link href={slug} passHref={true}>
+          <LinkButton
+            text={title}
+            className="link-category-title"
+          >
+            <span>{title}</span>
+          </LinkButton>
+        </Link>
+      </h3>
+    );
+  }
+
   render() {
     const {
       registry,
@@ -85,6 +126,8 @@ class Cards extends Component {
       dataset,
       className
     } = this.props;
+
+    let { catTitle, catSlug } = this.state;
     let items;
     registry
       ? (items = this.createCardComponent(
@@ -105,6 +148,9 @@ class Cards extends Component {
           backgroundColor: containerBG
         }}
       >
+        {catTitle &&
+          catSlug &&
+          this.createHeading(catTitle, catSlug)}
         <ul
           className={classNames(
             "card-lists",
@@ -135,7 +181,8 @@ Cards.propTypes = {
   limit: propTypes.number,
   containerBG: propTypes.string,
   gallery: propTypes.bool,
-  className: propTypes.string
+  className: propTypes.string,
+  heading: propTypes.bool
 };
 
 export default Cards;
