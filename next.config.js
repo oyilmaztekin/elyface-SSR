@@ -29,9 +29,11 @@ module.exports = withPlugins(
           localIdentName: "[local]"
         },
         [PHASE_PRODUCTION_BUILD + PHASE_EXPORT]: {
+          cssModules: false,
           cssLoaderOptions: {
-            localIdentName: "[hash:base64:8]"
-          }
+            localIdentName: "[local]--[hash:64:5]"
+          },
+          minimize: true
         }
       }
     ],

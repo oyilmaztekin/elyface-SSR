@@ -8,7 +8,6 @@
   "private": true,
   "scripts": {
     "dev": " esw . && next",
-    "dev-debug": " /usr/local/bin/node --inspect-brk node_modules/.bin/next",
     "build": "next build",
     "start": "next start",
     "export": "next export",
