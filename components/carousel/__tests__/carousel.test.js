@@ -3,7 +3,7 @@ import React from "react";
 import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Carousel from "@comp/carousel/";
-import mockData from "@mock/carouselMocks.json";
+import mockData from "@mock/gundemMocks.json";
 Enzyme.configure({ adapter: new Adapter() });
 
 function mouseEnterProps(e) {
