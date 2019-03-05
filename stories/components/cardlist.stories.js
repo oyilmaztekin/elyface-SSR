@@ -6,20 +6,22 @@ import {
   withKnobs,
   text,
   number,
-  boolean
+  boolean,
+  object
 } from "@storybook/addon-knobs";
-import readmeDOC from "@nest/cardManager/README.md";
+import readmeDOC from "@comp/cards/README.md";
+import mockData from "@mock/cardMock.json";
 import { withReadme } from "storybook-readme";
-import CardManager from "@nest/cardManager/";
+import Cards from "@comp/cards/";
 
 storiesOf("Card", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .addDecorator(withReadme(readmeDOC))
-  .add("Card Manager", () => {
+  .add("Card List", () => {
     return (
-      <CardManager
-        dataset={text("dataset", "cat-gundem")}
+      <Cards
+        registry={object("registry", mockData)}
         limit={number("limit", 5)}
         vertical={boolean("vertical", false)}
         containerBG={text(

@@ -16,7 +16,7 @@ const CarouselIndicator = props => {
   });
   return (
     <li>
-      <Link href={props.slide.href} passHref>
+      <Link href={props.slide.url} passHref>
         <LinkButton
           text={props.slide.title}
           className={indicatorClass}
@@ -52,23 +52,30 @@ const CarouselSlide = props => {
     }
   );
 
-  let { slide, layout, index } = props;
+  let {
+    slide,
+    slide: { ancestors },
+    slide: { haber_gorsel },
+    layout,
+    index
+  } = props;
+  let gorsel = haber_gorsel[0]._id;
   if (layout && layout === "bottom") {
     return (
       <li key={index} className={slideClass}>
         <div className={slideDiv}>
-          <Link href={slide.href} passHref>
+          <Link href={slide.url} passHref>
             <LinkButton text={slide.title}>
               <Image
-                src={slide.src}
-                alt={slide.desc}
-                longdesc={slide.longdesc}
+                src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
+                alt={slide.title}
+                longdesc={slide.description}
                 width={props.width}
               />
             </LinkButton>
           </Link>
 
-          <Link href={slide.href} passHref>
+          <Link href={slide.url} passHref>
             <LinkButton
               text={slide.title}
               className="slide__overlay"
@@ -77,7 +84,7 @@ const CarouselSlide = props => {
               }}
             >
               <span className="slide__desc">
-                {slide.cat}
+                {ancestors[0].title}
               </span>
               <span className="slide__title">
                 {slide.title}
@@ -92,17 +99,17 @@ const CarouselSlide = props => {
     return (
       <li key={index} className={slideClass}>
         <div className={slideDiv}>
-          <Link href={slide.href} passHref>
+          <Link href={slide.url} passHref>
             <LinkButton text={slide.title}>
               <Image
-                src={slide.src}
-                alt={slide.desc}
-                longdesc={slide.longdesc}
+                src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
+                alt={slide.title}
+                longdesc={slide.description}
                 width={props.width}
               />
             </LinkButton>
           </Link>
-          <Link href={slide.href} passHref>
+          <Link href={slide.url} passHref>
             <LinkButton
               text={slide.title}
               className="slide__content__item"
@@ -111,7 +118,7 @@ const CarouselSlide = props => {
               }}
             >
               <span className="slide__category">
-                {slide.cat}
+                {ancestors[0].title}
               </span>
               <span>{slide.title}</span>
             </LinkButton>
@@ -161,6 +168,7 @@ class Carousel extends Component {
 
     const containerClass = classNames(
       "carousel",
+      this.props.className,
       {
         carousel__bottom:
           this.props.layout === "bottom",
@@ -168,7 +176,6 @@ class Carousel extends Component {
           this.props.layout === "left"
       }
     );
-
     return (
       <div className={containerClass}>
         <ul className="carousel__slides">
@@ -219,7 +226,8 @@ Carousel.propTypes = {
   slides: propTypes.array,
   width: propTypes.string,
   buttonClass: propTypes.string,
-  layout: propTypes.string
+  layout: propTypes.string,
+  className: propTypes.string
 };
 
 export default Carousel;

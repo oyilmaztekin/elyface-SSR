@@ -33,7 +33,6 @@ ul {
   margin-right: auto;
   margin-left: auto;
   display: none;
-  max-width: 900px;
   list-style-type: none;
   text-align: center;
 
@@ -95,4 +94,9 @@ ul {
   &--right {
     right: 32px;
   }
+}
+
+.img-slider-width{
+  overflow: hidden;
+  height: 150px;
 }

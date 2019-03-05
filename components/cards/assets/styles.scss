@@ -1,0 +1,39 @@
+@import "../../../globalstyles/styles.scss";
+
+// Fix for jumping arrows
+.section-cards{
+    padding:40px;
+    &__heading{
+      padding-bottom:20px;
+    }   
+}
+.card-lists {
+  display: flex;
+
+  &-vertical {
+    flex-direction: column;
+    li {
+      margin-top: 40px;
+    }
+    li:first-child {
+      margin-top: 0px;
+    }
+  }
+  &-horizontal {
+    flex-direction: row;
+    li {
+      margin-left: 40px;
+    }
+    li:first-child {
+      margin-left: 0px;
+    }
+  }
+  &_item {
+  }
+
+}
+
+.section-cards__sag-manset-yani{
+  padding-top:0px;
+  padding-bottom:0px;
+}

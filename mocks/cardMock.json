@@ -1,0 +1,635 @@
+{
+  "data": {
+    "items": [
+      {
+        "haber_metni": "<p><span style=\"color: rgb(0, 0, 0);\">Akit TV’de yayınlanan \"Ters Kutuplar\" isimli programda ABD’de bulunan FETÖ elebaşı Fetullah Gülen’in Türkiye’ye iade edilmek üzere gözlem altına alındığı iddia edildi.</span></p><iframe class=\"ql-video\" frameborder=\"0\" allowfullscreen=\"true\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSadeceHabercom%2Fvideos%2F1857290164380746%2F&amp;amp;show_text=0&amp;amp;width=560\"></iframe><p><br></p>",
+        "meta_url": "",
+        "domain_id": "5c4984af5a4da10008e77628",
+        "refs_info": [
+          {
+            "type": "single_reference",
+            "refs": {},
+            "_id": "5c498cce9671ae0007d10a4e",
+            "field_id": "referans"
+          },
+          {
+            "type": "multiple_reference",
+            "refs": [],
+            "_id": "5c498cce9671ae0007d10a4f",
+            "field_id": "coklu_referans"
+          }
+        ],
+        "ancestors": [
+          {
+            "title": "Gündem",
+            "url": "/gundem",
+            "self_path": "/gundem/",
+            "base_type": "folder",
+            "path": "/",
+            "_id": "5c6bc4866d87ea0007573927",
+            "type": "kategori",
+            "slug": "gundem"
+          }
+        ],
+        "title": "'Fetullah Gülen Türkiye'ye getiriliyor'",
+        "base_type": "content",
+        "meta_aciklama": "Haberin devamı ve tüm detayları haberiyakala.com.'da",
+        "start_date": "2019-02-21T15:18:25.411000Z",
+        "reklam_gosterilmesin": false,
+        "status": "active",
+        "meta_title": "",
+        "coklu_referans": [],
+        "description": "FETÖ elebaşı Fetullah Gülen’in, ABD'den alınarak Türkiye'ye getirildiği iddia edildi. Bomba iddia sonrası Cumhurbaşkanlığı Sözcüsü İbrahim Kalın'dan açıklama geldi.",
+        "tags": [],
+        "sys": {
+          "modified_by": "sadece_haber",
+          "cid": 2427,
+          "first_published_by": "sadece_haber",
+          "created_at": "2019-02-21T15:18:25.518000Z",
+          "published_version": 2,
+          "modified_at": "2019-02-21T15:19:56.588000Z",
+          "published_by": "sadece_haber",
+          "collection": "published_contents",
+          "published_at": "2019-02-21T15:19:59.623000Z",
+          "version": 2,
+          "created_by": "sadece_haber",
+          "first_published_at": "2019-02-21T15:19:59.656000Z",
+          "domain_cid": 75,
+          "synchronized_at": "2019-02-21T15:19:59.490000Z"
+        },
+        "self_path": "/gundem/fetullah-gulen-turkiye-ye-getiriliyor/",
+        "path": "/gundem/",
+        "slug": "fetullah-gulen-turkiye-ye-getiriliyor",
+        "secenekler": "Normal İçerik ",
+        "kategori_sayfasinda_gizle": false,
+        "url": "/gundem/fetullah-gulen-turkiyeye-getiriliyor-75",
+        "type": "haber_ekleme",
+        "haber_gorsel": [
+          {
+            "contentType": "image/jpeg",
+            "chunkSize": 261120,
+            "image": {
+              "info": {
+                "width": 600,
+                "format": "JPEG",
+                "hash": "ebddcb1e98b53ec629ebbb24a9ae9b68",
+                "mode": "RGB",
+                "height": 340
+              },
+              "colors": [
+                {
+                  "color": "#ad9270",
+                  "percent": 0.399
+                },
+                {
+                  "color": "#404855",
+                  "percent": 0.282
+                },
+                {
+                  "color": "#856d53",
+                  "percent": 0.176
+                },
+                {
+                  "color": "#2c2f35",
+                  "percent": 0.106
+                },
+                {
+                  "color": "#ddd4d6",
+                  "percent": 0.037
+                }
+              ],
+              "faces": null
+            },
+            "membership_id": "sadece_haber",
+            "filename": "FG.jpg",
+            "sys": {
+              "created_at": "2019-02-21T15:19:47.141000Z",
+              "created_by": "sadece_haber",
+              "cid": 1
+            },
+            "length": 107259,
+            "uploadDate": "2019-02-21T15:19:47.148000Z",
+            "_id": "5c6ec1937b01dc0007ff2ac8",
+            "domain_id": "5c4984af5a4da10008e77628",
+            "md5": "ebddcb1e98b53ec629ebbb24a9ae9b68",
+            "metadata": {
+              "check_hash": "true"
+            }
+          }
+        ],
+        "membership_id": "sadece_haber",
+        "ref_set": [],
+        "custom_ref_set": [],
+        "referans": "",
+        "_id": "5c6ec14117ff6d0007031e6e",
+        "template_id": null
+      },
+      {
+        "haber_metni": "<p>Afet ve Acil Durum Yönetimi Başkanlığının internet sitesinde yer alan bilgiye göre, saat 06.46'da Girit Adası'nın kuzeyinde 4 büyüklüğünde deprem kaydedildi.</p><p>Depremin yaklaşık 6 kilometre derinlikte meydana geldiği bildirildi.</p>",
+        "meta_url": "",
+        "domain_id": "5c4984af5a4da10008e77628",
+        "refs_info": [
+          {
+            "type": "single_reference",
+            "refs": {},
+            "_id": "5c498cce9671ae0007d10a4e",
+            "field_id": "referans"
+          },
+          {
+            "type": "multiple_reference",
+            "refs": [],
+            "_id": "5c498cce9671ae0007d10a4f",
+            "field_id": "coklu_referans"
+          }
+        ],
+        "ancestors": [
+          {
+            "title": "Gündem",
+            "url": "/gundem",
+            "self_path": "/gundem/",
+            "base_type": "folder",
+            "path": "/",
+            "_id": "5c6bc4866d87ea0007573927",
+            "type": "kategori",
+            "slug": "gundem"
+          }
+        ],
+        "title": "Akdeniz'de 4 büyüklüğünde deprem",
+        "base_type": "content",
+        "meta_aciklama": "Haberin devamı ve tüm detayları haberiyakala.com.'da",
+        "start_date": "2019-02-21T15:16:56.872000Z",
+        "reklam_gosterilmesin": false,
+        "status": "active",
+        "meta_title": "",
+        "coklu_referans": [],
+        "description": "Akdeniz'de Girit Adası açıklarında 4 büyüklüğünde deprem meydana geldi.",
+        "tags": [],
+        "sys": {
+          "modified_by": "sadece_haber",
+          "cid": 2425,
+          "first_published_by": "sadece_haber",
+          "created_at": "2019-02-21T15:16:56.903000Z",
+          "published_version": 2,
+          "modified_at": "2019-02-21T15:17:44.646000Z",
+          "published_by": "sadece_haber",
+          "collection": "published_contents",
+          "published_at": "2019-02-21T15:17:51.221000Z",
+          "version": 2,
+          "created_by": "sadece_haber",
+          "first_published_at": "2019-02-21T15:17:51.252000Z",
+          "domain_cid": 73,
+          "synchronized_at": "2019-02-21T15:17:51.155000Z"
+        },
+        "self_path": "/gundem/akdeniz-de-4-buyuklugunde-deprem/",
+        "path": "/gundem/",
+        "slug": "akdeniz-de-4-buyuklugunde-deprem",
+        "secenekler": "Normal İçerik ",
+        "kategori_sayfasinda_gizle": false,
+        "url": "/gundem/akdenizde-4-buyuklugunde-deprem-73",
+        "type": "haber_ekleme",
+        "haber_gorsel": [
+          {
+            "contentType": "image/jpeg",
+            "image": {
+              "info": {
+                "width": 600,
+                "format": "JPEG",
+                "hash": "fda071b2de95fd490674472be76068e3",
+                "mode": "RGB",
+                "height": 340
+              },
+              "colors": [
+                {
+                  "color": "#f9a21d",
+                  "percent": 0.616
+                },
+                {
+                  "color": "#c47f24",
+                  "percent": 0.286
+                },
+                {
+                  "color": "#ee9b21",
+                  "percent": 0.048
+                },
+                {
+                  "color": "#272626",
+                  "percent": 0.045
+                },
+                {
+                  "color": "#a0722f",
+                  "percent": 0.005
+                }
+              ],
+              "faces": null
+            },
+            "filename": "SonDakika-Normal.jpg",
+            "sys": {
+              "created_at": "2019-02-21T15:13:05.328000Z",
+              "created_by": "sadece_haber",
+              "cid": 1
+            },
+            "length": 31398,
+            "uploadDate": "2019-02-21T15:13:05.333000Z",
+            "_id": "5c6ec0017b01dc0007ff2ac0"
+          }
+        ],
+        "membership_id": "sadece_haber",
+        "ref_set": [],
+        "custom_ref_set": [],
+        "referans": "",
+        "_id": "5c6ec0e817ff6d0007031e5d",
+        "template_id": null
+      },
+      {
+        "haber_metni": "<p>TBMM Başkanı Binali Yıldırım, TBMM Tören Salonu'nda geçmiş dönem Meclis başkanları ve 27. Dönem milletvekilleri onuruna verdiği yemekte, 31 Mart'ta Mahalli İdareler Genel Seçimleri'nin yapılacağını anımsattı.</p><p>Seçimlerin ülke ve millet için hayırlı olmasını dileyen Yıldırım, partilerin aday listelerini yarın seçim kurullarına teslim edeceğini söyledi.</p><p>Meclisten kendisinin de aralarında bulunduğu yaklaşık 20 kişinin listelerde olacağını aktaran Yıldırım, \"Çok alışılmış bir şey değil.\" ifadesini kullandı.</p><h3>\"Yeni başkana başarılar diliyorum\"</h3><p>AK Parti'nin, İstanbul Büyükşehir Belediye Başkanlığı için kendisini aday göstereceğini ifade eden Yıldırım, \"Bugün itibarıyla TBMM Başkanlığı görevimden çekileceğim. Bu yemekten sonra ilk yapacağım iş ayrılma dilekçesini TBMM'ye teslim etmek olacak. Yarın inşallah saat 09.00'da yeni başkan seçilene kadar görevi vekilim İstanbul Milletvekili Sayın Celal Adan'a devredeceğim. TBMM'ye seçilecek yeni başkana şimdiden başarılar diliyorum.\" diye konuştu.</p><p>Yıldırım, 143 yıllık bir geleneği bulunan Meclisin kurtuluş ve kuruluş mücadelesinde hep önde olduğunu dile getirdi.</p><p>Meclisin daima millete, çare olan bir merkez görevi yaptığına işaret eden Yıldırım, \"Önemli kanunlar ve kararlar hep egemenliğin kayıtsız, şartsız tecelli ettiği bu çatı altında, tamamlandı, yapıldı. Bu nedenden dolayıdır ki Türkiye Cumhuriyeti'ni hedef alan hainler ilk önce Gazi Meclis'e saldırdılar.\" ifadesini kullandı.</p><h3>\"Milli irade hep galip çıktı\"</h3><p>Türkiye darbe ve muhtıralara maruz kalsa da sonunda milli iradenin hep galip çıktığını söyleyen Yıldırım, milletin olumsuzluklardan güçlenerek çıkmayı bildiğini belirtti.</p><p>\"Yediğiniz darbe, sizi yıkmıyorsa güçlendirir. Yediği her darbe, TBMM'yi ve milletin iradesini daha da güçlendirdi.\" diyen Yıldırım, darbe girişimlerinin sonuncusunun, 15 Temmuz 2016'da FETÖ'cü hainler tarafından gerçekleştirilmeye çalışıldığını anımsattı.</p><p>15 Temmuz'da Meclis'teki bütün partilerin darbe girişimine karşı kararlı bir direniş gösterdiğini vurgulayan Yıldırım, 15 Temmuz gecesi milletin, Cumhurbaşkanı Recep Tayyip Erdoğan'ın davetiyle meydanlara indiğini ve demokrasinin yanında olduğunu alçak darbecilere gösterdiğini ifade etti.</p><p>Tanklara meydan okuyan aziz milletin ülkeye, bayrağa olan sevgi ve sadakatini bir kez daha cümle aleme ispat ettiğini vurgulayan Yıldırım, Başbakanlık görevini yeni üstlendiği bu dönemde ülkeyi kaosa sürüklemek isteyen iş birlikçi hainlerin, 15 Temmuz gecesinde 251 kişiyi öldürdüğünü, 2 bin 703 kişiyi yaraladığını anlattı.</p><p>Yıldırım, 15 Temmuz şehitlerine ve ülkenin bağımsızlığı, milletin istikbali için hayatını seve seve veren bütün şehitlere Allah'tan rahmet, gazilere güzel bir ömür diledi.</p><p>TBMM'nin, 15 Temmuz hainlerinin verdiği tahribatı hiç vakit geçirmeden gidermeyi başardığını dile getiren Yıldırım, Meclisi ziyaret edenlerin görmesi için hasarlı bir bölümün müze halinde muhafaza edildiğini söyledi.</p><h3>\"Türkiye kararlılıkla ilerlemeye devam ediyor\"</h3><p>Yıldırım, sözlerini şöyle sürdürdü:</p><p>\"Türkiye, ülkesi ve milletiyle bölünmez bir bütün olarak 21. yüzyılın lider ülkeleri arasında olma yolunda kararlılıkla ilerlemeye devam ediyor. Bu uğurda yapılan en önemli çalışmaların biri de kabul edildiği günden itibaren sürekli tartışma konusu olan 1982 darbe anayasasında sistem değişikliğini öngören köklü anayasa değişikliğidir. Devlet-millet uzlaşmasının temel hükümlerini içeren Anayasamızın 70 maddesi değiştirilmiştir. Genel Kurul'da, komisyonlarda yapılan görüşmeler, oylamalar sonucunda bu değişiklik 16 Nisan'da halkımızın oyuna sunulmuş ve yürürlük kazanmıştır. Kabul edilen anayasaya göre, TBMM'nin ve icranın, hükümetin yetkileri yeniden tanımlamıştır. 24 Haziran 2018'de yapılan seçimlerle de Cumhurbaşkanlığı Hükümet Sistemi yürürlüğe girmiş ve bu değişikliğin getirdiği 27. dönem milletvekilleri seçilmiş ve değişen sistemin ilk Meclisi oluşmuştur.\"</p>",
+        "meta_url": "",
+        "domain_id": "5c4984af5a4da10008e77628",
+        "refs_info": [
+          {
+            "type": "single_reference",
+            "refs": {},
+            "_id": "5c498cce9671ae0007d10a4e",
+            "field_id": "referans"
+          },
+          {
+            "type": "multiple_reference",
+            "refs": [],
+            "_id": "5c498cce9671ae0007d10a4f",
+            "field_id": "coklu_referans"
+          }
+        ],
+        "ancestors": [
+          {
+            "title": "Gündem",
+            "url": "/gundem",
+            "self_path": "/gundem/",
+            "base_type": "folder",
+            "path": "/",
+            "_id": "5c6bc4866d87ea0007573927",
+            "type": "kategori",
+            "slug": "gundem"
+          }
+        ],
+        "title": "Binali Yıldırım görevinden istifa etti",
+        "base_type": "content",
+        "meta_aciklama": "Haberin devamı ve tüm detayları haberiyakala.com.'da",
+        "start_date": "2019-02-21T15:15:15.374000Z",
+        "reklam_gosterilmesin": false,
+        "status": "active",
+        "meta_title": "",
+        "coklu_referans": [],
+        "description": "TBMM Başkanı Binali Yıldırım, görevinden istifa dilekçesini imzalayarak TBMM Genel Sekreteri Mehmet Kumbuzoğlu'na teslim etti.",
+        "tags": [
+          {
+            "tag": "binali yıldırım",
+            "slug": "binali-yildirim"
+          }
+        ],
+        "sys": {
+          "modified_by": "sadece_haber",
+          "cid": 2424,
+          "first_published_by": "sadece_haber",
+          "created_at": "2019-02-21T15:15:15.405000Z",
+          "published_version": 2,
+          "modified_at": "2019-02-21T15:16:28.779000Z",
+          "published_by": "sadece_haber",
+          "collection": "published_contents",
+          "published_at": "2019-02-21T15:16:34.304000Z",
+          "version": 2,
+          "created_by": "sadece_haber",
+          "first_published_at": "2019-02-21T15:16:34.336000Z",
+          "domain_cid": 72,
+          "synchronized_at": "2019-02-21T15:16:34.269000Z"
+        },
+        "self_path": "/gundem/binali-yildirim-gorevinden-istifa-etti/",
+        "path": "/gundem/",
+        "slug": "binali-yildirim-gorevinden-istifa-etti",
+        "secenekler": "Normal İçerik ",
+        "kategori_sayfasinda_gizle": false,
+        "url": "/gundem/binali-yildirim-gorevinden-istifa-etti-72",
+        "type": "haber_ekleme",
+        "haber_gorsel": [
+          {
+            "contentType": "image/jpeg",
+            "chunkSize": 261120,
+            "image": {
+              "info": {
+                "width": 600,
+                "format": "JPEG",
+                "hash": "69f296d9bfe4816070ec5ac96b41e705",
+                "mode": "RGB",
+                "height": 340
+              },
+              "colors": [
+                {
+                  "color": "#261814",
+                  "percent": 0.244
+                },
+                {
+                  "color": "#622b1f",
+                  "percent": 0.228
+                },
+                {
+                  "color": "#a03124",
+                  "percent": 0.214
+                },
+                {
+                  "color": "#b09474",
+                  "percent": 0.164
+                },
+                {
+                  "color": "#e0dbd7",
+                  "percent": 0.15
+                }
+              ],
+              "faces": [
+                {
+                  "y": 46,
+                  "x": 239,
+                  "height": 62,
+                  "width": 62
+                }
+              ]
+            },
+            "membership_id": "sadece_haber",
+            "filename": "NormalicerikGundem.jpg",
+            "sys": {
+              "created_at": "2019-02-21T15:16:25.498000Z",
+              "created_by": "sadece_haber",
+              "cid": 1
+            },
+            "length": 183025,
+            "uploadDate": "2019-02-21T15:16:25.527000Z",
+            "_id": "5c6ec0c97b01dc0007ff2ac6",
+            "domain_id": "5c4984af5a4da10008e77628",
+            "md5": "69f296d9bfe4816070ec5ac96b41e705",
+            "metadata": {
+              "check_hash": "true"
+            }
+          }
+        ],
+        "membership_id": "sadece_haber",
+        "ref_set": [],
+        "custom_ref_set": [],
+        "referans": "",
+        "_id": "5c6ec08317ff6d0007031e5a",
+        "template_id": null
+      },
+      {
+        "haber_metni": "<p>Diyarbakır'ın Kulp ilçesinde terör örgütü PKK'ya yönelik operasyonda toprağa gömülü halde, el yapımı patlayıcı yapımında kullanılan 75 dolu tüp ele geçirildi.</p><p><img src=\"http://assets.blupoint.io/img/75/0x0/5c6ec0577b01dc0007ff2ac2\"></p>",
+        "meta_url": "",
+        "domain_id": "5c4984af5a4da10008e77628",
+        "refs_info": [
+          {
+            "type": "single_reference",
+            "refs": {},
+            "_id": "5c498cce9671ae0007d10a4e",
+            "field_id": "referans"
+          },
+          {
+            "type": "multiple_reference",
+            "refs": [],
+            "_id": "5c498cce9671ae0007d10a4f",
+            "field_id": "coklu_referans"
+          }
+        ],
+        "ancestors": [
+          {
+            "title": "Gündem",
+            "url": "/gundem",
+            "self_path": "/gundem/",
+            "base_type": "folder",
+            "path": "/",
+            "_id": "5c6bc4866d87ea0007573927",
+            "type": "kategori",
+            "slug": "gundem"
+          }
+        ],
+        "title": "Patlayıcı yapımında kullanılmak üzere 75 tüp toprağa gömülü bulundu",
+        "base_type": "content",
+        "meta_aciklama": "Haberin devamı ve tüm detayları haberiyakala.com.'da",
+        "start_date": "2019-02-21T15:13:43.426000Z",
+        "reklam_gosterilmesin": false,
+        "status": "active",
+        "meta_title": "",
+        "coklu_referans": [],
+        "description": "Diyarbakır'da PKK'ya ait sığınak ve toprağa gömülü halde 75 dolu tüp ele geçirildi.",
+        "tags": [],
+        "sys": {
+          "modified_by": "sadece_haber",
+          "cid": 2423,
+          "first_published_by": "sadece_haber",
+          "created_at": "2019-02-21T15:13:43.454000Z",
+          "published_version": 2,
+          "modified_at": "2019-02-21T15:15:03.561000Z",
+          "published_by": "sadece_haber",
+          "collection": "published_contents",
+          "published_at": "2019-02-21T15:15:06.622000Z",
+          "version": 2,
+          "created_by": "sadece_haber",
+          "first_published_at": "2019-02-21T15:15:06.652000Z",
+          "domain_cid": 71,
+          "synchronized_at": "2019-02-21T15:15:06.485000Z"
+        },
+        "self_path": "/gundem/patlayici-yapiminda-kullanilmak-uzere-75-tup-topraga-gomulu-bulundu/",
+        "path": "/gundem/",
+        "slug": "patlayici-yapiminda-kullanilmak-uzere-75-tup-topraga-gomulu-bulundu",
+        "secenekler": "Normal İçerik ",
+        "kategori_sayfasinda_gizle": false,
+        "url": "/gundem/patlayici-yapiminda-kullanilmak-uzere-75-tup-topraga-gomulu-bulundu-71",
+        "type": "haber_ekleme",
+        "haber_gorsel": [
+          {
+            "contentType": "image/jpeg",
+            "chunkSize": 261120,
+            "image": {
+              "info": {
+                "width": 600,
+                "format": "JPEG",
+                "hash": "99012cc8f5e59ddbed28b0c841475555",
+                "mode": "RGB",
+                "height": 340
+              },
+              "colors": [
+                {
+                  "color": "#786f4e",
+                  "percent": 0.365
+                },
+                {
+                  "color": "#5d5433",
+                  "percent": 0.256
+                },
+                {
+                  "color": "#9e8b6c",
+                  "percent": 0.16
+                },
+                {
+                  "color": "#2d251a",
+                  "percent": 0.12
+                },
+                {
+                  "color": "#99c5ea",
+                  "percent": 0.099
+                }
+              ],
+              "faces": null
+            },
+            "membership_id": "sadece_haber",
+            "filename": "cropped_content_patlayici-yapiminda-kullanilmak-uzere-75-tup-topraga-gomulu-bulundu_96B4vO61tcFS9Ma.jpg",
+            "sys": {
+              "created_at": "2019-02-21T15:14:49.612000Z",
+              "created_by": "sadece_haber",
+              "cid": 1
+            },
+            "length": 98110,
+            "uploadDate": "2019-02-21T15:14:49.618000Z",
+            "_id": "5c6ec0697b01dc0007ff2ac4",
+            "domain_id": "5c4984af5a4da10008e77628",
+            "md5": "99012cc8f5e59ddbed28b0c841475555",
+            "metadata": {
+              "check_hash": "true"
+            }
+          }
+        ],
+        "membership_id": "sadece_haber",
+        "ref_set": [],
+        "custom_ref_set": [],
+        "referans": "",
+        "_id": "5c6ec027d74d9000078cdefc",
+        "template_id": null
+      },
+      {
+        "haber_metni": "<p>Milli Savunma Bakanlığı, Ankara Polatlı'daki Topçu ve Füze Okulu Komutanlığında icra edilen ağır silah eğitim atışı esnasında meydana gelen kazada 5 askerin yaralandığını açıkladı.</p><p>Milli Savunma Bakanlığından yapılan açıklamada, \"Ankara Polatlı’da bulunan Topçu ve Füze Okulu Komutanlığında ilk bilgilere göre icra edilen ağır silah eğitim atışı esnasında meydana gelen kazada 5 kahraman silah arkadaşımız yaralanmıştır. Kaza sonucunda yaralanan kahraman silah arkadaşlarımız süratle hastaneye tahliye edilmiş ve tedavilerine başlanmıştır. Kaza hakkında inceleme başlatılmıştır\" denildi.</p>",
+        "meta_url": "",
+        "domain_id": "5c4984af5a4da10008e77628",
+        "refs_info": [
+          {
+            "type": "single_reference",
+            "refs": {},
+            "_id": "5c498cce9671ae0007d10a4e",
+            "field_id": "referans"
+          },
+          {
+            "type": "multiple_reference",
+            "refs": [],
+            "_id": "5c498cce9671ae0007d10a4f",
+            "field_id": "coklu_referans"
+          }
+        ],
+        "ancestors": [
+          {
+            "title": "Gündem",
+            "url": "/gundem",
+            "self_path": "/gundem/",
+            "base_type": "folder",
+            "path": "/",
+            "_id": "5c6bc4866d87ea0007573927",
+            "type": "kategori",
+            "slug": "gundem"
+          }
+        ],
+        "title": "Ankara'da kışlada patlama",
+        "base_type": "content",
+        "meta_aciklama": "Haberin devamı ve tüm detayları haberiyakala.com.'da",
+        "start_date": "2019-02-21T15:09:34.317000Z",
+        "reklam_gosterilmesin": false,
+        "status": "active",
+        "meta_title": "",
+        "coklu_referans": [],
+        "description": "Polatlı'da Sakarya Kışlası'nda mühimmat patladı, 5 askerin yaralandığı öğrenildi.",
+        "tags": [
+          {
+            "tag": "ankara",
+            "slug": "ankara"
+          },
+          {
+            "tag": "polatlı",
+            "slug": "polatli"
+          }
+        ],
+        "sys": {
+          "modified_by": "sadece_haber",
+          "cid": 2422,
+          "first_published_by": "sadece_haber",
+          "created_at": "2019-02-21T15:09:34.503000Z",
+          "published_version": 2,
+          "modified_at": "2019-02-21T15:13:17.176000Z",
+          "published_by": "sadece_haber",
+          "collection": "published_contents",
+          "published_at": "2019-02-21T15:13:23.127000Z",
+          "version": 2,
+          "created_by": "sadece_haber",
+          "first_published_at": "2019-02-21T15:13:23.162000Z",
+          "domain_cid": 70,
+          "synchronized_at": "2019-02-21T15:13:23.028000Z"
+        },
+        "self_path": "/gundem/ankara-da-kislada-patlama/",
+        "path": "/gundem/",
+        "slug": "ankara-da-kislada-patlama",
+        "secenekler": "Normal İçerik ",
+        "kategori_sayfasinda_gizle": false,
+        "url": "/gundem/ankarada-kislada-patlama-70",
+        "type": "haber_ekleme",
+        "haber_gorsel": [
+          {
+            "contentType": "image/jpeg",
+            "chunkSize": 261120,
+            "image": {
+              "info": {
+                "width": 600,
+                "format": "JPEG",
+                "hash": "fda071b2de95fd490674472be76068e3",
+                "mode": "RGB",
+                "height": 340
+              },
+              "colors": [
+                {
+                  "color": "#f9a21d",
+                  "percent": 0.616
+                },
+                {
+                  "color": "#c47f24",
+                  "percent": 0.286
+                },
+                {
+                  "color": "#ee9b21",
+                  "percent": 0.048
+                },
+                {
+                  "color": "#272626",
+                  "percent": 0.045
+                },
+                {
+                  "color": "#a0722f",
+                  "percent": 0.005
+                }
+              ],
+              "faces": null
+            },
+            "membership_id": "sadece_haber",
+            "filename": "SonDakika-Normal.jpg",
+            "sys": {
+              "created_at": "2019-02-21T15:13:05.328000Z",
+              "created_by": "sadece_haber",
+              "cid": 1
+            },
+            "length": 31398,
+            "uploadDate": "2019-02-21T15:13:05.333000Z",
+            "_id": "5c6ec0017b01dc0007ff2ac0",
+            "domain_id": "5c4984af5a4da10008e77628",
+            "md5": "fda071b2de95fd490674472be76068e3",
+            "metadata": {
+              "check_hash": "true"
+            }
+          }
+        ],
+        "membership_id": "sadece_haber",
+        "ref_set": [],
+        "custom_ref_set": [],
+        "referans": "",
+        "_id": "5c6ebf2e6d87ea0007574002",
+        "template_id": null
+      }
+    ]
+  }
+}
