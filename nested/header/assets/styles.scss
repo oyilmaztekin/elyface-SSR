@@ -4,17 +4,27 @@
   max-width: 100%;
   display: block;
 }
-.orange-bg {
+
+.sticky-inner-wrapper {
   background-color: $brand;
 }
 
+.sticky-now {
+  .header {
+    &__row-two {
+      display:none;
+    }
+  }
+}
+
 .header {
-  max-width:1000px;
-  margin:auto;
+  margin: auto;
   padding: 10px 0px;
   &__row-one {
     width: 100%;
     flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
     &-logo {
       margin-top: 20px;
     }
@@ -28,6 +38,8 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
     margin-top: 30px;
     &-moment {
       line-height: 33px;
