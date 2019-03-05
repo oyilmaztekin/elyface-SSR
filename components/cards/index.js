@@ -154,7 +154,6 @@ class Cards extends Component {
         <ul
           className={classNames(
             "card-lists",
-
             vertical && `card-lists-vertical`,
             !vertical && `card-lists-horizontal`
           )}

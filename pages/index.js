@@ -10,6 +10,7 @@ import Cards from "@comp/cards/";
 import Carousel from "@comp/carousel/";
 import Container from "@comp/container/";
 import propTypes from "prop-types";
+import Lists from "@comp/lists/";
 const IndexPage = props => {
   return (
     <Fragment>
@@ -182,6 +183,17 @@ const IndexPage = props => {
 
       {/* SAĞLIK */}
       {/* EĞİTİM */}
+
+      <Container>
+        <Lists
+          registry={props.registry.seohaberleri}
+          dataset={props.dataset.seohaberleri}
+          bg="#ffffff"
+          className="list-link seo-haberleri"
+          linkClassName="link-footer-category"
+          vertical={false}
+        />
+      </Container>
     </Fragment>
   );
 };
@@ -206,6 +218,7 @@ IndexPage.getInitialProps = async () => {
   const yasamdataset = "cat-yasam";
   const teknolojidataset = "cat-teknoloji";
   const dunyadataset = "cat-dunya";
+  const seohaberleridataset = "seo-haberleri";
 
   const surmanset = await getDataset(
     surmansetdataset
@@ -260,6 +273,12 @@ IndexPage.getInitialProps = async () => {
     .then(data => data.data)
     .catch(err => err.response.data);
 
+  const seohaberleri = await getDataset(
+    seohaberleridataset
+  )
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
   return {
     registry: {
       surmanset: surmanset,
@@ -272,7 +291,8 @@ IndexPage.getInitialProps = async () => {
       siyaset: siyaset,
       yasam: yasam,
       teknoloji: teknoloji,
-      dunya: dunya
+      dunya: dunya,
+      seohaberleri: seohaberleri
     },
     dataset: {
       surmanset: surmansetdataset,
@@ -285,7 +305,8 @@ IndexPage.getInitialProps = async () => {
       siyaset: siyasetdataset,
       yasam: yasamdataset,
       teknoloji: teknolojidataset,
-      dunya: dunyadataset
+      dunya: dunyadataset,
+      seohaberleri: seohaberleridataset
     }
   };
 };

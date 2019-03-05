@@ -1,0 +1,19 @@
+@import "../../../globalstyles/styles.scss";
+
+.list-link{
+  display: flex;
+}
+
+.seo-haberleri{
+  flex-wrap: wrap;
+  align-content: center;
+  
+  li {
+    padding:20px;
+    font-size: 13px;
+    line-height: 20px;
+    flex: 1 0 22%;
+    align-self: flex-start;
+  }
+  
+}
