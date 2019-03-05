@@ -10,6 +10,7 @@ import Moment from "@comp/moment/";
 import SearchForm from "@comp/searchform/";
 import LinkButton from "@comp/linkButton/";
 import Icon from "@comp/icon/";
+import Container from "@comp/container/";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -51,65 +52,67 @@ class Header extends Component {
         releasedClass={releasedClass}
         className={stickyClassName}
       >
-        <header className="header">
-          <div className="row header__row-one">
-            <Logo
-              src={LogoImage}
-              title="Haberi Yakala Logosu"
-              className="header__row-one-logo"
-            />
-            <Navigation
-              navElements={navElements}
-              onMouseEnter={
-                this.props.onMouseEnter
-              }
-              className="header__row-one-nav"
-            />
-          </div>
-
-          <div className="row header__row-two">
-            <Moment
-              format="Do MMMM YYYY, dddd"
-              className="header__row-two-moment"
-            >
-              <Icon icon={faClock} />{" "}
-            </Moment>
-            <div className="header__row-two-input-buttons-container">
-              <SearchForm
-                id="searh_form"
-                name="searh_form"
-                value="Ara"
-                type="search"
-                className="search-form-input header__row-two-input-buttons-container-form"
+        <Container display="block">
+          <header className="header">
+            <div className="row header__row-one">
+              <Logo
+                src={LogoImage}
+                title="Haberi Yakala Logosu"
+                className="header__row-one-logo"
               />
+              <Navigation
+                navElements={navElements}
+                onMouseEnter={
+                  this.props.onMouseEnter
+                }
+                className="header__row-one-nav"
+              />
+            </div>
 
-              <div className="header__row-two-input-buttons-container-btn">
-                <LinkButton
-                  text="Galeriler"
-                  className="link-nav-btn"
-                  href="#"
-                >
-                  <span>
-                    <Icon icon={faCamera} />{" "}
-                    Galeriler
-                  </span>
-                </LinkButton>
-              </div>
-              <div className="header__row-two-input-buttons-container-btn">
-                <LinkButton
-                  text="Videolar"
-                  className="link-nav-btn"
-                  href="#"
-                >
-                  <span>
-                    <Icon icon={faVideo} />{" "}
-                    Videolar
-                  </span>
-                </LinkButton>
+            <div className="row header__row-two">
+              <Moment
+                format="Do MMMM YYYY, dddd"
+                className="header__row-two-moment"
+              >
+                <Icon icon={faClock} />{" "}
+              </Moment>
+              <div className="header__row-two-input-buttons-container">
+                <SearchForm
+                  id="searh_form"
+                  name="searh_form"
+                  value="Ara"
+                  type="search"
+                  className="search-form-input header__row-two-input-buttons-container-form"
+                />
+
+                <div className="header__row-two-input-buttons-container-btn">
+                  <LinkButton
+                    text="Galeriler"
+                    className="link-nav-btn"
+                    href="#"
+                  >
+                    <span>
+                      <Icon icon={faCamera} />{" "}
+                      Galeriler
+                    </span>
+                  </LinkButton>
+                </div>
+                <div className="header__row-two-input-buttons-container-btn">
+                  <LinkButton
+                    text="Videolar"
+                    className="link-nav-btn"
+                    href="#"
+                  >
+                    <span>
+                      <Icon icon={faVideo} />{" "}
+                      Videolar
+                    </span>
+                  </LinkButton>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
+          </header>
+        </Container>
       </Sticky>
     );
   }

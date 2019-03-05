@@ -16,9 +16,9 @@ const IndexPage = props => {
     <Fragment>
       <Header
         LogoImage="http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
-        stickyClassName="orange-bg container"
         navElements={mockData}
         zIndex={9}
+        activeClass="sticky-now"
       />
       <Cards
         dataset={props.dataset.surmanset}
@@ -35,7 +35,7 @@ const IndexPage = props => {
         width={400}
         lineHeight="24"
       />
-      <Container>
+      <Container paddingRight={0}>
         <Carousel
           width="720"
           layout="bottom"
