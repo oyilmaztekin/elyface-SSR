@@ -1,4 +1,4 @@
-import "@globalstyle";
+
 import React, { Component } from "react";
 import propTypes from "prop-types";
 import autobind from "autobind-decorator";

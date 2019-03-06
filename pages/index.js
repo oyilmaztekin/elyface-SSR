@@ -1,8 +1,5 @@
-import React, {
-  Component,
-  Fragment
-} from "react";
-import "@globalstyle";
+import React, { Fragment } from "react";
+
 import Header from "@nest/header/";
 import mockData from "@mock/menuMocks.json";
 import { getDataset, getContent } from "@utils";
@@ -11,6 +8,12 @@ import Carousel from "@comp/carousel/";
 import Container from "@comp/container/";
 import propTypes from "prop-types";
 import Lists from "@comp/lists/";
+import Footer from "@nest/footer/";
+import ScrollToTop from "react-scroll-up";
+import Icon from "@comp/icon/";
+import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
+import "static/pagestyles/index.scss";
+
 const IndexPage = props => {
   return (
     <Fragment>
@@ -192,8 +195,19 @@ const IndexPage = props => {
           className="list-link seo-haberleri"
           linkClassName="link-footer-category"
           vertical={false}
+          tagType="section"
         />
       </Container>
+      <Footer />
+
+      <ScrollToTop showUnder={160}>
+        <span className="scroll-to-top">
+          <Icon
+            icon={faArrowAltCircleUp}
+            color="#FFA200"
+          />
+        </span>
+      </ScrollToTop>
     </Fragment>
   );
 };

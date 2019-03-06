@@ -1,4 +1,4 @@
-import "@globalstyle";
+
 import "./assets/styles.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";

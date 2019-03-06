@@ -7,22 +7,19 @@ import mockData from "@mock/cardMock.json";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("Lists Component Testing", () => {
-  let comp;
   let wrapper;
-  let spy;
   beforeAll(async () => {
-    comp = (
+    wrapper = mount(
       <Lists
         registry={mockData}
-        limit={5}
         bg="#ffffff"
         className="list-link seo-haberleri"
         linkClassName="link-footer-category"
         vertical={false}
+        tagType="section"
+        limit={5}
       />
     );
-
-    wrapper = mount(comp);
   });
 
   afterAll(() => {

@@ -3,6 +3,7 @@ import propTypes from "prop-types";
 import Link from "next/link";
 import LinkButton from "@comp/linkButton/";
 import "./assets/styles.scss";
+import { List } from "immutable";
 
 class Lists extends Component {
   constructor(props) {
@@ -57,9 +58,8 @@ class Lists extends Component {
           registry
         ))
       : (items = "loading...");
-
     return (
-      <section
+      <this.props.tagType
         data-dataset={dataset}
         data-dataset-id={
           registry &&
@@ -80,7 +80,7 @@ class Lists extends Component {
         >
           {items}
         </ul>
-      </section>
+      </this.props.tagType>
     );
   }
 }
@@ -92,7 +92,8 @@ Lists.propTypes = {
   limit: propTypes.number,
   className: propTypes.string,
   linkClassName: propTypes.string,
-  vertical: propTypes.bool
+  vertical: propTypes.bool,
+  tagType: propTypes.string
 };
 
 export default Lists;
