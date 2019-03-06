@@ -15,6 +15,7 @@ const Container = props => {
         paddingBottom: props.paddingBottom + "px",
         paddingLeft: props.paddingLeft + "px"
       }}
+      className={props.className}
     >
       {props.children}
     </div>
@@ -30,7 +31,8 @@ Container.propTypes = {
   paddingLeft: propTypes.number,
   paddingRight: propTypes.number,
   paddingTop: propTypes.number,
-  paddingBottom: propTypes.number
+  paddingBottom: propTypes.number,
+  className: propTypes.string
 };
 
 Container.defaultProps = {

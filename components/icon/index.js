@@ -1,4 +1,3 @@
-import "@globalstyle";
 import "./assets/styles.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";
@@ -11,7 +10,12 @@ class Icon extends Component {
   }
   render() {
     return (
-      <span className={this.props.className}>
+      <span
+        className={this.props.className}
+        style={{
+          color: this.props.color
+        }}
+      >
         <FontAwesomeIcon icon={this.props.icon} />
       </span>
     );
@@ -20,7 +24,8 @@ class Icon extends Component {
 
 Icon.propTypes = {
   icon: propTypes.object.isRequired,
-  className: propTypes.string
+  className: propTypes.string,
+  color: propTypes.string
 };
 
 export default Icon;

@@ -1,4 +1,4 @@
-import "@globalstyle";
+
 import React from "react";
 import propTypes from "prop-types";
 import Link from "next/link";

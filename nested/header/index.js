@@ -1,4 +1,3 @@
-import "@globalstyle";
 import "./assets/styles.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";
@@ -11,11 +10,11 @@ import SearchForm from "@comp/searchform/";
 import LinkButton from "@comp/linkButton/";
 import Icon from "@comp/icon/";
 import Container from "@comp/container/";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 import {
   faCamera,
-  faVideo
+  faVideo,
+  faClock
 } from "@fortawesome/free-solid-svg-icons";
 
 class Header extends Component {

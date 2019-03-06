@@ -1,0 +1,15 @@
+@import "../../globalstyles/styles.scss";
+.scroll-to-top {
+  font-size: 46px;
+  svg {
+    border-radius: 100%;
+    padding: 0px;
+    @include create-shadow(
+      0px,
+      0px,
+      10px,
+      5px,
+      "false"
+    );
+  }
+}
