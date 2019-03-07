@@ -12,21 +12,20 @@ class Cards extends Component {
     super(props);
     this.state = {
       limit: this.props.limit,
-      catTitle: "",
-      catSlug: ""
+      registry: this.props.registry,
+      catTitle: null,
+      catSlug: null
     };
   }
 
   componentDidMount() {
+    const reg = this.state.registry.data.items;
+    const catTitle = reg[0].ancestors[0].title;
+    const catSlug = reg[0].ancestors[0].slug;
     if (this.props.heading) {
-      const liElement = document.querySelector(
-        ".card-lists_item"
-      );
-      const title = liElement.dataset.catTitle;
-      const slug = liElement.dataset.catSlug;
       this.setState({
-        catTitle: title,
-        catSlug: slug
+        catTitle: catTitle,
+        catSlug: catSlug
       });
     }
   }
@@ -36,9 +35,18 @@ class Cards extends Component {
       return <div>{registry.error}</div>;
     }
     const reg = registry.data.items;
-    const catTitle = reg[0].ancestors[0].title;
-    const catSlug = reg[0].ancestors[0].slug;
-
+    const {
+      cardBg,
+      imgClassName,
+      border,
+      textColor,
+      fontSize,
+      width,
+      height,
+      lineHeight,
+      gallery
+    } = this.props;
+    const { catSlug, catTitle } = this.state;
     return reg
       .map((item, ind) => {
         const {
@@ -48,18 +56,6 @@ class Cards extends Component {
           self_path,
           haber_gorsel
         } = item;
-        const {
-          cardBg,
-          imgClassName,
-          border,
-          textColor,
-          fontSize,
-          width,
-          height,
-          lineHeight,
-          gallery,
-          className
-        } = this.props;
 
         let gorsel = haber_gorsel[0]._id;
 
@@ -119,8 +115,8 @@ class Cards extends Component {
   }
 
   render() {
+    const { registry } = this.state;
     const {
-      registry,
       vertical,
       containerBG,
       dataset,
