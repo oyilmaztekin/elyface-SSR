@@ -26,7 +26,6 @@ const IndexPage = props => {
       <Cards
         dataset={props.dataset.surmanset}
         registry={props.registry.surmanset}
-        limit={5}
         vertical={false}
         containerBG="#ffffff"
         cardBg="#fff"
@@ -62,7 +61,6 @@ const IndexPage = props => {
       <Cards
         dataset={props.dataset.mansetalti}
         registry={props.registry.mansetalti}
-        limit={5}
         vertical={false}
         containerBG="#ffffff"
         cardBg="#fff"
@@ -118,7 +116,21 @@ const IndexPage = props => {
         heading={true}
       />
 
-      {/* MAGAZİN */}
+      <Cards
+        dataset={props.dataset.magazin}
+        registry={props.registry.magazin}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
 
       <Cards
         dataset={props.dataset.siyaset}
@@ -184,8 +196,37 @@ const IndexPage = props => {
         heading={true}
       />
 
-      {/* SAĞLIK */}
-      {/* EĞİTİM */}
+      <Cards
+        dataset={props.dataset.saglik}
+        registry={props.registry.saglik}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
+
+      <Cards
+        dataset={props.dataset.egitim}
+        registry={props.registry.egitim}
+        vertical={false}
+        containerBG="#ffffff"
+        cardBg="#fff"
+        textColor="#323232"
+        fontSize="18"
+        gallery={false}
+        imgClassName="className"
+        border="#ffa200"
+        width={400}
+        lineHeight="24"
+        heading={true}
+      />
 
       <Container>
         <Lists
@@ -233,6 +274,9 @@ IndexPage.getInitialProps = async () => {
   const teknolojidataset = "cat-teknoloji";
   const dunyadataset = "cat-dunya";
   const seohaberleridataset = "seo-haberleri";
+  const egitimdataset = "cat-egitim";
+  const saglikdataset = "cat-saglik";
+  const magazindataset = "cat-magazin";
 
   const surmanset = await getDataset(
     surmansetdataset
@@ -293,6 +337,16 @@ IndexPage.getInitialProps = async () => {
     .then(data => data.data)
     .catch(err => err.response.data);
 
+  const magazin = await getDataset(magazindataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+  const saglik = await getDataset(saglikdataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const egitim = await getDataset(egitimdataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
   return {
     registry: {
       surmanset: surmanset,
@@ -306,7 +360,10 @@ IndexPage.getInitialProps = async () => {
       yasam: yasam,
       teknoloji: teknoloji,
       dunya: dunya,
-      seohaberleri: seohaberleri
+      seohaberleri: seohaberleri,
+      egitim: egitim,
+      saglik: saglik,
+      magazin: magazin
     },
     dataset: {
       surmanset: surmansetdataset,
@@ -320,7 +377,10 @@ IndexPage.getInitialProps = async () => {
       yasam: yasamdataset,
       teknoloji: teknolojidataset,
       dunya: dunyadataset,
-      seohaberleri: seohaberleridataset
+      seohaberleri: seohaberleridataset,
+      egitim: egitimdataset,
+      saglik: saglikdataset,
+      magazin: magazindataset
     }
   };
 };
