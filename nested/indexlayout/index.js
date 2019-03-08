@@ -17,12 +17,10 @@ const IndexLayout = props => {
           containerBG="#ffffff"
           bg="#fff"
           textColor="#323232"
-          fontSize="18"
           gallery={false}
           imgClassName="className"
           border="#ffa200"
           width={303}
-          lineHeight="24"
         />
         <Row>
           <Carousel

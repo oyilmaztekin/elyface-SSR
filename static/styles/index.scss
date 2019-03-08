@@ -1,6 +1,10 @@
+@import "reset";
+@import "type";
 @import "../../globalstyles/styles.scss";
+
 body{
   background-color:#efefef;
+  font-size: $body-font-size
 }
 .scroll-to-top {
   font-size: 46px;

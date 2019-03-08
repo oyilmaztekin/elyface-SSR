@@ -1,21 +1,12 @@
 @import "../../../globalstyles/styles.scss";
 
-@mixin make-row-footer() {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-@mixin footer-heading() {
-  color: $brand;
-}
-
 .footer {
   background-color: $dark;
 
   &__row1 {
     align-items: center;
-    @include make-row-footer();
+    @include make-row();
+    justify-content: space-between;
     .copyright {
       color: #efefef;
       font-weight: 400;
@@ -52,7 +43,8 @@
     margin: 0px;
   }
   &__row2 {
-    @include make-row-footer();
+    @include make-row();
+    justify-content: space-between;
     div {
       flex: 1 0 30%;
       margin-left: 5%;
@@ -61,7 +53,7 @@
       margin-left: 0px;
     }
     h3 {
-      @include footer-heading();
+      color: $brand;
       font-size: 21px;
     }
     ul.footer-cat {
