@@ -7,13 +7,10 @@ const Container = props => {
   return (
     <div
       style={{
+        margin: props.margin,
         width: props.width + perc,
         display: props.display,
-        justifyContent: props.display,
-        paddingTop: props.paddingTop + "px",
-        paddingRight: props.paddingRight + "px",
-        paddingBottom: props.paddingBottom + "px",
-        paddingLeft: props.paddingLeft + "px"
+        backgroundColor: props.bg
       }}
       className={props.className}
     >
@@ -27,19 +24,14 @@ Container.propTypes = {
   width: propTypes.number,
   percentage: propTypes.bool,
   display: propTypes.string,
-  justify: propTypes.string,
-  paddingLeft: propTypes.number,
-  paddingRight: propTypes.number,
-  paddingTop: propTypes.number,
-  paddingBottom: propTypes.number,
-  className: propTypes.string
+  className: propTypes.string,
+  margin: propTypes.string,
+  bg: propTypes.string
 };
 
 Container.defaultProps = {
-  display: "flex",
-  justifyContent: "space-between",
-  paddingLeft: 40,
-  paddingRight: 40
+  display: "block",
+  margin: "0 auto"
 };
 
 export default Container;

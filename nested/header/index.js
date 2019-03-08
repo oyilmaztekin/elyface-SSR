@@ -51,7 +51,7 @@ class Header extends Component {
         releasedClass={releasedClass}
         className={stickyClassName}
       >
-        <Container display="block">
+        <Container display="block" width={970}>
           <header className="header">
             <div className="row header__row-one">
               <Logo

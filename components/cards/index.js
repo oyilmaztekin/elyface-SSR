@@ -36,7 +36,7 @@ class Cards extends Component {
     }
     const reg = registry.data.items;
     const {
-      cardBg,
+      bg,
       imgClassName,
       border,
       textColor,
@@ -71,7 +71,7 @@ class Cards extends Component {
             data-cat-slug={catSlug}
           >
             <Card
-              bg={cardBg}
+              bg={bg}
               height={height}
               id={_id}
               gallery={gallery}
@@ -118,7 +118,6 @@ class Cards extends Component {
     const { registry } = this.state;
     const {
       vertical,
-      containerBG,
       dataset,
       className
     } = this.props;
@@ -140,9 +139,6 @@ class Cards extends Component {
           registry.data._id
         }
         className={`section-cards ${className}`}
-        style={{
-          backgroundColor: containerBG
-        }}
       >
         {catTitle &&
           catSlug &&
@@ -164,7 +160,7 @@ class Cards extends Component {
 Cards.propTypes = {
   registry: propTypes.object.isRequired,
   dataset: propTypes.string,
-  cardBg: propTypes.string,
+  bg: propTypes.string,
   imgClassName: propTypes.string,
   border: propTypes.string,
   textColor: propTypes.string,
@@ -174,7 +170,6 @@ Cards.propTypes = {
   lineHeight: propTypes.string,
   vertical: propTypes.bool,
   limit: propTypes.number,
-  containerBG: propTypes.string,
   gallery: propTypes.bool,
   className: propTypes.string,
   heading: propTypes.bool

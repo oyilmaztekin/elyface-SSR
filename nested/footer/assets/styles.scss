@@ -3,6 +3,7 @@
 @mixin make-row-footer() {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 @mixin footer-heading() {
