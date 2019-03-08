@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { getDataset, getContent } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
@@ -7,12 +7,14 @@ import "static/pagestyles/index.scss";
 
 const IndexPage = props => {
   return (
-    <PageLayout>
-      <IndexLayout
-        registry={props.registry}
-        dataset={props.dataset}
-      />
-    </PageLayout>
+    <Fragment>
+      <PageLayout>
+        <IndexLayout
+          registry={props.registry}
+          dataset={props.dataset}
+        />
+      </PageLayout>
+    </Fragment>
   );
 };
 

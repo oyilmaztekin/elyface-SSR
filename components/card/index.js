@@ -11,11 +11,12 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 const Card = props => {
   let {
     id,
-    bg,
     className,
+    bg,
     loading,
     children,
     height,
+    width,
     gallery
   } = props;
   return (
@@ -27,8 +28,9 @@ const Card = props => {
         loading && `card-loading`
       )}
       style={{
-        backgroundColor: bg,
-        height: height
+        width: width,
+        height: height,
+        backgroundColor: bg
       }}
     >
       {gallery ? (
@@ -51,7 +53,8 @@ Card.propTypes = {
   loading: propTypes.bool,
   children: propTypes.node,
   gallery: propTypes.bool,
-  height: propTypes.number
+  height: propTypes.number,
+  width: propTypes.number
 };
 
 Card.IMG = props => {

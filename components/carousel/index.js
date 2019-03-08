@@ -70,7 +70,6 @@ const CarouselSlide = props => {
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
                 alt={slide.title}
                 longdesc={slide.description}
-                width={props.width}
               />
             </LinkButton>
           </Link>
@@ -105,7 +104,6 @@ const CarouselSlide = props => {
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
                 alt={slide.title}
                 longdesc={slide.description}
-                width={props.width}
               />
             </LinkButton>
           </Link>
@@ -134,8 +132,8 @@ CarouselSlide.propTypes = {
   index: propTypes.number,
   activeIndex: propTypes.number,
   slide: propTypes.object,
-  width: propTypes.string,
-  layout: propTypes.string
+  layout: propTypes.string,
+  width: propTypes.width
 };
 
 // Carousel wrapper component
@@ -177,7 +175,14 @@ class Carousel extends Component {
       }
     );
     return (
-      <div className={containerClass}>
+      <div
+        className={containerClass}
+        style={{
+          width: this.props.width + "px",
+          height: this.props.height + "px",
+          backgroundColor: this.props.bg
+        }}
+      >
         <ul className="carousel__slides">
           {this.props.slides.map(
             (slide, index) => (
@@ -224,10 +229,12 @@ class Carousel extends Component {
 
 Carousel.propTypes = {
   slides: propTypes.array,
-  width: propTypes.string,
+  width: propTypes.number,
+  height: propTypes.number,
   buttonClass: propTypes.string,
   layout: propTypes.string,
-  className: propTypes.string
+  className: propTypes.string,
+  bg: propTypes.bg
 };
 
 export default Carousel;

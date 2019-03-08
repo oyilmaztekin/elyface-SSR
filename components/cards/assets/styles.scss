@@ -2,18 +2,26 @@
 
 // Fix for jumping arrows
 .section-cards{
-    padding:40px;
+    padding:40px 0px;
     &__heading{
-      padding-bottom:20px;
+      margin-bottom:-10px;
     }   
 }
+
+.nested-cards{
+  ul > li:nth-child(3n+4) {
+    margin-left:0px;
+  }  
+}
+
 .card-lists {
   display: flex;
-
+  flex-wrap: wrap;
+  
   &-vertical {
     flex-direction: column;
     li {
-      margin-top: 40px;
+      margin-top: 30px;
     }
     li:first-child {
       margin-top: 0px;
@@ -22,7 +30,8 @@
   &-horizontal {
     flex-direction: row;
     li {
-      margin-left: 40px;
+      margin-left: 30px;
+      margin-top:30px;
     }
     li:first-child {
       margin-left: 0px;
@@ -36,4 +45,9 @@
 .section-cards__sag-manset-yani{
   padding-top:0px;
   padding-bottom:0px;
+
+}
+
+.section-cards__sag-manset-yani .card-title{
+  padding-top:12px;
 }
