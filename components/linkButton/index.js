@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import propTypes from "prop-types";
 import autobind from "autobind-decorator";
@@ -37,12 +36,14 @@ class LinkButton extends Component {
       target,
       children,
       className,
+      href,
       ...otherProps
     } = this.props;
     return (
       <a
         alt={text}
         title={text}
+        href={href}
         target={!target ? "_self" : target}
         className={className}
         onMouseEnter={this.onMouseEnter}
@@ -60,6 +61,7 @@ LinkButton.propTypes = {
   type: propTypes.string,
   alt: propTypes.string,
   title: propTypes.string,
+  href: propTypes.string,
   target: propTypes.string,
   children: propTypes.node,
   className: propTypes.string,
