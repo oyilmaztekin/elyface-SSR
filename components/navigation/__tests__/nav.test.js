@@ -14,10 +14,10 @@ import mockData from "@mock/menuMocks.json";
 function compareEachElement(arr1, arr2) {
   let countclass = 0;
   let countclassforli = 0;
-  let passhref = 0;
   let counthref = 0;
   let counttext = 0;
   if (!!arr1 && !!arr2) {
+    debugger;
     for (let i = 0; i < arr1.length; i++) {
       let el1 = arr1[i];
 
@@ -25,13 +25,10 @@ function compareEachElement(arr1, arr2) {
         ? ++countclass
         : null; // must be
 
-      el1.props.children.props.children.props
-        .className === "link-nav"
+      el1.props.children.props.className ===
+      "link-nav"
         ? ++countclassforli //must be 20
         : null;
-      el1.props.children.props.passHref === true
-        ? ++passhref
-        : null; // must be 10
 
       for (let k = 0; k < arr2.length; k++) {
         let el2 = arr2[k];
@@ -39,8 +36,7 @@ function compareEachElement(arr1, arr2) {
         el1.props.children.props.href === el2.href
           ? ++counthref
           : null; // must be 10
-        el1.props.children.props.children.props
-          .text === el2.key
+        el1.props.children.props.text === el2.key
           ? ++counttext // must be 10
           : null;
       }
@@ -50,7 +46,6 @@ function compareEachElement(arr1, arr2) {
       countclass: countclass, // must be 10
       countclassforli: countclassforli,
       counthref: counthref,
-      passhref: passhref,
       counttext: counttext //must be 10
     };
   } else {
@@ -94,9 +89,7 @@ describe("Navigation Component Testing", () => {
 
     expect(compared.countclass).toEqual(10);
     expect(compared.countclassforli).toEqual(10);
-    expect(compared.counthref).toEqual(10);
     expect(compared.counttext).toEqual(10);
     expect(compared.comparedLength).toBe(true);
-    expect(compared.passhref).toEqual(10);
   });
 });
