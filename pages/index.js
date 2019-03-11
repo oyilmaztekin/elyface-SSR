@@ -3,7 +3,7 @@ import { getDataset, getContent } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import IndexLayout from "@nest/indexlayout";
-import "static/styles/index.scss";
+import "static/styles/pages.scss";
 
 const IndexPage = props => {
   return (

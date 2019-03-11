@@ -45,7 +45,8 @@ module.exports = withPlugins(
           defaultPathMap
         ) {
           return {
-            "/": { page: "/" }
+            "/": { page: "/" },
+            "/gundem": { page: "/gundem" }
             // '/about': { page: '/about' },
             // '/readme.md': { page: '/readme' },
             // '/p/hello-nextjs': { page: '/post', query: { title: 'hello-nextjs' } },
