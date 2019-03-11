@@ -10,7 +10,6 @@ import SearchForm from "@comp/searchform/";
 import LinkButton from "@comp/linkButton/";
 import Icon from "@comp/icon/";
 import Container from "@comp/container/";
-import Link from "next/link";
 
 import {
   faCamera,
@@ -55,18 +54,16 @@ class Header extends Component {
         <Container display="block" width={970}>
           <header className="header">
             <div className="row header__row-one">
-              <Link href="/" passHref={true}>
-                <LinkButton
-                  text="ana sayfa"
-                  href="/"
-                >
-                  <Logo
-                    src={LogoImage}
-                    title="Haberi Yakala Logosu"
-                    className="header__row-one-logo"
-                  />
-                </LinkButton>
-              </Link>
+              <LinkButton
+                text="ana sayfa"
+                href="/"
+              >
+                <Logo
+                  src={LogoImage}
+                  title="Haberi Yakala Logosu"
+                  className="header__row-one-logo"
+                />
+              </LinkButton>
               <Navigation
                 navElements={navElements}
                 onMouseEnter={
