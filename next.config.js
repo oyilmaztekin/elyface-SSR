@@ -46,7 +46,16 @@ module.exports = withPlugins(
         ) {
           return {
             "/": { page: "/" },
-            "/gundem": { page: "/gundem" }
+            "/gundem": { page: "/gundem" },
+            "/egitim": { page: "/egitim" },
+            "/ekonomi": { page: "/ekonomi" },
+            "/emlak": { page: "/emlak" },
+            "/magazin": { page: "/magazin" },
+            "/seyahat": { page: "/seyahat" },
+            "/siyaset": { page: "/siyaset" },
+            "/spor": { page: "/spor" },
+            "/teknoloji": { page: "/teknoloji" },
+            "/yasam": { page: "/yasam" }
             // '/about': { page: '/about' },
             // '/readme.md': { page: '/readme' },
             // '/p/hello-nextjs': { page: '/post', query: { title: 'hello-nextjs' } },
