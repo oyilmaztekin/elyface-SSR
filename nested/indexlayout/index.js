@@ -76,7 +76,25 @@ const IndexLayout = props => {
             bg="#fff"
           />
         </Row>
-        {/* GALERİ */}
+
+        {/* <Row>
+          <Cards
+            dataset={props.dataset.galeri}
+            registry={props.registry.galeri}
+            vertical={false}
+            containerBG="#ffffff"
+            bg="#fff"
+            textColor="#323232"
+            fontSize="18"
+            gallery={true}
+            imgClassName="className"
+            className="nested-cards"
+            border="#ffa200"
+            width={303}
+            lineHeight="24"
+            heading={true}
+          />
+        </Row> */}
 
         <Row>
           <Cards

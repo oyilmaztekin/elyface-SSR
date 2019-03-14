@@ -15,7 +15,7 @@ class Cards extends Component {
       registry: this.props.registry,
       catTitle: null,
       catSlug: null
-    };
+    }
   }
 
   componentDidMount() {
