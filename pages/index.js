@@ -42,6 +42,7 @@ IndexPage.getInitialProps = async () => {
   const egitimdataset = "cat-egitim";
   const saglikdataset = "cat-saglik";
   const magazindataset = "cat-magazin";
+  const galeridataset = "type-galeri";
 
   const surmanset = await getDataset(
     surmansetdataset
@@ -112,6 +113,10 @@ IndexPage.getInitialProps = async () => {
   const egitim = await getDataset(egitimdataset)
     .then(data => data.data)
     .catch(err => err.response.data);
+
+  const galeri = await getDataset(galeridataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
   return {
     registry: {
       surmanset: surmanset,
@@ -128,7 +133,8 @@ IndexPage.getInitialProps = async () => {
       seohaberleri: seohaberleri,
       egitim: egitim,
       saglik: saglik,
-      magazin: magazin
+      magazin: magazin,
+      galeri:galeri
     },
     dataset: {
       surmanset: surmansetdataset,
@@ -145,7 +151,8 @@ IndexPage.getInitialProps = async () => {
       seohaberleri: seohaberleridataset,
       egitim: egitimdataset,
       saglik: saglikdataset,
-      magazin: magazindataset
+      magazin: magazindataset,
+      galeri:galeridataset
     }
   };
 };
