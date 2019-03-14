@@ -8,6 +8,8 @@ import LinkButton from "@comp/linkButton/";
 import Link from "next/link";
 import Image from "@comp/image/";
 import classNames from "classnames";
+import Icon from "@comp/icon/";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const CarouselIndicator = props => {
   const indicatorClass = classNames({
@@ -56,10 +58,26 @@ const CarouselSlide = props => {
     slide,
     slide: { ancestors },
     slide: { haber_gorsel },
+    slide: { galeri_gorsel },
+    slide: { type },
     layout,
     index
   } = props;
-  let gorsel = haber_gorsel[0]._id;
+  let gorsel, cat, url;
+
+  if (type === "haber_ekleme") {
+    gorsel = haber_gorsel[0]._id;
+    cat = ancestors[0].title;
+    url = slide.self_path;
+
+  }
+  if (type === "galeri") {
+    gorsel = galeri_gorsel._id;
+    cat = "Galeri";
+    url = `galeri/${slide.self_path}`
+  }
+
+
   if (layout && layout === "bottom") {
     return (
       <li key={index} className={slideClass}>
@@ -70,10 +88,16 @@ const CarouselSlide = props => {
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
                 alt={slide.title}
                 longdesc={slide.description}
-                width={props.width}
               />
             </LinkButton>
           </Link>
+          
+          {cat === "Galeri" ? 
+              <Icon
+                icon={faCamera}
+                className="gallery-icon"
+              />
+            : null }
 
           <Link href={slide.url} passHref>
             <LinkButton
@@ -84,7 +108,7 @@ const CarouselSlide = props => {
               }}
             >
               <span className="slide__desc">
-                {ancestors[0].title}
+                {cat}
               </span>
               <span className="slide__title">
                 {slide.title}
@@ -105,10 +129,15 @@ const CarouselSlide = props => {
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
                 alt={slide.title}
                 longdesc={slide.description}
-                width={props.width}
               />
             </LinkButton>
           </Link>
+          {cat === "Galeri" ? 
+              <Icon
+                icon={faCamera}
+                className="gallery-icon-bottom"
+              />
+            : null }
           <Link href={slide.url} passHref>
             <LinkButton
               text={slide.title}
@@ -117,8 +146,9 @@ const CarouselSlide = props => {
                 width: props.width / 2.3
               }}
             >
+
               <span className="slide__category">
-                {ancestors[0].title}
+                {cat}
               </span>
               <span>{slide.title}</span>
             </LinkButton>
@@ -134,8 +164,8 @@ CarouselSlide.propTypes = {
   index: propTypes.number,
   activeIndex: propTypes.number,
   slide: propTypes.object,
-  width: propTypes.string,
-  layout: propTypes.string
+  layout: propTypes.string,
+  width: propTypes.width
 };
 
 // Carousel wrapper component
@@ -177,7 +207,14 @@ class Carousel extends Component {
       }
     );
     return (
-      <div className={containerClass}>
+      <div
+        className={containerClass}
+        style={{
+          width: this.props.width + "px",
+          height: this.props.height + "px",
+          backgroundColor: this.props.bg
+        }}
+      >
         <ul className="carousel__slides">
           {this.props.slides.map(
             (slide, index) => (
@@ -224,10 +261,12 @@ class Carousel extends Component {
 
 Carousel.propTypes = {
   slides: propTypes.array,
-  width: propTypes.string,
+  width: propTypes.number,
+  height: propTypes.number,
   buttonClass: propTypes.string,
   layout: propTypes.string,
-  className: propTypes.string
+  className: propTypes.string,
+  bg: propTypes.bg
 };
 
 export default Carousel;

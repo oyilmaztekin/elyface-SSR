@@ -1,0 +1,104 @@
+@import "../../../globalstyles/styles.scss";
+
+.footer {
+  background-color: $dark;
+
+  &__row1 {
+    align-items: center;
+    @include make-row();
+    justify-content: space-between;
+    .copyright {
+      color: #efefef;
+      font-weight: 400;
+      font-size: 13px;
+    }
+    .social-media {
+      color: #efefef;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 26px;
+      .icons {
+        cursor: pointer;
+        margin-left: 15px;
+      }
+      .icons:first-child {
+        margin-left: 0px;
+      }
+      a:visited,
+      a:link {
+        color: #efefef;
+      }
+      a:hover,
+      a:active,
+      a:focus {
+        opacity: 0.5;
+      }
+    }
+  }
+  hr {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 3px;
+    border: 0 none;
+    margin: 0px;
+  }
+  &__row2 {
+    @include make-row();
+    justify-content: space-between;
+    div {
+      flex: 1 0 30%;
+      margin-left: 5%;
+    }
+    div:first-child {
+      margin-left: 0px;
+    }
+    h3 {
+      color: $brand;
+      font-size: 21px;
+    }
+    ul.footer-cat {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+        flex: 1 0 24%;
+        line-height: 25px;
+        margin-top: 15px;
+
+        a:link,
+        a:visited{
+            color:$white;
+            font-size: 13px;
+        }
+      }
+    }
+    .referanslar {
+      flex: 1 0 19%;
+      h3 {
+        text-align: right;
+      }
+      .app-icons {
+        font-size: 46px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 15px;
+
+        a:first-child {
+          margin-left: 0px;
+        }
+
+        a {
+          margin-left: 20px;
+        }
+      }
+      h4 {
+        margin-top: 20px;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 12px;
+        line-height: 18px;
+        text-align: right;
+      }
+    }
+  }
+}

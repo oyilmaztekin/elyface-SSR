@@ -1,37 +1,40 @@
 @import "../../../globalstyles/styles.scss";
 
 .card {
-    @include create-shadow(0, 4px, 8px, 0, "false");
-    transition: 0.3s;
+  * {
+    box-sizing: border-box;
+  }
+  @include create-shadow(0, 4px, 8px, 0, "false");
+  transition: 0.3s;
+  width: 100%;
+  position: relative;
+  &-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url("./bg.svg") no-repeat;
+    width: 61px;
+    height: 61px;
+    padding-left: 13px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: 22px;
+    line-height: 2.4em;
+  }
+  &-title {
+    padding: 20px 20px;
+    display: block;
+  }
+  &-img {
+    display: block;
+  }
+  &-divider {
     width: 100%;
-    position: relative;
-    &-icon{
-        position: absolute;
-        top:0px;
-        left:0px;
-        background: url("./bg.svg") no-repeat;
-        width:61px;
-        height: 61px;
-        padding-left: 13px;
-        padding-right: 10px;
-        box-sizing:border-box;
-        font-size: 22px;
-        line-height: 2.4em;
-    }
-    &-title {
-        padding: 20px 20px;
-        display:block;
-    }
-    &-img{
-        display:block;
-    }
-    &-divider{
-        width:100%;
-        display:block;
-        height: 5px;
-    }
+    display: block;
+    height: 5px;
+  }
 }
 
 .card:hover {
-    @include create-shadow(0, 4px, 8px, 0, "true");
-  }
+  @include create-shadow(0, 4px, 8px, 0, "true");
+}

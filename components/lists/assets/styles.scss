@@ -7,13 +7,18 @@
 .seo-haberleri{
   flex-wrap: wrap;
   align-content: center;
+  padding:40px 0px;
   
   li {
     padding:20px;
     font-size: 13px;
     line-height: 20px;
-    flex: 1 0 22%;
+    flex: 1 0 25%;
     align-self: flex-start;
+  }
+
+  li:nth-child(3n+1){
+    padding-left:0px;
   }
   
 }

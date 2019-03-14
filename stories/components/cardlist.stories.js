@@ -11,6 +11,7 @@ import {
 } from "@storybook/addon-knobs";
 import readmeDOC from "@comp/cards/README.md";
 import mockData from "@mock/cardMock.json";
+import galeriMock from "@mock/galeriMocks.json";
 import { withReadme } from "storybook-readme";
 import Cards from "@comp/cards/";
 
@@ -18,7 +19,7 @@ storiesOf("Card", module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .addDecorator(withReadme(readmeDOC))
-  .add("Card List", () => {
+  .add("Gündem Cards", () => {
     return (
       <Cards
         registry={object("registry", mockData)}
@@ -33,6 +34,27 @@ storiesOf("Card", module)
         fontSize={text("fontSize", "18")}
         gallery={boolean("gallery", false)}
         imgClassName={text("imgClassName", "")}
+        border={text("borderColor", "#ffa200")}
+        width={number("width", 400)}
+        height={number("height", 320)}
+        lineHeight={text("lineHeight", "24")}
+        border={text("border", "#ffa200")}
+        heading={boolean("heading", true)}
+      />
+    );
+  })
+  .add("Galeri Cards", () => {
+    return (
+      <Cards
+        registry={object("registry", galeriMock)}
+        vertical={boolean("vertical", false)}
+        containerBG={text(
+          "containerBG",
+          "#ffffff"
+        )}
+        cardBg={text("cardBg", "#fff")}
+        textColor={text("textColor", "#323232")}
+        fontSize={text("fontSize", "18")}
         border={text("borderColor", "#ffa200")}
         width={number("width", 400)}
         height={number("height", 320)}

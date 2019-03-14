@@ -1,4 +1,4 @@
-import "@globalstyle";
+
 import "./assets/styles.scss";
 import Image from "@comp/image/";
 import React from "react";

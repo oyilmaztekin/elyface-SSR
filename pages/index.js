@@ -1,199 +1,19 @@
-import React, {
-  Component,
-  Fragment
-} from "react";
-import "@globalstyle";
-import Header from "@nest/header/";
-import mockData from "@mock/menuMocks.json";
+import React, { Fragment } from "react";
 import { getDataset, getContent } from "@utils";
-import Cards from "@comp/cards/";
-import Carousel from "@comp/carousel/";
-import Container from "@comp/container/";
+import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
-import Lists from "@comp/lists/";
+import IndexLayout from "@nest/indexlayout";
+import "static/styles/pages.scss";
+
 const IndexPage = props => {
   return (
     <Fragment>
-      <Header
-        LogoImage="http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
-        stickyClassName="orange-bg container"
-        navElements={mockData}
-        zIndex={9}
-      />
-      <Cards
-        dataset={props.dataset.surmanset}
-        registry={props.registry.surmanset}
-        limit={5}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-      />
-      <Container>
-        <Carousel
-          width="720"
-          layout="bottom"
-          slides={props.registry.manset}
-          className="manset-alti-slider"
+      <PageLayout>
+        <IndexLayout
+          registry={props.registry}
+          dataset={props.dataset}
         />
-        <Cards
-          dataset={props.dataset.sagmanset}
-          className="section-cards__sag-manset-yani"
-          registry={props.registry.sagmanset}
-          vertical={true}
-          containerBG="#ffffff"
-          cardBg="#ffa200"
-          textColor="#323232"
-          fontSize="18"
-          gallery={false}
-          imgClassName="img-slider-width"
-          lineHeight="24"
-        />
-      </Container>
-      <Cards
-        dataset={props.dataset.mansetalti}
-        registry={props.registry.mansetalti}
-        limit={5}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-      />
-      <Container>
-        <Carousel
-          width="440"
-          height="250"
-          layout="left"
-          slides={props.registry.cokokunanlar}
-          className="manset-alti-slider"
-        />
-      </Container>
-
-      {/* GALERİ */}
-
-      <Cards
-        dataset={props.dataset.gundem}
-        registry={props.registry.gundem}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-        heading={true}
-      />
-
-      <Cards
-        dataset={props.dataset.ekonomi}
-        registry={props.registry.ekonomi}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-        heading={true}
-      />
-
-      {/* MAGAZİN */}
-
-      <Cards
-        dataset={props.dataset.siyaset}
-        registry={props.registry.siyaset}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-        heading={true}
-      />
-
-      <Cards
-        dataset={props.dataset.yasam}
-        registry={props.registry.yasam}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-        heading={true}
-      />
-
-      <Cards
-        dataset={props.dataset.teknoloji}
-        registry={props.registry.teknoloji}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-        heading={true}
-      />
-
-      <Cards
-        dataset={props.dataset.dunya}
-        registry={props.registry.dunya}
-        vertical={false}
-        containerBG="#ffffff"
-        cardBg="#fff"
-        textColor="#323232"
-        fontSize="18"
-        gallery={false}
-        imgClassName="className"
-        border="#ffa200"
-        width={400}
-        lineHeight="24"
-        heading={true}
-      />
-
-      {/* SAĞLIK */}
-      {/* EĞİTİM */}
-
-      <Container>
-        <Lists
-          registry={props.registry.seohaberleri}
-          dataset={props.dataset.seohaberleri}
-          bg="#ffffff"
-          className="list-link seo-haberleri"
-          linkClassName="link-footer-category"
-          vertical={false}
-        />
-      </Container>
+      </PageLayout>
     </Fragment>
   );
 };
@@ -219,6 +39,10 @@ IndexPage.getInitialProps = async () => {
   const teknolojidataset = "cat-teknoloji";
   const dunyadataset = "cat-dunya";
   const seohaberleridataset = "seo-haberleri";
+  const egitimdataset = "cat-egitim";
+  const saglikdataset = "cat-saglik";
+  const magazindataset = "cat-magazin";
+  const galeridataset = "type-galeri";
 
   const surmanset = await getDataset(
     surmansetdataset
@@ -279,6 +103,20 @@ IndexPage.getInitialProps = async () => {
     .then(data => data.data)
     .catch(err => err.response.data);
 
+  const magazin = await getDataset(magazindataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+  const saglik = await getDataset(saglikdataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const egitim = await getDataset(egitimdataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
+
+  const galeri = await getDataset(galeridataset)
+    .then(data => data.data)
+    .catch(err => err.response.data);
   return {
     registry: {
       surmanset: surmanset,
@@ -292,7 +130,11 @@ IndexPage.getInitialProps = async () => {
       yasam: yasam,
       teknoloji: teknoloji,
       dunya: dunya,
-      seohaberleri: seohaberleri
+      seohaberleri: seohaberleri,
+      egitim: egitim,
+      saglik: saglik,
+      magazin: magazin,
+      galeri:galeri
     },
     dataset: {
       surmanset: surmansetdataset,
@@ -306,7 +148,11 @@ IndexPage.getInitialProps = async () => {
       yasam: yasamdataset,
       teknoloji: teknolojidataset,
       dunya: dunyadataset,
-      seohaberleri: seohaberleridataset
+      seohaberleri: seohaberleridataset,
+      egitim: egitimdataset,
+      saglik: saglikdataset,
+      magazin: magazindataset,
+      galeri:galeridataset
     }
   };
 };

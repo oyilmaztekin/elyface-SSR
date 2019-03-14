@@ -12,21 +12,21 @@ class Cards extends Component {
     super(props);
     this.state = {
       limit: this.props.limit,
-      catTitle: "",
-      catSlug: ""
-    };
+      registry: this.props.registry,
+      catTitle: null,
+      catSlug: null,
+      isGallery: this.props.registry.data.items[0].type === "galeri"
+    }
   }
 
   componentDidMount() {
+    const reg = this.state.registry.data.items;
+    const catTitle = reg[0].ancestors[0].title;
+    const catSlug = reg[0].ancestors[0].slug;
     if (this.props.heading) {
-      const liElement = document.querySelector(
-        ".card-lists_item"
-      );
-      const title = liElement.dataset.catTitle;
-      const slug = liElement.dataset.catSlug;
       this.setState({
-        catTitle: title,
-        catSlug: slug
+        catTitle: catTitle,
+        catSlug: catSlug
       });
     }
   }
@@ -36,9 +36,17 @@ class Cards extends Component {
       return <div>{registry.error}</div>;
     }
     const reg = registry.data.items;
-    const catTitle = reg[0].ancestors[0].title;
-    const catSlug = reg[0].ancestors[0].slug;
-
+    const {
+      bg,
+      imgClassName,
+      border,
+      textColor,
+      fontSize,
+      width,
+      height,
+      lineHeight
+    } = this.props;
+    const { catSlug, catTitle, isGallery } = this.state;
     return reg
       .map((item, ind) => {
         const {
@@ -46,22 +54,21 @@ class Cards extends Component {
           description,
           title,
           self_path,
-          haber_gorsel
+          haber_gorsel,
+          galeri_gorsel,
+          type
         } = item;
-        const {
-          cardBg,
-          imgClassName,
-          border,
-          textColor,
-          fontSize,
-          width,
-          height,
-          lineHeight,
-          gallery,
-          className
-        } = this.props;
 
-        let gorsel = haber_gorsel[0]._id;
+        let gorsel;
+
+        if (type === "haber_ekleme") {
+          gorsel = haber_gorsel[0]._id;
+
+        }
+
+        if (type === "galeri") {
+          gorsel = galeri_gorsel._id;
+        }
 
         return (
           <li
@@ -75,10 +82,10 @@ class Cards extends Component {
             data-cat-slug={catSlug}
           >
             <Card
-              bg={cardBg}
+              bg={bg}
               height={height}
               id={_id}
-              gallery={gallery}
+              gallery={isGallery}
             >
               <Card.IMG
                 src={`http://assets.blupoint.io/img/75/600x340/${gorsel}`}
@@ -119,10 +126,9 @@ class Cards extends Component {
   }
 
   render() {
+    const { registry } = this.state;
     const {
-      registry,
       vertical,
-      containerBG,
       dataset,
       className
     } = this.props;
@@ -131,8 +137,8 @@ class Cards extends Component {
     let items;
     registry
       ? (items = this.createCardComponent(
-          registry
-        ))
+        registry
+      ))
       : (items = "loading...");
 
     return (
@@ -144,9 +150,6 @@ class Cards extends Component {
           registry.data._id
         }
         className={`section-cards ${className}`}
-        style={{
-          backgroundColor: containerBG
-        }}
       >
         {catTitle &&
           catSlug &&
@@ -168,7 +171,7 @@ class Cards extends Component {
 Cards.propTypes = {
   registry: propTypes.object.isRequired,
   dataset: propTypes.string,
-  cardBg: propTypes.string,
+  bg: propTypes.string,
   imgClassName: propTypes.string,
   border: propTypes.string,
   textColor: propTypes.string,
@@ -178,7 +181,6 @@ Cards.propTypes = {
   lineHeight: propTypes.string,
   vertical: propTypes.bool,
   limit: propTypes.number,
-  containerBG: propTypes.string,
   gallery: propTypes.bool,
   className: propTypes.string,
   heading: propTypes.bool

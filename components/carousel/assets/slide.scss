@@ -59,3 +59,31 @@
     color:$dark;
     margin-bottom:10px;
 }
+
+.gallery-icon{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url("./gallery-icon-bg.svg") no-repeat;
+    background-size: 100% 100%;
+    width: 80px;
+    height: 80px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: 32px;
+    line-height: 2.4em;
+  }
+
+.gallery-icon-bottom{
+    position: absolute;
+    top: 0px;
+    left: 43px;
+    background: url("./gallery-icon-bg.svg") no-repeat;
+    background-size: 100% 100%;
+    width: 61px;
+    height: 61px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: 22px;
+    line-height: 2.4em;
+}
