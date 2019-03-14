@@ -77,7 +77,7 @@ const IndexLayout = props => {
           />
         </Row>
 
-        {/* <Row>
+        <Row>
           <Cards
             dataset={props.dataset.galeri}
             registry={props.registry.galeri}
@@ -94,7 +94,7 @@ const IndexLayout = props => {
             lineHeight="24"
             heading={true}
           />
-        </Row> */}
+        </Row>
 
         <Row>
           <Cards
@@ -105,7 +105,7 @@ const IndexLayout = props => {
             bg="#fff"
             textColor="#323232"
             fontSize="18"
-            gallery={false}
+            gallery={true}
             imgClassName="className"
             className="nested-cards"
             border="#ffa200"

@@ -7,7 +7,7 @@
   "license": "UNLICENCED",
   "private": true,
   "scripts": {
-    "dev": "esw . && next",
+    "dev": "esw . && node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "export": "next export",

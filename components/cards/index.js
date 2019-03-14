@@ -14,7 +14,8 @@ class Cards extends Component {
       limit: this.props.limit,
       registry: this.props.registry,
       catTitle: null,
-      catSlug: null
+      catSlug: null,
+      isGallery: this.props.registry.data.items[0].type === "galeri"
     }
   }
 
@@ -43,10 +44,9 @@ class Cards extends Component {
       fontSize,
       width,
       height,
-      lineHeight,
-      gallery
+      lineHeight
     } = this.props;
-    const { catSlug, catTitle } = this.state;
+    const { catSlug, catTitle, isGallery } = this.state;
     return reg
       .map((item, ind) => {
         const {
@@ -54,10 +54,21 @@ class Cards extends Component {
           description,
           title,
           self_path,
-          haber_gorsel
+          haber_gorsel,
+          galeri_gorsel,
+          type
         } = item;
 
-        let gorsel = haber_gorsel[0]._id;
+        let gorsel;
+
+        if (type === "haber_ekleme") {
+          gorsel = haber_gorsel[0]._id;
+
+        }
+
+        if (type === "galeri") {
+          gorsel = galeri_gorsel._id;
+        }
 
         return (
           <li
@@ -74,7 +85,7 @@ class Cards extends Component {
               bg={bg}
               height={height}
               id={_id}
-              gallery={gallery}
+              gallery={isGallery}
             >
               <Card.IMG
                 src={`http://assets.blupoint.io/img/75/600x340/${gorsel}`}
@@ -126,8 +137,8 @@ class Cards extends Component {
     let items;
     registry
       ? (items = this.createCardComponent(
-          registry
-        ))
+        registry
+      ))
       : (items = "loading...");
 
     return (

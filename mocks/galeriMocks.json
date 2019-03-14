@@ -1,0 +1,952 @@
+{
+    "_id": "5c88f371eb9341000a6d417b",
+    "data": {
+        "count": 2,
+        "items": [
+            {
+                "galeri_gorsel": {
+                    "contentType": "image/jpeg",
+                    "chunkSize": 261120,
+                    "image": {
+                        "info": {
+                            "width": 600,
+                            "format": "JPEG",
+                            "hash": "b0c58816caff1c8d41b8bacded6dedf8",
+                            "mode": "RGB",
+                            "height": 340
+                        },
+                        "colors": [
+                            {
+                                "color": "#3a3c67",
+                                "percent": 0.397
+                            },
+                            {
+                                "color": "#595b85",
+                                "percent": 0.301
+                            },
+                            {
+                                "color": "#19152d",
+                                "percent": 0.197
+                            },
+                            {
+                                "color": "#6773d4",
+                                "percent": 0.087
+                            },
+                            {
+                                "color": "#eacfca",
+                                "percent": 0.018
+                            }
+                        ],
+                        "faces": [
+                            {
+                                "y": 47,
+                                "x": 237,
+                                "height": 74,
+                                "width": 75
+                            }
+                        ]
+                    },
+                    "membership_id": "sadece_haber",
+                    "filename": "cropped_content_5-mart-2019-unlulerin-instagram-paylasimlari_MbP26hy6Qcib7y8.jpg",
+                    "sys": {
+                        "created_at": "2019-03-13T09:45:36.201000Z",
+                        "created_by": "sadece_haber",
+                        "cid": 1
+                    },
+                    "length": 31172,
+                    "uploadDate": "2019-03-13T09:45:36.206000Z",
+                    "_id": "5c88d140a2c413000872f387",
+                    "domain_id": "5c4984af5a4da10008e77628",
+                    "md5": "b0c58816caff1c8d41b8bacded6dedf8",
+                    "metadata": {
+                        "check_hash": "true"
+                    }
+                },
+                "meta_url": "",
+                "gorselcok": [
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 518,
+                                "format": "JPEG",
+                                "hash": "a834fb557c76111470b4f004bc6532fa",
+                                "mode": "RGB",
+                                "height": 600
+                            },
+                            "colors": [
+                                {
+                                    "color": "#373737",
+                                    "percent": 0.631
+                                },
+                                {
+                                    "color": "#0b0b0b",
+                                    "percent": 0.191
+                                },
+                                {
+                                    "color": "#5d5d5d",
+                                    "percent": 0.082
+                                },
+                                {
+                                    "color": "#878787",
+                                    "percent": 0.08
+                                },
+                                {
+                                    "color": "#d0d0d0",
+                                    "percent": 0.016
+                                }
+                            ],
+                            "faces": null
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565563_lA1JB0r6b7kO7F1.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:45:19.957000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 87391,
+                        "uploadDate": "2019-03-13T09:45:19.964000Z",
+                        "_id": "5c88d12fa2c413000872f37b",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "a834fb557c76111470b4f004bc6532fa",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Dergi çekimleri için kamera karşısına geçen ve iddialı pozlarıyla dedikoduların hedefi olan Hande Erçel, siyah temalı bu fotoğrafı boynu bükük lale emojisiyle paylaştı."
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 517,
+                                "format": "JPEG",
+                                "hash": "97f98f68723a867c2b5a564b87ac8ae5",
+                                "mode": "RGB",
+                                "height": 637
+                            },
+                            "colors": [
+                                {
+                                    "color": "#1a1a14",
+                                    "percent": 0.337
+                                },
+                                {
+                                    "color": "#746d65",
+                                    "percent": 0.208
+                                },
+                                {
+                                    "color": "#524c41",
+                                    "percent": 0.202
+                                },
+                                {
+                                    "color": "#9c8d8d",
+                                    "percent": 0.175
+                                },
+                                {
+                                    "color": "#d7c1b7",
+                                    "percent": 0.078
+                                }
+                            ],
+                            "faces": [
+                                {
+                                    "y": 232,
+                                    "x": 170,
+                                    "height": 62,
+                                    "width": 62
+                                }
+                            ]
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565563_M00xOQy08Ae7xL8.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:45:21.276000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 144382,
+                        "uploadDate": "2019-03-13T09:45:21.282000Z",
+                        "_id": "5c88d131a2c413000872f385",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "97f98f68723a867c2b5a564b87ac8ae5",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Esprili paylaşımlarıyla tanınan Enis Arıkan bu fotoğrafı, ''İnşallah yuttuğum sahne tozları ödem yapmaz'' notuyla paylaştı."
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 475,
+                                "format": "JPEG",
+                                "hash": "74a3cd2d3ee8de061a0a43930a495a0d",
+                                "mode": "RGB",
+                                "height": 896
+                            },
+                            "colors": [
+                                {
+                                    "color": "#2f2423",
+                                    "percent": 0.34
+                                },
+                                {
+                                    "color": "#c8b8ba",
+                                    "percent": 0.208
+                                },
+                                {
+                                    "color": "#b28f85",
+                                    "percent": 0.196
+                                },
+                                {
+                                    "color": "#82625a",
+                                    "percent": 0.146
+                                },
+                                {
+                                    "color": "#efedf4",
+                                    "percent": 0.11
+                                }
+                            ],
+                            "faces": [
+                                {
+                                    "y": 201,
+                                    "x": 111,
+                                    "height": 267,
+                                    "width": 268
+                                }
+                            ]
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565563_xWcwbDctneqxS14.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:45:21.250000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 148263,
+                        "uploadDate": "2019-03-13T09:45:21.258000Z",
+                        "_id": "5c88d131a2c413000872f383",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "74a3cd2d3ee8de061a0a43930a495a0d",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Enis Arıkan'ın dikkat çeken bir diğer paylaşımı da sahne için hazırlanırken çektiği bu hikaye oldu."
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 470,
+                                "format": "JPEG",
+                                "hash": "499a71227e31455ca8d4b03ed9dd89d1",
+                                "mode": "RGB",
+                                "height": 900
+                            },
+                            "colors": [
+                                {
+                                    "color": "#dccabc",
+                                    "percent": 0.337
+                                },
+                                {
+                                    "color": "#2e2a25",
+                                    "percent": 0.206
+                                },
+                                {
+                                    "color": "#f2e5dc",
+                                    "percent": 0.184
+                                },
+                                {
+                                    "color": "#7d6d61",
+                                    "percent": 0.144
+                                },
+                                {
+                                    "color": "#bba992",
+                                    "percent": 0.129
+                                }
+                            ],
+                            "faces": null
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565563_SLHx907b8UC4w1x.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:45:20.299000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 131398,
+                        "uploadDate": "2019-03-13T09:45:20.306000Z",
+                        "_id": "5c88d130a2c413000872f37f",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "499a71227e31455ca8d4b03ed9dd89d1",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Geçen hafta tartıya rüşvet vererek kendisini 5 kilo az tartmasını söyleyen Ezgi Mola, bugün de ''Ama biz geçen hafta bu konuyu konuşmamış mıydık?'' notuyla bu fotoğrafı paylaştı."
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 519,
+                                "format": "JPEG",
+                                "hash": "de379691b5e3fe3d814052c1b1bfd3a7",
+                                "mode": "RGB",
+                                "height": 645
+                            },
+                            "colors": [
+                                {
+                                    "color": "#2b1d23",
+                                    "percent": 0.326
+                                },
+                                {
+                                    "color": "#cd8a75",
+                                    "percent": 0.239
+                                },
+                                {
+                                    "color": "#a15d51",
+                                    "percent": 0.164
+                                },
+                                {
+                                    "color": "#693d39",
+                                    "percent": 0.16
+                                },
+                                {
+                                    "color": "#e5b4bf",
+                                    "percent": 0.111
+                                }
+                            ],
+                            "faces": [
+                                {
+                                    "y": 99,
+                                    "x": 134,
+                                    "height": 321,
+                                    "width": 321
+                                }
+                            ]
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565563_450ap0ErjRwA56z.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:45:21.180000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 114488,
+                        "uploadDate": "2019-03-13T09:45:21.189000Z",
+                        "_id": "5c88d131a2c413000872f381",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "de379691b5e3fe3d814052c1b1bfd3a7",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Cem Yılmaz, katıldığı etkinlikleri anlattığı bir video çekerek bunu ''Çalışmadan Olur Mu?'' notuyla hayranlarına sundu."
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 630,
+                                "format": "JPEG",
+                                "hash": "07fdd1eeb4d1063b9668aa9f1c9bfb06",
+                                "mode": "RGB",
+                                "height": 640
+                            },
+                            "colors": [
+                                {
+                                    "color": "#181d1f",
+                                    "percent": 0.47
+                                },
+                                {
+                                    "color": "#000000",
+                                    "percent": 0.297
+                                },
+                                {
+                                    "color": "#398f9e",
+                                    "percent": 0.081
+                                },
+                                {
+                                    "color": "#9ea4a1",
+                                    "percent": 0.08
+                                },
+                                {
+                                    "color": "#275862",
+                                    "percent": 0.072
+                                }
+                            ],
+                            "faces": null
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565563_NC00ZN8IPT72FuN.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:45:19.958000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 188482,
+                        "uploadDate": "2019-03-13T09:45:19.967000Z",
+                        "_id": "5c88d12fa2c413000872f37c",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "07fdd1eeb4d1063b9668aa9f1c9bfb06",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Sertap Erener, \"Sertab’ın Müzikali bu defa Darüşşafaka yararına sahnede olacak! 'eğitimde fırsat eşitliği için' siz de bir şeyler yapabilirsiniz!\" notuyla, konserinin gelirini bağışlayacağını ifade etti."
+                        }
+                    }
+                ],
+                "domain_id": "5c4984af5a4da10008e77628",
+                "sonraki_haberler": [],
+                "refs_info": [
+                    {
+                        "type": "single_reference",
+                        "refs": {},
+                        "_id": "5c88ef6017ff6d0007033270",
+                        "field_id": "ilgili_haber"
+                    },
+                    {
+                        "type": "multiple_reference",
+                        "refs": [],
+                        "_id": "5c88ef6017ff6d0007033271",
+                        "field_id": "sonraki_haberler"
+                    }
+                ],
+                "ancestors": [
+                    {
+                        "title": "Magazin",
+                        "url": "/magazin",
+                        "self_path": "/magazin/",
+                        "base_type": "folder",
+                        "path": "/",
+                        "_id": "5c6c13cf17ff6d00070317c0",
+                        "type": "kategori",
+                        "slug": "magazin"
+                    }
+                ],
+                "title": "5 Mart 2019 ünlülerin instagram paylaşımları",
+                "base_type": "content",
+                "icerik_konumu_galeri": "Normal İçerik",
+                "type": "galeri",
+                "start_date": "2019-03-13T09:44:02.180000Z",
+                "reklam_gosterilmesin": false,
+                "status": "active",
+                "meta_title": "",
+                "description": "Ünlülerin son 24 saatte yaptığı paylaşımlar instagramda binlerce beğeni aldı. Kimi esprili paylaşımlarıyla gülümsetirken, kimi ünlü de güzelliğiyle göz kamaştırdı.\n",
+                "tags": [],
+                "sys": {
+                    "modified_by": "sadece_haber",
+                    "cid": 3040,
+                    "first_published_by": "sadece_haber",
+                    "created_at": "2019-03-13T09:44:02.635000Z",
+                    "published_version": 3,
+                    "modified_at": "2019-03-13T12:14:34.367000Z",
+                    "published_by": "sadece_haber",
+                    "collection": "published_contents",
+                    "published_at": "2019-03-13T12:14:38.645000Z",
+                    "version": 3,
+                    "created_by": "sadece_haber",
+                    "first_published_at": "2019-03-13T09:57:11.759000Z",
+                    "domain_cid": 157,
+                    "synchronized_at": "2019-03-13T12:14:38.565000Z"
+                },
+                "self_path": "/magazin/5-mart-2019-unlulerin-instagram-paylasimlari/",
+                "path": "/magazin/",
+                "slug": "5-mart-2019-unlulerin-instagram-paylasimlari",
+                "kategori_sayfasinda_gizle": false,
+                "url": "/magazin/5-mart-2019-unlulerin-instagram-paylasimlari",
+                "meta_aciklama": "Haberin devamı ve tüm detayları haberiyakala.com.'da",
+                "membership_id": "sadece_haber",
+                "ref_set": [],
+                "custom_ref_set": [],
+                "_id": "5c88d0e2eb9341000a6d4149",
+                "template_id": null
+            },
+            {
+                "galeri_gorsel": {
+                    "contentType": "image/jpeg",
+                    "chunkSize": 261120,
+                    "image": {
+                        "info": {
+                            "width": 600,
+                            "format": "JPEG",
+                            "hash": "b8b2d19e40bb4deca824cafdc2163cef",
+                            "mode": "RGB",
+                            "height": 340
+                        },
+                        "colors": [
+                            {
+                                "color": "#110b0e",
+                                "percent": 0.492
+                            },
+                            {
+                                "color": "#41291e",
+                                "percent": 0.179
+                            },
+                            {
+                                "color": "#88542a",
+                                "percent": 0.145
+                            },
+                            {
+                                "color": "#cb8441",
+                                "percent": 0.111
+                            },
+                            {
+                                "color": "#e5ac74",
+                                "percent": 0.073
+                            }
+                        ],
+                        "faces": [
+                            {
+                                "y": 38,
+                                "x": 345,
+                                "height": 75,
+                                "width": 74
+                            }
+                        ]
+                    },
+                    "membership_id": "sadece_haber",
+                    "filename": "cropped_content_ozan-guven-paylasimiyla-gulmekten-kirdi-gecirdi_lkD44bZ359g8728.jpg",
+                    "sys": {
+                        "created_at": "2019-03-13T09:17:34.293000Z",
+                        "created_by": "sadece_haber",
+                        "cid": 1
+                    },
+                    "length": 30918,
+                    "uploadDate": "2019-03-13T09:17:34.298000Z",
+                    "_id": "5c88caaea2c413000872f36d",
+                    "domain_id": "5c4984af5a4da10008e77628",
+                    "md5": "b8b2d19e40bb4deca824cafdc2163cef",
+                    "metadata": {
+                        "check_hash": "true"
+                    }
+                },
+                "meta_url": "",
+                "gorselcok": [
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 630,
+                                "format": "JPEG",
+                                "hash": "ff75968bbb048a376a248270c644b32b",
+                                "mode": "RGB",
+                                "height": 635
+                            },
+                            "colors": [
+                                {
+                                    "color": "#f5f4f3",
+                                    "percent": 0.289
+                                },
+                                {
+                                    "color": "#2e1f16",
+                                    "percent": 0.214
+                                },
+                                {
+                                    "color": "#e3d3c8",
+                                    "percent": 0.209
+                                },
+                                {
+                                    "color": "#7c6351",
+                                    "percent": 0.158
+                                },
+                                {
+                                    "color": "#be9c86",
+                                    "percent": 0.13
+                                }
+                            ],
+                            "faces": [
+                                {
+                                    "y": 167,
+                                    "x": 253,
+                                    "height": 155,
+                                    "width": 155
+                                }
+                            ]
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565677_0Gf49DNQmFfz2h3.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:15:33.568000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 213531,
+                        "uploadDate": "2019-03-13T09:15:33.578000Z",
+                        "_id": "5c88ca35a2c413000872f368",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "ff75968bbb048a376a248270c644b32b",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "21 gün önce doğum yapan Buse Varol, o güne ait fotoğraflarla tbt yaparak eşi Alişan ve oğlu Burak'a olan sevgisini ifade etti."
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 622,
+                                "format": "JPEG",
+                                "hash": "7dcb24546745b100a4ac614468d8bb38",
+                                "mode": "RGB",
+                                "height": 610
+                            },
+                            "colors": [
+                                {
+                                    "color": "#403626",
+                                    "percent": 0.266
+                                },
+                                {
+                                    "color": "#948a79",
+                                    "percent": 0.232
+                                },
+                                {
+                                    "color": "#716755",
+                                    "percent": 0.211
+                                },
+                                {
+                                    "color": "#c1b79f",
+                                    "percent": 0.175
+                                },
+                                {
+                                    "color": "#e2dcc8",
+                                    "percent": 0.116
+                                }
+                            ],
+                            "faces": null
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565677_p3Y54jlU8S850lz.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:15:32.212000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 243519,
+                        "uploadDate": "2019-03-13T09:15:32.223000Z",
+                        "_id": "5c88ca34a2c413000872f362",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "7dcb24546745b100a4ac614468d8bb38",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Eşi ve kızıyla çekildiği bu fotoğrafı hesabında yayınlayan Berkay Şahin, fotoğrafın altına \"3+1\" notunu düşerek henüz anne karnında olan ikinci çocuğunu da unutmadığını belirtti. Şahin'in terlikleri de dikkat çeken bir diğer unsurdu. "
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 630,
+                                "format": "JPEG",
+                                "hash": "e9f098df89de0b4707a862a9c51a9f7f",
+                                "mode": "RGB",
+                                "height": 633
+                            },
+                            "colors": [
+                                {
+                                    "color": "#dfbfc0",
+                                    "percent": 0.26
+                                },
+                                {
+                                    "color": "#7d4023",
+                                    "percent": 0.209
+                                },
+                                {
+                                    "color": "#2b1816",
+                                    "percent": 0.204
+                                },
+                                {
+                                    "color": "#d47e31",
+                                    "percent": 0.183
+                                },
+                                {
+                                    "color": "#a24567",
+                                    "percent": 0.144
+                                }
+                            ],
+                            "faces": [
+                                {
+                                    "y": 76,
+                                    "x": 161,
+                                    "height": 385,
+                                    "width": 385
+                                }
+                            ]
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565677_3b6153DnnQSt5JB.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:15:33.579000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 262739,
+                        "uploadDate": "2019-03-13T09:15:33.590000Z",
+                        "_id": "5c88ca35a2c413000872f36a",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "e9f098df89de0b4707a862a9c51a9f7f",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Esprili paylaşımlarıyla sosyal medyanın sevilen yüzlerinden biri olan ünlü oyuncu Ozan Güven, yüzüne havuç bağladığı bu fotoğrafı paylaşarak altına, \"Kendine bakan erkeklerin kolayca uygulayabilecekleri havuç maskesi\" yazdı. "
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 520,
+                                "format": "JPEG",
+                                "hash": "eaff000ccba99e4472a6cffdc327dbd5",
+                                "mode": "RGB",
+                                "height": 647
+                            },
+                            "colors": [
+                                {
+                                    "color": "#0a0a0b",
+                                    "percent": 0.57
+                                },
+                                {
+                                    "color": "#847973",
+                                    "percent": 0.123
+                                },
+                                {
+                                    "color": "#2d2a2c",
+                                    "percent": 0.116
+                                },
+                                {
+                                    "color": "#57504b",
+                                    "percent": 0.109
+                                },
+                                {
+                                    "color": "#d8a781",
+                                    "percent": 0.082
+                                }
+                            ],
+                            "faces": [
+                                {
+                                    "y": 80,
+                                    "x": 220,
+                                    "height": 75,
+                                    "width": 75
+                                }
+                            ]
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565677_NZvgStq47jrV6h8.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:15:33.099000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 135021,
+                        "uploadDate": "2019-03-13T09:15:33.394000Z",
+                        "_id": "5c88ca35a2c413000872f364",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "eaff000ccba99e4472a6cffdc327dbd5",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Bir ayakkabı markasının yeni sezon yüzü olan Meryem Üzerli, tanıtım gecesine giderken çekilen bu fotoğrafıyla dikkatleri üzerine çekti. "
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 426,
+                                "format": "JPEG",
+                                "hash": "67865a2cf29aee44a0d173774e24dbf6",
+                                "mode": "RGB",
+                                "height": 747
+                            },
+                            "colors": [
+                                {
+                                    "color": "#f33088",
+                                    "percent": 0.591
+                                },
+                                {
+                                    "color": "#b2215c",
+                                    "percent": 0.268
+                                },
+                                {
+                                    "color": "#f284b4",
+                                    "percent": 0.066
+                                },
+                                {
+                                    "color": "#dca166",
+                                    "percent": 0.044
+                                },
+                                {
+                                    "color": "#430d16",
+                                    "percent": 0.031
+                                }
+                            ],
+                            "faces": [
+                                {
+                                    "y": 319,
+                                    "x": 108,
+                                    "height": 43,
+                                    "width": 43
+                                },
+                                {
+                                    "y": 339,
+                                    "x": 167,
+                                    "height": 155,
+                                    "width": 155
+                                }
+                            ]
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565677_ic97bIKFVY0j27T.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:15:33.487000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 131997,
+                        "uploadDate": "2019-03-13T09:15:33.529000Z",
+                        "_id": "5c88ca35a2c413000872f366",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "67865a2cf29aee44a0d173774e24dbf6",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Günün gururu Gülse Birsel oldu. Barbie markası, 60. yaş gününe özel projesi kapsamında, 60 örnek kadının bebeğini tasarladı. Türkiye'den yalnızca Gülse birsel seçildi. Birsel konuyla ilgili Barbie resmi sayfasından aldığı ekran görüntüsüyle bu paylaşımda bulundu."
+                        }
+                    },
+                    {
+                        "contentType": "image/jpeg",
+                        "chunkSize": 261120,
+                        "image": {
+                            "info": {
+                                "width": 409,
+                                "format": "JPEG",
+                                "hash": "445c1d035fe33557619356b664d6f5cb",
+                                "mode": "RGB",
+                                "height": 643
+                            },
+                            "colors": [
+                                {
+                                    "color": "#15161a",
+                                    "percent": 0.326
+                                },
+                                {
+                                    "color": "#6e6764",
+                                    "percent": 0.223
+                                },
+                                {
+                                    "color": "#56514f",
+                                    "percent": 0.196
+                                },
+                                {
+                                    "color": "#333030",
+                                    "percent": 0.158
+                                },
+                                {
+                                    "color": "#bea694",
+                                    "percent": 0.097
+                                }
+                            ],
+                            "faces": null
+                        },
+                        "membership_id": "sadece_haber",
+                        "filename": "gallery_565677_oonKv65LENVWdE4.jpg",
+                        "sys": {
+                            "created_at": "2019-03-13T09:15:31.763000Z",
+                            "created_by": "sadece_haber",
+                            "cid": 1
+                        },
+                        "length": 55655,
+                        "uploadDate": "2019-03-13T09:15:31.769000Z",
+                        "_id": "5c88ca33a2c413000872f360",
+                        "domain_id": "5c4984af5a4da10008e77628",
+                        "md5": "445c1d035fe33557619356b664d6f5cb",
+                        "metadata": {
+                            "check_hash": "true",
+                            "gor_yazi": "Art arda hikayeler atan Acun Ilıcalı, Murat Boz ve arkadaşlarını görüntüleyerek Boz'un doğum gününü kutladı. "
+                        }
+                    }
+                ],
+                "domain_id": "5c4984af5a4da10008e77628",
+                "sonraki_haberler": [],
+                "refs_info": [
+                    {
+                        "type": "single_reference",
+                        "refs": {},
+                        "_id": "5c88ef6017ff6d0007033270",
+                        "field_id": "ilgili_haber"
+                    },
+                    {
+                        "type": "multiple_reference",
+                        "refs": [],
+                        "_id": "5c88ef6017ff6d0007033271",
+                        "field_id": "sonraki_haberler"
+                    }
+                ],
+                "ancestors": [
+                    {
+                        "title": "Magazin",
+                        "url": "/magazin",
+                        "self_path": "/magazin/",
+                        "base_type": "folder",
+                        "path": "/",
+                        "_id": "5c6c13cf17ff6d00070317c0",
+                        "type": "kategori",
+                        "slug": "magazin"
+                    }
+                ],
+                "title": "Ozan Güven paylaşımıyla gülmekten kırdı geçirdi",
+                "base_type": "content",
+                "icerik_konumu_galeri": "Normal İçerik",
+                "type": "galeri",
+                "start_date": "2019-03-13T09:12:04.473000Z",
+                "reklam_gosterilmesin": false,
+                "status": "active",
+                "meta_title": "",
+                "description": "Bugün de ünlülerin instagram fotoğrafları magazinseverleri mutlu etti. Eğlenceli ve dikkat çekici paylaşımlarıyla bugün en çok bu ünlüler gündemdeydi:\n",
+                "tags": [
+                    {
+                        "tag": "galeri",
+                        "slug": "galeri"
+                    },
+                    {
+                        "tag": "murat boz",
+                        "slug": "murat-boz"
+                    }
+                ],
+                "sys": {
+                    "modified_by": "sadece_haber",
+                    "cid": 3035,
+                    "first_published_by": "sadece_haber",
+                    "created_at": "2019-03-13T09:12:04.627000Z",
+                    "published_version": 4,
+                    "modified_at": "2019-03-13T12:13:36.225000Z",
+                    "published_by": "sadece_haber",
+                    "collection": "published_contents",
+                    "published_at": "2019-03-13T12:13:41.088000Z",
+                    "version": 4,
+                    "created_by": "sadece_haber",
+                    "first_published_at": "2019-03-13T09:18:06.057000Z",
+                    "domain_cid": 155,
+                    "synchronized_at": "2019-03-13T12:13:41.033000Z"
+                },
+                "self_path": "/magazin/ozan-guven-paylasimiyla-gulmekten-kirdi-gecirdi/",
+                "path": "/magazin/",
+                "slug": "ozan-guven-paylasimiyla-gulmekten-kirdi-gecirdi",
+                "kategori_sayfasinda_gizle": false,
+                "url": "/ozan-guven-paylasimiyla-gulmekten-kirdi-gecirdi",
+                "meta_aciklama": "Haberin devamı ve tüm detayları haberiyakala.com.'da",
+                "membership_id": "sadece_haber",
+                "ref_set": [],
+                "custom_ref_set": [],
+                "_id": "5c88c96417ff6d000703320e",
+                "template_id": null
+            }
+        ]
+    }
+}
