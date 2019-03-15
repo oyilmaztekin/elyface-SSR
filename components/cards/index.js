@@ -73,13 +73,13 @@ class Cards extends Component {
         return (
           <li
             key={ind}
-            id={_id}
             style={{
               width: width + "px"
             }}
             className="card-lists_item"
             data-cat-title={catTitle}
             data-cat-slug={catSlug}
+            data-content-id={_id}
           >
             <Card
               bg={bg}
@@ -93,14 +93,14 @@ class Cards extends Component {
                 alt={title}
                 className={`card-img ${imgClassName}`}
                 border={border}
-                href={self_path}
+                href={`${self_path}?content_hash=${_id}`}
               />
               <Card.Title
                 title={title}
                 color={textColor}
                 fontSize={fontSize}
                 lineHeight={lineHeight}
-                href={self_path}
+                href={`${self_path}?content_hash=${_id}`}
               />
             </Card>
           </li>

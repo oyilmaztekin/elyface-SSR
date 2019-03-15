@@ -22,6 +22,7 @@ const Card = props => {
   return (
     <div
       id={id}
+      data-content-id={id}
       className={classNames(
         "card",
         className && `card-${className}`,
