@@ -24,6 +24,10 @@ app.prepare().then(() => {
     );
   });
 
+  server.get("/gundem/:id", (req, res) => {
+    return app.render(req, res, '/newsdetail', Object.assign({ id: req.params }, req.query))
+  });
+
   server.get("/siyaset", (req, res) => {
     return app.render(
       req,

@@ -60,6 +60,7 @@ const CarouselSlide = props => {
     slide: { haber_gorsel },
     slide: { galeri_gorsel },
     slide: { type },
+    slide: { _id },
     layout,
     index
   } = props;
@@ -80,9 +81,9 @@ const CarouselSlide = props => {
 
   if (layout && layout === "bottom") {
     return (
-      <li key={index} className={slideClass}>
+      <li key={index} className={slideClass} data-content-id={_id}>
         <div className={slideDiv}>
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}?content_hash=${_id}`} passHref>
             <LinkButton text={slide.title}>
               <Image
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
@@ -99,7 +100,7 @@ const CarouselSlide = props => {
               />
             : null }
 
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}?content_hash=${_id}`} passHref>
             <LinkButton
               text={slide.title}
               className="slide__overlay"
@@ -121,9 +122,9 @@ const CarouselSlide = props => {
   }
   if (layout && layout === "left") {
     return (
-      <li key={index} className={slideClass}>
+      <li key={index} className={slideClass} data-content-id={_id}>
         <div className={slideDiv}>
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}?content_hash=${_id}`} passHref>
             <LinkButton text={slide.title}>
               <Image
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
@@ -138,7 +139,7 @@ const CarouselSlide = props => {
                 className="gallery-icon-bottom"
               />
             : null }
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}?content_hash=${_id}`} passHref>
             <LinkButton
               text={slide.title}
               className="slide__content__item"
