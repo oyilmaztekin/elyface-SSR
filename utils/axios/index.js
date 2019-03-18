@@ -37,3 +37,18 @@ export const getContent = async (
     }
   });
 };
+
+export const getRouter = async (
+  url,
+  endpoint
+) => {
+  endpoint = detectEndpoint(endpoint);
+  const { addr, domain_id, token } = endpoint;
+  return axios({
+    method: "get",
+    url: `http://${addr}/api/domains/${domain_id}/router?url=${url}`,
+    headers: {
+      Authorization: token
+    }
+  });
+};

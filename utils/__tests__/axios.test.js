@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { getDataset, getContent } from "@utils";
+import { getDataset, getContent, getRouter } from "@utils";
 
 function testDatasets(data) {
   const item = data.data.data.items[0];
@@ -139,7 +139,7 @@ describe("Axios getContent", () => {
   test("should be defined", () => {
     expect(getContent).toBeDefined();
   });
-  test("testing category such as gundem, siyaset etc...", async () => {
+  test("testing some results...", async () => {
     return await getContent(
       "5c6bc4866d87ea0007573927"
     ).then(data => {
@@ -152,13 +152,54 @@ describe("Axios getContent", () => {
       );
     });
   });
-  test("testing content", async () => {
+  test("testing returned content", async () => {
     return await getContent(
       "5c6e9e1ad74d9000078cddfb",
       "preview"
     ).then(data => {
-      debugger;
       const item = data.data;
+      expect(item.domain_id).not.toBeUndefined();
+      expect(item.title).not.toBeUndefined();
+      expect(item.url).not.toBeUndefined();
+      expect(
+        item.description
+      ).not.toBeUndefined();
+      expect(item.membership_id).toEqual(
+        "sadece_haber"
+      );
+      expect(item.self_path).not.toBeUndefined();
+      expect(item.slug).not.toBeUndefined();
+      expect(item.domain_id).toEqual(
+        "5c4984af5a4da10008e77628"
+      );
+    });
+  });
+});
+
+
+describe("Axios getRouter", () => {
+  test("should be defined", () => {
+    expect(getRouter).toBeDefined();
+  });
+  test("testing some results...", async () => {
+    return await getRouter(
+      "/gundem/fetullah-gulen-turkiyeye-getiriliyor-75"
+    ).then(data => {
+      const item = data.data.model;
+      expect(item.domain_id).not.toBeUndefined();
+      expect(item.title).not.toBeUndefined();
+      expect(item.url).not.toBeUndefined();
+      expect(item.domain_id).toEqual(
+        "5c4984af5a4da10008e77628"
+      );
+    });
+  });
+  test("testing returned content", async () => {
+    return await getRouter(
+      "/gundem/fetullah-gulen-turkiyeye-getiriliyor-75",
+      "preview"
+    ).then(data => {      
+      const item = data.data.model;
       expect(item.domain_id).not.toBeUndefined();
       expect(item.title).not.toBeUndefined();
       expect(item.url).not.toBeUndefined();

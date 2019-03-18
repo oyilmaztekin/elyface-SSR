@@ -53,7 +53,7 @@ class Cards extends Component {
           _id,
           description,
           title,
-          self_path,
+          url,
           haber_gorsel,
           galeri_gorsel,
           type
@@ -93,14 +93,14 @@ class Cards extends Component {
                 alt={title}
                 className={`card-img ${imgClassName}`}
                 border={border}
-                href={`${self_path}?content_hash=${_id}`}
+                href={url}
               />
               <Card.Title
                 title={title}
                 color={textColor}
                 fontSize={fontSize}
                 lineHeight={lineHeight}
-                href={`${self_path}?content_hash=${_id}`}
+                href={url}
               />
             </Card>
           </li>

@@ -1,4 +1,5 @@
 export {
   getDataset,
-  getContent
+  getContent,
+  getRouter
 } from "./axios/index";
