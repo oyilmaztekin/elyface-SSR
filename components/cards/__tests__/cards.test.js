@@ -6,6 +6,10 @@ import Cards from "@comp/cards/";
 import mockData from "@mock/cardMock.json";
 Enzyme.configure({ adapter: new Adapter() });
 
+/**
+ * TODO: count returned object and test its properties...
+ */
+
 describe("Lists Component Testing", () => {
   let comp;
   let wrapper;
