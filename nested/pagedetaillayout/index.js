@@ -115,7 +115,8 @@ class PageDetailLayout extends Component {
 }
 
 PageDetailLayout.propTypes = {
-  content: propTypes.object
+  content: propTypes.object,
+  context: propTypes.object
 };
 
 export default URLConsumerHOC(PageDetailLayout);
