@@ -3,25 +3,30 @@ import { getRouter } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import PageDetailLayout from "@nest/pagedetaillayout";
+import { URLProvider } from "@utils";
 import "static/styles/pages.scss";
 import "static/styles/newsdetail.scss";
 
 const GundemPage = props => {
-    return (
-        <Fragment>
-            <PageLayout>
-                <PageDetailLayout content={props.content.data}
-                />
-            </PageLayout>
-        </Fragment>
-    );
+  return (
+      <PageLayout>
+        <URLProvider>
+        <PageDetailLayout
+          content={props.content.data}
+        />
+      </URLProvider>    
+      </PageLayout>
+    
+  );
 };
 
 GundemPage.propTypes = {
-    content: propTypes.object
+  content: propTypes.object
 };
 
-GundemPage.getInitialProps = async ({asPath}) => {
+GundemPage.getInitialProps = async ({
+  asPath
+}) => {
   const data = await getRouter(asPath)
     .then(data => data.data)
     .catch(err => err.response.data);
@@ -32,7 +37,6 @@ GundemPage.getInitialProps = async ({asPath}) => {
       template: data.template
     }
   };
-
 };
 
 export default GundemPage;
