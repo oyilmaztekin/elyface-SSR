@@ -25,7 +25,6 @@ class ArticleHeading extends Component {
       infinite,
       imgSrc,
       articleContent,
-      contentURL
     } = this.props;
 
     return (
