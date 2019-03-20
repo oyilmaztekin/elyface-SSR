@@ -83,7 +83,7 @@ const CarouselSlide = props => {
     return (
       <li key={index} className={slideClass} data-content-id={_id}>
         <div className={slideDiv}>
-          <Link href={`${slide.url}?content_hash=${_id}`} passHref>
+          <Link href={`${slide.url}`} passHref>
             <LinkButton text={slide.title}>
               <Image
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
@@ -139,7 +139,7 @@ const CarouselSlide = props => {
                 className="gallery-icon-bottom"
               />
             : null }
-          <Link href={`${slide.url}?content_hash=${_id}`} passHref>
+          <Link href={`${slide.url}`} passHref>
             <LinkButton
               text={slide.title}
               className="slide__content__item"

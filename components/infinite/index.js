@@ -1,20 +1,17 @@
-import React, {
-  Component,
-  PureComponent
-} from "react";
+import React, { PureComponent } from "react";
 import propTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroller";
 import autobind from "autobind-decorator";
 import { getDataset } from "@utils";
 import { Block } from "@comp/layouts";
 import ArticleHead from "@nest/articleheading";
+import { URLConsumerHOC } from "@utils";
+
 /**
  * @this State
  * @prop { hasMore } Boolean - determines if more fetch request needed
  * @prop { fetchCounter } Number - counts how many fetchMoreData invoked
  * @prop { registry } Array - returned data from API
- * @prop { dataLength } Number - size of the array returned from API
- * @prop { sliced } Array - A clone of the sliced registry represents shown items of the array
  */
 
 class Infinite extends PureComponent {
@@ -40,6 +37,13 @@ class Infinite extends PureComponent {
   }
 
   async componentDidMount() {
+    this.props.context &&
+      this.props.context.updateValue &&
+      this.props.context.updateValue(
+        "activeURL",
+        document.location.href
+      );
+
     const reg = await this.sendRequest();
     const slicedReg = reg.slice(
       0,
@@ -70,12 +74,19 @@ class Infinite extends PureComponent {
       0,
       newFetch
     );
-    setTimeout(() => {
-      this.setState({
-        fetchCounter: newFetch,
-        registry: slicedReg
-      });
-    }, 300);
+    this.setState({
+      fetchCounter: newFetch,
+      registry: slicedReg
+    });
+  }
+
+  @autobind
+  _changeURL(event, url) {
+    event.preventDefault();
+    this.props.context.updateValue(
+      "activeURL",
+      document.location.origin + url
+    );
   }
 
   render() {
@@ -104,6 +115,9 @@ class Infinite extends PureComponent {
                   desc={i.description}
                   articleContent={i.haber_metni}
                   infinite={true}
+                  onMouseEnter={e =>
+                    this._changeURL(e, i.url)
+                  }
                 />
               </Block>
             ))}
@@ -124,11 +138,12 @@ class Infinite extends PureComponent {
 }
 
 Infinite.propTypes = {
-  dataset: propTypes.object.isRequired
+  dataset: propTypes.object.isRequired,
+  context: propTypes.object
 };
 
 Infinite.defaultProps = {
   dataset: "cat-gundem"
 };
 
-export default Infinite;
+export default URLConsumerHOC(Infinite);

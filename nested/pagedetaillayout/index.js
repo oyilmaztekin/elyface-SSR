@@ -9,7 +9,7 @@ import Lists from "@comp/lists/";
 import CardManager from "@nest/cardManager";
 import propTypes from "prop-types";
 import Article from "@comp/article";
-import ArticleHead from "@nest/articleheading";
+import ArticleHeading from "@nest/articleheading";
 
 const PageDetailLayout = props => {
   const { content } = props;
@@ -46,7 +46,7 @@ const PageDetailLayout = props => {
             active={breadcrumbs.active}
           />
 
-          <ArticleHead
+          <ArticleHeading
             title={title}
             imgSrc={haber_gorsel[0]._id}
             desc={description}
@@ -89,6 +89,8 @@ const PageDetailLayout = props => {
     </Fragment>
   );
 };
+
+PageDetailLayout.displayName = "NewsDetail"
 
 PageDetailLayout.propTypes = {
   content: propTypes.object

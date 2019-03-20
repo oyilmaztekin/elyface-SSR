@@ -1,60 +1,88 @@
-import React from "react";
+import React, { Component } from "react";
 import propTypes from "prop-types";
 import { Block, Element } from "@comp/layouts";
 import Image from "@comp/image";
 import Article from "@comp/article";
+import autobind from "autobind-decorator";
 
-const ArticleHead = props => {
-  return (
-    <>
-      <Block
-        type="section"
-        className={props.className}
-      >
-        <Element
-          type="h1"
-          style={{
-            marginTop: 20 + "px"
-          }}
+class ArticleHeading extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  @autobind
+  _handleMouseEnter(e) {
+    e.preventDefault();
+    this.props.onMouseEnter &&
+      this.props.onMouseEnter(e);
+  }
+
+  render() {
+    const {
+      className,
+      title,
+      desc,
+      infinite,
+      imgSrc,
+      articleContent,
+      contentURL
+    } = this.props;
+
+    return (
+      <>
+        <Block
+          type="section"
+          className={className}
+          onMouseEnter={this._handleMouseEnter}
         >
-          {props.title}
-        </Element>
-        
-        <Element type="p" className="desc">
-          {" "}
-          {props.desc}
-        </Element>
+          <Element
+            type="h1"
+            style={{
+              marginTop: 20 + "px"
+            }}
+          >
+            {title}
+          </Element>
 
-        {props.infinite ? (
-          <Image
-            src={`http://assets.blupoint.io/img/75/600x340/${
-              props.imgSrc
-            }`}
-            longdesc={props.desc}
-            title={props.title}
-            style={{ width: 100 + "%" }}
-          />
-        ) : null}
+          <Element
+            type="p"
+            className="desc"
+          >
+            {" "}
+            {desc}
+          </Element>
 
-        {props.infinite ? (
-          <Article
-            style={{ width: 100 + "%" }}
-            article={props.articleContent}
-          />
-        ) : null}
-      </Block>
-    </>
-  );
-};
+          {infinite ? (
+            <Image
+              src={`http://assets.blupoint.io/img/75/600x340/${imgSrc}`}
+              longdesc={desc}
+              title={title}
+              style={{ width: 100 + "%" }}
+            />
+          ) : null}
 
-ArticleHead.propTypes = {
+          {infinite ? (
+            <Article
+              style={{ width: 100 + "%" }}
+              article={articleContent}
+            />
+          ) : null}
+        </Block>
+      </>
+    );
+  }
+}
+
+ArticleHeading.propTypes = {
   className: propTypes.string,
   index: propTypes.number,
   title: propTypes.string,
   imgSrc: propTypes.string,
   desc: propTypes.string,
   articleContent: propTypes.string,
-  infinite: propTypes.bool
+  infinite: propTypes.bool,
+  contentURL: propTypes.string,
+  onMouseEnter: propTypes.func
 };
 
-export default ArticleHead;
+export default ArticleHeading;
