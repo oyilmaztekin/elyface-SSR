@@ -6,23 +6,26 @@ import propTypes from "prop-types";
 import ScrollToTop from "react-scroll-up";
 import Icon from "@comp/icon/";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { URLProvider } from "@utils";
+import { Block } from "@comp/layouts";
 
 const PageLayout = props => {
   return (
     <Fragment>
       <Header
-        LogoImage="http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
+        LogoImage="/static/logo.png"
         navElements={mockData}
         zIndex={9}
         activeClass="sticky-now"
       />
-      <section
-        className="content-section"
-        data-content-id=""
-      >
-        {props.children}
-      </section>
-
+      <URLProvider>
+        <Block
+          type="section"
+          className="content-section"
+        >
+          {props.children}
+        </Block>
+      </URLProvider>
       <Footer />
 
       <ScrollToTop showUnder={160}>

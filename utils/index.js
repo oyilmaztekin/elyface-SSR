@@ -12,3 +12,5 @@ export {
 export {
   URLConsumerHOC
 } from "./consumers/urlconsumer";
+
+export { AdManager } from "./admanager";

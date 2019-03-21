@@ -8,7 +8,8 @@ export class URLProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeURL: ""
+      activeURL: "",
+      pageTitle: ""
     };
   }
 

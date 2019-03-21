@@ -2735,6 +2735,13 @@ babel-plugin-transform-minify-booleans@^6.9.4:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-minify-booleans/-/babel-plugin-transform-minify-booleans-6.9.4.tgz#acbb3e56a3555dd23928e4b582d285162dd2b198"
   integrity sha1-rLs+VqNVXdI5KOS1gtKFFi3SsZg=
 
+babel-plugin-transform-object-assign@^6.22.0:
+  version "6.22.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-assign/-/babel-plugin-transform-object-assign-6.22.0.tgz#f99d2f66f1a0b0d498e346c5359684740caa20ba"
+  integrity sha1-+Z0vZvGgsNSY40bFNZaEdAyqILo=
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-property-literals@^6.9.4:
   version "6.9.4"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-property-literals/-/babel-plugin-transform-property-literals-6.9.4.tgz#98c1d21e255736573f93ece54459f6ce24985d39"
@@ -2846,7 +2853,7 @@ babel-preset-react-app@^6.1.0:
     babel-plugin-macros "2.4.2"
     babel-plugin-transform-react-remove-prop-types "0.4.18"
 
-babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.5.0:
+babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.5.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -9548,6 +9555,14 @@ react-dev-utils@^6.1.0:
     sockjs-client "1.1.5"
     strip-ansi "4.0.0"
     text-table "0.2.0"
+
+react-dfp@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/react-dfp/-/react-dfp-0.11.0.tgz#9927117a3cd4aa07f1c50f7980d744e8c6ea7751"
+  integrity sha512-EBwqymEYq39ZeRWy8vvS/+3QJEBYDIhdIFyMLIV8kLcmhaz0G1HTpS7E+cPtWS8IMNruDJ4dfg1FYiaH68pLLw==
+  dependencies:
+    babel-plugin-transform-object-assign "^6.22.0"
+    prop-types "^15.6.1"
 
 react-docgen@^3.0.0-rc.1:
   version "3.0.0"
