@@ -3,8 +3,9 @@ import { getDataset, getContent } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import IndexLayout from "@nest/indexlayout";
-import { DFPSlotsProvider } from "react-dfp";
+import { DFPSlotsProvider, AdSlot } from "react-dfp";
 import "static/styles/pages.scss";
+import "static/styles/indexAds.scss";
 
 const IndexPage = props => {
   return (

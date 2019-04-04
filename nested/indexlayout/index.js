@@ -5,10 +5,21 @@ import Container from "@comp/container/";
 import Row from "@comp/row/";
 import Lists from "@comp/lists/";
 import propTypes from "prop-types";
+import { AdSlot } from "react-dfp";
 
 const IndexLayout = props => {
   return (
     <Fragment>
+      <AdSlot
+        sizes={[[970, 250]]}
+        adUnit={"AnasayfaMastHead"}
+        slotId="anasayfaMastHead"
+      />
+      <AdSlot
+        sizes={[[160, 600], [120, 600]]}
+        adUnit={"anasayfa_sol1"}
+        slotId="anasayfa_sol"
+      />
       <Container width={970}>
         <Cards
           dataset={props.dataset.surmanset}

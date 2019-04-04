@@ -24,8 +24,15 @@ class Header extends Component {
   }
   @autobind
   handleStateChange(status) {
+    // FIXME: global state e bağla. burada değiştirmek doğru değil.
     if (status.status === Sticky.STATUS_FIXED) {
       console.log("the component is sticky");
+      const adLeft = document.getElementById("anasayfa_sol");
+      adLeft.style.top = 80 + "px";
+    }
+    else {
+      const adLeft = document.getElementById("anasayfa_sol");
+      adLeft.style.top = 150 + "px";
     }
   }
   render() {
