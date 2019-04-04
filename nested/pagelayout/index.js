@@ -8,6 +8,8 @@ import Icon from "@comp/icon/";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { URLProvider } from "@utils";
 import { Block } from "@comp/layouts";
+import { AdSlot } from "react-dfp";
+import "./assets/style.scss";
 
 const PageLayout = props => {
   return (
@@ -17,6 +19,17 @@ const PageLayout = props => {
         navElements={mockData}
         zIndex={9}
         activeClass="sticky-now"
+      />
+      <AdSlot
+        adUnit={"haberiyakala_anasayfa_masthead"}
+        slotId="anasayfaMastHead"
+        sizes={[[970, 250]]}
+      />
+      
+      <AdSlot
+        adUnit={"haberiyakala_anasayfa_sol1"}
+        slotId="anasayfa_sol"
+        sizes={[[160, 600],[120,600]]}
       />
       <URLProvider>
         <Block

@@ -51,11 +51,12 @@ class PageDetailLayout extends Component {
     };
     return (
       <Fragment>
-        <Block type="main">
+        <Block type="main" >
           <Container
             width={970}
             bg="#fff"
             padding="40"
+            boxSizing="border-box"
           >
             <Breadcrumb
               cat={breadcrumbs.cat}

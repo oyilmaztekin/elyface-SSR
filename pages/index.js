@@ -3,16 +3,19 @@ import { getDataset, getContent } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import IndexLayout from "@nest/indexlayout";
+import { DFPSlotsProvider } from "react-dfp";
 import "static/styles/pages.scss";
 
 const IndexPage = props => {
   return (
     <Fragment>
       <PageLayout>
-        <IndexLayout
-          registry={props.registry}
-          dataset={props.dataset}
-        />
+        <DFPSlotsProvider dfpNetworkId="61966246">
+          <IndexLayout
+            registry={props.registry}
+            dataset={props.dataset}
+          />
+        </DFPSlotsProvider>
       </PageLayout>
     </Fragment>
   );
@@ -134,7 +137,7 @@ IndexPage.getInitialProps = async () => {
       egitim: egitim,
       saglik: saglik,
       magazin: magazin,
-      galeri:galeri
+      galeri: galeri
     },
     dataset: {
       surmanset: surmansetdataset,
@@ -152,7 +155,7 @@ IndexPage.getInitialProps = async () => {
       egitim: egitimdataset,
       saglik: saglikdataset,
       magazin: magazindataset,
-      galeri:galeridataset
+      galeri: galeridataset
     }
   };
 };

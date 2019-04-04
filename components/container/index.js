@@ -11,7 +11,8 @@ const Container = props => {
         width: props.width + perc,
         display: props.display,
         backgroundColor: props.bg,
-        padding:props.padding + "px"
+        padding:props.padding + "px",
+        boxSizing:props.boxSizing
       }}
       className={props.className}
     >
@@ -28,7 +29,8 @@ Container.propTypes = {
   className: propTypes.string,
   margin: propTypes.string,
   bg: propTypes.string,
-  padding: propTypes.string
+  padding: propTypes.string,
+  boxSizing:propTypes.string
 };
 
 Container.defaultProps = {

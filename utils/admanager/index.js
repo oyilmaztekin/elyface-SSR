@@ -6,7 +6,7 @@ export class AdManager {
 
   static loadGooogleDFPScript() {
     const source =
-      "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+      "https://www.googletagservices.com/tag/js/gpt.js";
     const script = document.createElement(
       "script"
     );

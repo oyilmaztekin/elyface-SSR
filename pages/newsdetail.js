@@ -5,11 +5,10 @@ import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import PageDetailLayout from "@nest/pagedetaillayout";
 import { DFPSlotsProvider } from "react-dfp";
-import { AdManager } from "@utils";
 import "static/styles/pages.scss";
 import "static/styles/newsdetail.scss";
 
-class GundemPage extends Component {
+class NewsDetail extends Component {
   static getInitialProps = async ({ asPath }) => {
     const data = await getRouter(asPath)
       .then(data => data.data)
@@ -26,11 +25,6 @@ class GundemPage extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    AdManager.loadGooogleDFPScript();
-    AdManager.createAdConfigScript();
-  }
-
   render() {
     const {
       content: {
@@ -43,8 +37,9 @@ class GundemPage extends Component {
         <Head>
           <title>{title}</title>
         </Head>
+
         <PageLayout>
-          <DFPSlotsProvider>
+          <DFPSlotsProvider dfpNetworkId="61966246">
             <PageDetailLayout content={data} />
           </DFPSlotsProvider>
         </PageLayout>
@@ -53,8 +48,8 @@ class GundemPage extends Component {
   }
 }
 
-GundemPage.propTypes = {
+NewsDetail.propTypes = {
   content: propTypes.object
 };
 
-export default GundemPage;
+export default NewsDetail;
