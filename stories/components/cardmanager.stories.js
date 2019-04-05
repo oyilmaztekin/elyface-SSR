@@ -8,9 +8,9 @@ import {
   number,
   boolean
 } from "@storybook/addon-knobs";
-import readmeDOC from "@nest/cardManager/README.md";
+import readmeDOC from "@comp/cardmanager/README.md";
 import { withReadme } from "storybook-readme";
-import CardManager from "@nest/cardManager/";
+import CardManager from "@comp/cardmanager/";
 
 storiesOf("Card", module)
   .addDecorator(withKnobs)

@@ -4,9 +4,9 @@ import { getRouter } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import PageDetailLayout from "@nest/pagedetaillayout";
-import { DFPSlotsProvider } from "react-dfp";
 import "static/styles/pages.scss";
 import "static/styles/newsdetail.scss";
+import "static/styles/indexAds.scss";
 
 class NewsDetail extends Component {
   static getInitialProps = async ({ asPath }) => {
@@ -39,9 +39,7 @@ class NewsDetail extends Component {
         </Head>
 
         <PageLayout>
-          <DFPSlotsProvider dfpNetworkId="61966246">
             <PageDetailLayout content={data} />
-          </DFPSlotsProvider>
         </PageLayout>
       </>
     );

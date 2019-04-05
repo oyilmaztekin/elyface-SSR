@@ -1,14 +1,17 @@
 import "./assets/styles.scss";
-import React, {
-  Fragment,
-  Component
-} from "react";
+import React, { Component } from "react";
 import Container from "@comp/container/";
 import { Block } from "@comp/layouts";
+import Article from "@comp/article/";
 import Breadcrumb from "@comp/breadcrumb";
 import propTypes from "prop-types";
 import { StoreConsumerHOC } from "@utils";
 import autobind from "autobind-decorator";
+import {
+  DFPSlotsProvider,
+  AdSlot
+} from "react-dfp";
+import CardManager from "@comp/cardmanager/";
 
 class PageDetailLayout extends Component {
   static displayName = "NewsDetail";
@@ -27,7 +30,12 @@ class PageDetailLayout extends Component {
   }
 
   render() {
-    const { content } = this.props;
+    const {
+      content,
+      context: {
+        state: { adNetworkID }
+      }
+    } = this.props;
     const {
       title,
       description,
@@ -50,41 +58,74 @@ class PageDetailLayout extends Component {
       }
     };
     return (
-      <Fragment>
-        <Block type="main" >
+      <DFPSlotsProvider
+        dfpNetworkId={adNetworkID}
+      >
+        <AdSlot
+          sizes={[[970, 250]]}
+          adUnit={"AnasayfaMastHead"}
+          slotId="anasayfaMastHead"
+        />
+        <AdSlot
+          sizes={[[160, 600], [120, 600]]}
+          adUnit={"anasayfa_sol1"}
+          slotId="anasayfa_sol"
+        />
+        <Block type="main">
           <Container
             width={970}
             bg="#fff"
-            padding="40"
+            padding="20"
             boxSizing="border-box"
           >
             <Breadcrumb
               cat={breadcrumbs.cat}
               active={breadcrumbs.active}
             />
-            
-                <Block
-                  type="div"
-                  id="articles"
-                  className={`articles-${id}`}
-                >
-                  {/* <ArticleServer
-                    title={title}
-                    imgSrc={haber_gorsel[0]._id}
-                    desc={description}
-                    articleContent={haber_metni}
-                    className="heading"
-                    article={haber_metni}
-                  />
 
+            <Block
+              type="div"
+              id="ssr-article"
+              className={`articles-${id}`}
+            >
+              <Article
+                title={title}
+                desc={description}
+                cat={breadcrumbs.cat.title}
+                catUrl={breadcrumbs.cat.url}
+                className="main-article"
+                cover={haber_gorsel[0]._id}
+                isSSR={true}
+                content={haber_metni}
+              >
+                <CardManager
+                  dataset="cat-gundem"
+                  limit={2}
+                  vertical={true}
+                  cardBg="#282841"
+                  className="section-cards__sag-manset-yani"
+                  imgClassName="nomargin"
+                  border="#ffa200"
+                  width={303}
+                  lineHeight="24"
+                  textColor="#fff"
+                />
+                <AdSlot
+                  sizes={[[970, 120]]}
+                  adUnit={"HaberDetay_970x250"}
+                  slotId="HaberDetay_970x250"
+                />
+              </Article>
+
+              {/* 
                   <ArticleInfinite
                     infinitedataset="cat-gundem"
                     cardsdataset="cat-gundem"
                   /> */}
-                </Block>
+            </Block>
           </Container>
         </Block>
-      </Fragment>
+      </DFPSlotsProvider>
     );
   }
 }
