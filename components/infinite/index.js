@@ -5,7 +5,7 @@ import autobind from "autobind-decorator";
 import { getDataset } from "@utils";
 import { Block } from "@comp/layouts";
 import ArticleHead from "@nest/articleheading";
-import { URLConsumerHOC } from "@utils";
+import { StoreConsumerHOC } from "@utils";
 
 /**
  * @this State
@@ -146,4 +146,4 @@ Infinite.defaultProps = {
   dataset: "cat-gundem"
 };
 
-export default URLConsumerHOC(Infinite);
+export default StoreConsumerHOC(Infinite);

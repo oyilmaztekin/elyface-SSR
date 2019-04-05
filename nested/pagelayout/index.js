@@ -6,26 +6,25 @@ import propTypes from "prop-types";
 import ScrollToTop from "react-scroll-up";
 import Icon from "@comp/icon/";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
-import { URLProvider } from "@utils";
+import { StoreProvider } from "@utils";
 import { Block } from "@comp/layouts";
 
 const PageLayout = props => {
   return (
-    <Fragment>
+    <StoreProvider>
       <Header
         LogoImage="/static/logo.png"
         navElements={mockData}
         zIndex={9}
         activeClass="sticky-now"
       />
-      <URLProvider>
-        <Block
-          type="section"
-          className="content-section"
-        >
-          {props.children}
-        </Block>
-      </URLProvider>
+
+      <Block
+        type="section"
+        className="content-section"
+      >
+        {props.children}
+      </Block>
       <Footer />
 
       <ScrollToTop showUnder={160}>
@@ -36,7 +35,7 @@ const PageLayout = props => {
           />
         </span>
       </ScrollToTop>
-    </Fragment>
+    </StoreProvider>
   );
 };
 

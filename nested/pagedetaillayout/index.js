@@ -7,7 +7,7 @@ import Container from "@comp/container/";
 import { Block } from "@comp/layouts";
 import Breadcrumb from "@comp/breadcrumb";
 import propTypes from "prop-types";
-import { URLConsumerHOC } from "@utils";
+import { StoreConsumerHOC } from "@utils";
 import autobind from "autobind-decorator";
 
 class PageDetailLayout extends Component {
@@ -94,4 +94,4 @@ PageDetailLayout.propTypes = {
   context: propTypes.object
 };
 
-export default URLConsumerHOC(PageDetailLayout);
+export default StoreConsumerHOC(PageDetailLayout);

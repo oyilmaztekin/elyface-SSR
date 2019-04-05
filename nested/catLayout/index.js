@@ -5,10 +5,31 @@ import Container from "@comp/container/";
 import Row from "@comp/row/";
 import Lists from "@comp/lists/";
 import propTypes from "prop-types";
+import {
+  DFPSlotsProvider,
+  AdSlot
+} from "react-dfp";
+import { StoreConsumerHOC } from "@utils";
 
 const CategoryLayout = props => {
+  const {
+    context: {
+      state: { adNetworkID }
+    }
+  } = props;
+
   return (
-    <Fragment>
+    <DFPSlotsProvider dfpNetworkId={adNetworkID}>
+      <AdSlot
+        sizes={[[970, 250]]}
+        adUnit={"AnasayfaMastHead"}
+        slotId="anasayfaMastHead"
+      />
+      <AdSlot
+        sizes={[[160, 600], [120, 600]]}
+        adUnit={"anasayfa_sol1"}
+        slotId="anasayfa_sol"
+      />
       <Container
         width={970}
         className="section-cards"
@@ -78,13 +99,22 @@ const CategoryLayout = props => {
           </Row>
         </Container>
       </Container>
-    </Fragment>
+    </DFPSlotsProvider>
   );
 };
 
 CategoryLayout.propTypes = {
   dataset: propTypes.object,
-  registry: propTypes.registry
+  registry: propTypes.registry,
+  context: propTypes.shape({
+    state: propTypes.shape({
+      activeURL: propTypes.string,
+      pageTitle: propTypes.string,
+      isHeaderSticky: propTypes.bool,
+      adNetworkID: propTypes.string,
+      updateValue: propTypes.func
+    })
+  })
 };
 
-export default CategoryLayout;
+export default StoreConsumerHOC(CategoryLayout);

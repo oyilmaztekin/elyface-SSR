@@ -3,7 +3,6 @@ import { getDataset, getContent } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import IndexLayout from "@nest/indexlayout";
-import { DFPSlotsProvider, AdSlot } from "react-dfp";
 import "static/styles/pages.scss";
 import "static/styles/indexAds.scss";
 
@@ -11,12 +10,10 @@ const IndexPage = props => {
   return (
     <Fragment>
       <PageLayout>
-        <DFPSlotsProvider dfpNetworkId="61966246">
           <IndexLayout
             registry={props.registry}
             dataset={props.dataset}
           />
-        </DFPSlotsProvider>
       </PageLayout>
     </Fragment>
   );

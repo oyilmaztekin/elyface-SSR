@@ -5,12 +5,12 @@ export {
 } from "./axios/index";
 
 export {
-  URLProvider,
-  URLContext
-} from "./providers/urlprovider";
+  StoreProvider,
+  StoreContext
+} from "./providers/storeprovider";
 
 export {
-  URLConsumerHOC
-} from "./consumers/urlconsumer";
+  StoreConsumerHOC
+} from "./consumers/storeconsumer";
 
 export { AdManager } from "./admanager";

@@ -10,6 +10,7 @@ import SearchForm from "@comp/searchform/";
 import LinkButton from "@comp/linkButton/";
 import Icon from "@comp/icon/";
 import Container from "@comp/container/";
+import { StoreConsumerHOC } from "@utils";
 
 import {
   faCamera,
@@ -24,18 +25,15 @@ class Header extends Component {
   }
   @autobind
   handleStateChange(status) {
-    // FIXME: global state e bağla. burada değiştirmek doğru değil.
-    if (status.status === Sticky.STATUS_FIXED) {
-      console.log("the component is sticky");
-      const adLeft = document.getElementById("anasayfa_sol");
-      adLeft.style.top = 80 + "px";
+    if(status.status === 2) {
+      this.props.context.updateValue("isHeaderSticky", true)
     }
     else {
-      const adLeft = document.getElementById("anasayfa_sol");
-      adLeft.style.top = 150 + "px";
+      this.props.context.updateValue("isHeaderSticky", false)
     }
   }
   render() {
+
     let {
       sticky,
       top,
@@ -148,7 +146,14 @@ Header.propTypes = {
     propTypes.number
   ]),
   activeClass: propTypes.string,
-  releasedClass: propTypes.string
+  releasedClass: propTypes.string,
+  context: propTypes.shape({
+    activeURL: propTypes.string,
+    pageTitle: propTypes.string,
+    isHeaderSticky:propTypes.bool,
+    adNetworkID:propTypes.string,
+    updateValue:propTypes.func
+  })
 };
 
-export default Header;
+export default StoreConsumerHOC(Header);
