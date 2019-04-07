@@ -1,4 +1,4 @@
-service: nextjs-testing
+service: haberiyakala-serverless
 
 package:
   exclude:
