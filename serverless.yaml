@@ -1,0 +1,17 @@
+service: serverless
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  environment:
+    NODE_ENV: production
+
+plugins:
+  - serverless-offline
+
+functions:
+  app:
+    handler: lambdas/serverless.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
