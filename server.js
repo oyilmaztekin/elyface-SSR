@@ -1,4 +1,6 @@
 /* eslint-disable */
+const path = require("path");
+
 const express = require("express");
 const next = require("next");
 
@@ -8,8 +10,20 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
+function createServer() {
   const server = express();
+
+  server.get(
+    "/service-worker.js",
+    async (req, res) => {
+      const filePath = path.join(
+        __dirname,
+        ".next",
+        "/service-worker.js"
+      );
+      await app.serveStatic(req, res, filePath);
+    }
+  );
 
   server.get("/", (req, res) => {
     return app.render(req, res, "/", req.query);
@@ -25,7 +39,12 @@ app.prepare().then(() => {
   });
 
   server.get("/gundem/:id", (req, res) => {
-    return app.render(req, res, '/newsdetail', Object.assign({ id: req.params }, req.query))
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
   });
 
   server.get("/siyaset", (req, res) => {
@@ -34,6 +53,15 @@ app.prepare().then(() => {
       res,
       "/siyaset",
       req.query
+    );
+  });
+
+  server.get("/siyaset/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
     );
   });
 
@@ -46,12 +74,30 @@ app.prepare().then(() => {
     );
   });
 
+  server.get("/ekonomi/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
+  
   server.get("/spor", (req, res) => {
     return app.render(
       req,
       res,
       "/spor",
       req.query
+    );
+  });
+
+  server.get("/spor/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
     );
   });
 
@@ -64,12 +110,30 @@ app.prepare().then(() => {
     );
   });
 
+  server.get("/yasam/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
+
   server.get("/magazin", (req, res) => {
     return app.render(
       req,
       res,
       "/magazin",
       req.query
+    );
+  });
+
+  server.get("/magazin/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
     );
   });
 
@@ -82,12 +146,30 @@ app.prepare().then(() => {
     );
   });
 
+  server.get("/emlak/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
+
   server.get("/egitim", (req, res) => {
     return app.render(
       req,
       res,
       "/egitim",
       req.query
+    );
+  });
+
+  server.get("/egitim/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
     );
   });
 
@@ -100,6 +182,15 @@ app.prepare().then(() => {
     );
   });
 
+  server.get("/teknoloji/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
+
   server.get("/seyahat", (req, res) => {
     return app.render(
       req,
@@ -109,20 +200,35 @@ app.prepare().then(() => {
     );
   });
 
-  //   server.get("/posts/:id", (req, res) => {
-  //     return app.render(req, res, "/posts", {
-  //       id: req.params.id
-  //     });
-  //   });
+  server.get("/seyahat/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
 
   server.get("*", (req, res) => {
     return handle(req, res);
   });
 
-  server.listen(port, err => {
-    if (err) throw err;
-    console.log(
-      `> Ready on http://localhost:${port}`
-    );
-  });
+  return server;
+}
+
+const server = createServer();
+
+const prepareP = app.prepare().then(() => {
+  console.log("App prepared");
+  if (process.env.IN_LAMBDA !== "true") {
+    console.log("Starting server on: " + port);
+    server.listen(port, err => {
+      if (err) throw err;
+      console.log(
+        `> Ready on http://localhost:${port}`
+      );
+    });
+  }
 });
+
+module.exports = { appServer: server, prepareP };
