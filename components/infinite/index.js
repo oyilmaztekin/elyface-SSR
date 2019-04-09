@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import propTypes from "prop-types";
-import InfiniteScroll from "react-infinite-scroller";
+import InfiniteScroll from "./lib/infinitescroll";
 import autobind from "autobind-decorator";
 import { getDataset } from "@utils";
 import { Block } from "@comp/layouts";
@@ -15,7 +15,7 @@ import Article from "@comp/article/";
  */
 
 class Infinite extends PureComponent {
-  static displayName = "Infinite";
+  static displayName = "InfiniteWrapper";
 
   constructor(props) {
     super(props);
@@ -24,6 +24,7 @@ class Infinite extends PureComponent {
       fetchCounter: 1,
       registry: null
     };
+    this.currentNode = React.createRef();
   }
   
   _changeURL(event, url) {
@@ -97,14 +98,14 @@ class Infinite extends PureComponent {
           hasMore={hasMore}
           loader={<h4>Yükleniyor...</h4>}
           useWindow={true}
-          initialLoad={false}
+          initialLoad={true}
           threshold={-200}
         >
           {registry &&
             registry.map((i, index) => (
               <Block
                 type="div"
-                className={i._id}
+                id={i._id}
                 key={index}
                 style={{
                   marginTop: 50 + "px"
