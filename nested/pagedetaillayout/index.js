@@ -6,27 +6,18 @@ import Article from "@comp/article/";
 import Breadcrumb from "@comp/breadcrumb";
 import propTypes from "prop-types";
 import { StoreConsumerHOC } from "@utils";
-import autobind from "autobind-decorator";
 import {
   DFPSlotsProvider,
   AdSlot
 } from "react-dfp";
 import CardManager from "@comp/cardmanager/";
+import Infinite from "@comp/infinite";
 
 class PageDetailLayout extends Component {
   static displayName = "NewsDetail";
 
   constructor(props) {
     super(props);
-  }
-
-  @autobind
-  _changeURL(event, url) {
-    event.preventDefault();
-    this.props.context.updateValue(
-      "activeURL",
-      document.location.origin + url
-    );
   }
 
   render() {
@@ -71,6 +62,7 @@ class PageDetailLayout extends Component {
           adUnit={"anasayfa_sol1"}
           slotId="anasayfa_sol"
         />
+
         <Block type="main">
           <Container
             width={970}
@@ -117,11 +109,7 @@ class PageDetailLayout extends Component {
                 />
               </Article>
 
-              {/* 
-                  <ArticleInfinite
-                    infinitedataset="cat-gundem"
-                    cardsdataset="cat-gundem"
-                  /> */}
+              <Infinite dataset="cat-gundem" />
             </Block>
           </Container>
         </Block>

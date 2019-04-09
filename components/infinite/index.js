@@ -4,8 +4,8 @@ import InfiniteScroll from "react-infinite-scroller";
 import autobind from "autobind-decorator";
 import { getDataset } from "@utils";
 import { Block } from "@comp/layouts";
-import ArticleHead from "@nest/articleheading";
 import { StoreConsumerHOC } from "@utils";
+import Article from "@comp/article/";
 
 /**
  * @this State
@@ -24,6 +24,14 @@ class Infinite extends PureComponent {
       fetchCounter: 1,
       registry: null
     };
+  }
+  
+  _changeURL(event, url) {
+    event.preventDefault();
+    this.props.context.updateValue(
+      "activeURL",
+      document.location.origin + url
+    );
   }
 
   sendRequest() {
@@ -80,15 +88,6 @@ class Infinite extends PureComponent {
     });
   }
 
-  @autobind
-  _changeURL(event, url) {
-    event.preventDefault();
-    this.props.context.updateValue(
-      "activeURL",
-      document.location.origin + url
-    );
-  }
-
   render() {
     const { registry, hasMore } = this.state;
     if (registry) {
@@ -107,18 +106,19 @@ class Infinite extends PureComponent {
                 type="div"
                 className={i._id}
                 key={index}
+                style={{
+                  marginTop: 50 + "px"
+                }}
               >
-                <ArticleHead
-                  className="heading"
+                <Article
                   title={i.title}
-                  imgSrc={i.haber_gorsel[0]._id}
                   desc={i.description}
-                  articleContent={i.haber_metni}
-                  infinite={true}
-                  onMouseEnter={e =>
-                    this._changeURL(e, i.url)
-                  }
+                  className="main-article"
+                  cover={i.haber_gorsel[0]._id}
+                  isSSR={false}
+                  content={i.haber_metni}
                 />
+                
               </Block>
             ))}
         </InfiniteScroll>
