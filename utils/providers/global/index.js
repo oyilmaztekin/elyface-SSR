@@ -8,7 +8,6 @@ export class StoreProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeURL: "",
       pageTitle: "",
       isHeaderSticky: false,
       adNetworkID: "61966246"

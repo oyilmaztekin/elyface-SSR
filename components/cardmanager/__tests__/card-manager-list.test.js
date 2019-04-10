@@ -126,7 +126,7 @@ describe("Card Manager Component Testing", () => {
     expect(li.attribs.style).toBe(
       "width: 400px;"
     );
-    expect(li.attribs.id).toBe(itemID);
+    expect(li.attribs.id).toBe(`cardmanager-li-${itemID}`);
 
     wrapper.setProps({ gallery: true });
 

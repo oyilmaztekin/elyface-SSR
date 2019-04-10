@@ -24,7 +24,6 @@ describe("Header Component Testing", () => {
   });
   // onStateChange needs to be tested with scroll event.
   test("testing sticky header ", () => {
-    debugger;
     expect(
       wrapper.children().get(0).props.activeClass
     ).toBe("sticky-now");

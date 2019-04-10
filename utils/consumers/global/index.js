@@ -9,11 +9,10 @@ export const StoreConsumerHOC = WrappedComponent => {
       super(props);
     }
     render() {
-      
       return (
         <StoreContext.Consumer>
-          {context => {
-            return <WrappedComponent {...this.props} context={context} />;
+          {store => {
+            return <WrappedComponent {...this.props} store={store} />;
           }}
         </StoreContext.Consumer>
       );

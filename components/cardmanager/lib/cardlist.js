@@ -55,7 +55,7 @@ class Cardlist extends Component {
         return (
           <li
             key={ind}
-            id={_id}
+            id={`cardmanager-li-${_id}`}
             style={{
               width: width + "px"
             }}
@@ -64,7 +64,7 @@ class Cardlist extends Component {
             <Card
               bg={cardBg}
               height={height}
-              id={_id}
+              id={`cardmanager-card-${_id}`}
               gallery={gallery}
             >
               <Card.IMG

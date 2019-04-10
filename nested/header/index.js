@@ -26,10 +26,10 @@ class Header extends Component {
   @autobind
   handleStateChange(status) {
     if(status.status === 2) {
-      this.props.context.updateValue("isHeaderSticky", true)
+      this.props.store.updateValue("isHeaderSticky", true)
     }
     else {
-      this.props.context.updateValue("isHeaderSticky", false)
+      this.props.store.updateValue("isHeaderSticky", false)
     }
   }
   render() {
@@ -147,7 +147,7 @@ Header.propTypes = {
   ]),
   activeClass: propTypes.string,
   releasedClass: propTypes.string,
-  context: propTypes.shape({
+  store: propTypes.shape({
     activeURL: propTypes.string,
     pageTitle: propTypes.string,
     isHeaderSticky:propTypes.bool,

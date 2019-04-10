@@ -17,7 +17,6 @@ function compareEachElement(arr1, arr2) {
   let counthref = 0;
   let counttext = 0;
   if (!!arr1 && !!arr2) {
-    debugger;
     for (let i = 0; i < arr1.length; i++) {
       let el1 = arr1[i];
 

@@ -5,7 +5,7 @@ import { Block } from "@comp/layouts";
 import Article from "@comp/article/";
 import Breadcrumb from "@comp/breadcrumb";
 import propTypes from "prop-types";
-import { StoreConsumerHOC } from "@utils";
+import { StoreConsumerHOC, InfiniteProvider } from "@utils";
 import {
   DFPSlotsProvider,
   AdSlot
@@ -23,7 +23,7 @@ class PageDetailLayout extends Component {
   render() {
     const {
       content,
-      context: {
+      store: {
         state: { adNetworkID }
       }
     } = this.props;
@@ -108,8 +108,9 @@ class PageDetailLayout extends Component {
                   slotId="HaberDetay_970x250"
                 />
               </Article>
-
-              <Infinite dataset="cat-gundem" />
+              <InfiniteProvider>
+                <Infinite dataset="cat-gundem" />
+              </InfiniteProvider>
             </Block>
           </Container>
         </Block>
@@ -120,7 +121,7 @@ class PageDetailLayout extends Component {
 
 PageDetailLayout.propTypes = {
   content: propTypes.object,
-  context: propTypes.object
+  store: propTypes.object
 };
 
 export default StoreConsumerHOC(PageDetailLayout);

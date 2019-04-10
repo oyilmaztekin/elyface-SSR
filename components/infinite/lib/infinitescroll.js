@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StoreConsumerHOC } from "@utils";
 
 class InfiniteScroll extends Component {
   static displayName = "InfiniteScroll";
@@ -285,4 +284,4 @@ InfiniteScroll.defaultProps = {
   getScrollParent: null
 };
 
-export default StoreConsumerHOC(InfiniteScroll);
+export default InfiniteScroll;

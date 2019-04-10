@@ -85,7 +85,7 @@ class Cards extends Component {
             <Card
               bg={bg}
               height={height}
-              id={_id}
+              id={`card-${_id}`}
               gallery={isGallery}
             >
               <Card.IMG

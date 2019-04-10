@@ -13,7 +13,7 @@ import { StoreConsumerHOC } from "@utils";
 
 const CategoryLayout = props => {
   const {
-    context: {
+    store: {
       state: { adNetworkID }
     }
   } = props;
@@ -106,7 +106,7 @@ const CategoryLayout = props => {
 CategoryLayout.propTypes = {
   dataset: propTypes.object,
   registry: propTypes.registry,
-  context: propTypes.shape({
+  store: propTypes.shape({
     state: propTypes.shape({
       activeURL: propTypes.string,
       pageTitle: propTypes.string,
