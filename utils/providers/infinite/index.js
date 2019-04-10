@@ -8,6 +8,7 @@ export class InfiniteProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      activeURL: "",
       nodesHash: {}
     };
   }
@@ -32,7 +33,11 @@ export class InfiniteProvider extends Component {
 
   scrollListener(e) {
     e.preventDefault();
-    
+  }
+
+  @autobind
+  changeURL(url) {
+    this.updateValue("activeURL", url);
   }
 
   @autobind
@@ -58,7 +63,8 @@ export class InfiniteProvider extends Component {
       <InfiniteContext.Provider
         value={{
           state: this.state,
-          createNodeHash: this.createNodeHash
+          createNodeHash: this.createNodeHash,
+          changeURL: this.changeURL
         }}
       >
         {this.props.children}
@@ -69,5 +75,4 @@ export class InfiniteProvider extends Component {
 
 InfiniteProvider.propTypes = {
   children: propTypes.node.isRequired
-
 };
