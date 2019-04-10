@@ -4,7 +4,10 @@ import InfiniteScroll from "./lib/infinitescroll";
 import autobind from "autobind-decorator";
 import { getDataset } from "@utils";
 import { Block } from "@comp/layouts";
-import { StoreConsumerHOC, InfiniteConsumerHOC } from "@utils";
+import {
+  StoreConsumerHOC,
+  InfiniteConsumerHOC
+} from "@utils";
 import InfiniteItem from "./lib/infiniteItem";
 
 /**
@@ -28,14 +31,6 @@ class Infinite extends PureComponent {
     this.nodesHash = {};
   }
 
-  _changeURL(event, url) {
-    event.preventDefault();
-    this.props.store.updateValue(
-      "activeURL",
-      document.location.origin + url
-    );
-  }
-
   sendRequest() {
     return getDataset(this.props.dataset)
       .then(data => {
@@ -47,10 +42,9 @@ class Infinite extends PureComponent {
   }
 
   async componentDidMount() {
-    this.props.store &&
-      this.props.store.updateValue &&
-      this.props.store.updateValue(
-        "activeURL",
+    this.props.context &&
+      this.props.context.changeURL &&
+      this.props.context.changeURL(
         document.location.href
       );
 
@@ -96,29 +90,26 @@ class Infinite extends PureComponent {
     const loader = <h4>Yükleniyor...</h4>;
     if (registry && registry.length > 0) {
       return (
-          <InfiniteScroll
-            loadMore={this.fetchMoreData}
-            hasMore={hasMore}
-            loader={loader}
-            useWindow={true}
-            initialLoad={true}
-            threshold={-200}
-          >
-            <Block
-              type="div"
-              id="infinite__items"
-            >
-              {registry &&
-                registry.map((i, index) => (
-                  <InfiniteItem
-                    item={i}
-                    index={index}
-                    key={index}
-                    hasMore={hasMore}
-                  />
-                ))}
-            </Block>
-          </InfiniteScroll>
+        <InfiniteScroll
+          loadMore={this.fetchMoreData}
+          hasMore={hasMore}
+          loader={loader}
+          useWindow={true}
+          initialLoad={true}
+          threshold={-200}
+        >
+          <Block type="div" id="infinite__items">
+            {registry &&
+              registry.map((i, index) => (
+                <InfiniteItem
+                  item={i}
+                  index={index}
+                  key={index}
+                  hasMore={hasMore}
+                />
+              ))}
+          </Block>
+        </InfiniteScroll>
       );
     }
     return (
@@ -136,7 +127,8 @@ class Infinite extends PureComponent {
 
 Infinite.propTypes = {
   dataset: propTypes.object.isRequired,
-  store: propTypes.object
+  store: propTypes.object,
+  context:propTypes.object
 };
 
 Infinite.defaultProps = {
