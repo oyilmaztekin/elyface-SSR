@@ -1,19 +1,17 @@
 import "./assets/styles.scss";
-import React, {
-  Fragment,
-  Component
-} from "react";
-import Cards from "@comp/cards/";
+import React, { Component } from "react";
 import Container from "@comp/container/";
-import { Element, Block } from "@comp/layouts";
+import { Block } from "@comp/layouts";
+import Article from "@comp/article/";
 import Breadcrumb from "@comp/breadcrumb";
-import Row from "@comp/row/";
-import CardManager from "@nest/cardManager";
 import propTypes from "prop-types";
-import Article from "@comp/article";
-import ArticleHeading from "@nest/articleheading";
-import { URLConsumerHOC } from "@utils";
-import autobind from "autobind-decorator";
+import { StoreConsumerHOC, InfiniteProvider } from "@utils";
+import {
+  DFPSlotsProvider,
+  AdSlot
+} from "react-dfp";
+import CardManager from "@comp/cardmanager/";
+import Infinite from "@comp/infinite";
 
 class PageDetailLayout extends Component {
   static displayName = "NewsDetail";
@@ -22,17 +20,13 @@ class PageDetailLayout extends Component {
     super(props);
   }
 
-  @autobind
-  _changeURL(event, url) {
-    event.preventDefault();
-    this.props.context.updateValue(
-      "activeURL",
-      document.location.origin + url
-    );
-  }
-  
   render() {
-    const { content } = this.props;
+    const {
+      content,
+      store: {
+        state: { adNetworkID }
+      }
+    } = this.props;
     const {
       title,
       description,
@@ -40,7 +34,8 @@ class PageDetailLayout extends Component {
       path,
       haber_metni,
       haber_gorsel,
-      url
+      url,
+      id
     } = content;
 
     const breadcrumbs = {
@@ -54,69 +49,79 @@ class PageDetailLayout extends Component {
       }
     };
     return (
-      <Fragment>
+      <DFPSlotsProvider
+        dfpNetworkId={adNetworkID}
+      >
+        <AdSlot
+          sizes={[[970, 250]]}
+          adUnit={"AnasayfaMastHead"}
+          slotId="anasayfaMastHead"
+        />
+        <AdSlot
+          sizes={[[160, 600], [120, 600]]}
+          adUnit={"anasayfa_sol1"}
+          slotId="anasayfa_sol"
+        />
+
         <Block type="main">
           <Container
             width={970}
             bg="#fff"
-            padding="40"
+            padding="20"
+            boxSizing="border-box"
           >
             <Breadcrumb
               cat={breadcrumbs.cat}
               active={breadcrumbs.active}
             />
 
-            <ArticleHeading
-              title={title}
-              imgSrc={haber_gorsel[0]._id}
-              desc={description}
-              articleContent={haber_metni}
-              className="heading"
-              infinite={false}
-              onMouseEnter={e =>
-                this._changeURL(e, url)
-              }
-            />
-
             <Block
-              type="section"
-              className="article"
+              type="div"
+              id="ssr-article"
+              className={`articles-${id}`}
             >
-              <Row>
-                <Article
-                  style={{ width: 100 + "%" }}
-                  article={haber_metni}
-                  infinite={true}
+              <Article
+                title={title}
+                desc={description}
+                cat={breadcrumbs.cat.title}
+                catUrl={breadcrumbs.cat.url}
+                className="main-article"
+                cover={haber_gorsel[0]._id}
+                isSSR={true}
+                content={haber_metni}
+              >
+                <CardManager
                   dataset="cat-gundem"
+                  limit={2}
+                  vertical={true}
+                  cardBg="#282841"
+                  className="section-cards__sag-manset-yani"
+                  imgClassName="nomargin"
+                  border="#ffa200"
+                  width={303}
+                  lineHeight="24"
+                  textColor="#fff"
                 />
-                <Block type="aside">
-                  <CardManager
-                    dataset="cat-gundem"
-                    limit={5}
-                    vertical={true}
-                    containerBG="#ffffff"
-                    cardBg="#fff"
-                    textColor="#323232"
-                    fontSize="16"
-                    gallery={false}
-                    imgClassName="className"
-                    border="#ffa200"
-                    width={250}
-                    lineHeight="24"
-                  />
-                </Block>
-              </Row>
+                <AdSlot
+                  sizes={[[970, 120]]}
+                  adUnit={"HaberDetay_970x250"}
+                  slotId="HaberDetay_970x250"
+                />
+              </Article>
+              <InfiniteProvider>
+                <Infinite dataset="cat-gundem" />
+              </InfiniteProvider>
             </Block>
           </Container>
         </Block>
-      </Fragment>
+      </DFPSlotsProvider>
     );
   }
 }
 
 PageDetailLayout.propTypes = {
   content: propTypes.object,
-  context: propTypes.object
+  store: propTypes.object
 };
 
-export default URLConsumerHOC(PageDetailLayout);
+export default StoreConsumerHOC(PageDetailLayout);

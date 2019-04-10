@@ -1,42 +1,53 @@
-import React, { Fragment } from "react";
+import React, { Component } from "react";
+import Head from "next/head";
 import { getRouter } from "@utils";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import PageDetailLayout from "@nest/pagedetaillayout";
-import { URLProvider } from "@utils";
 import "static/styles/pages.scss";
 import "static/styles/newsdetail.scss";
+import "static/styles/indexAds.scss";
 
-const GundemPage = props => {
-  return (
-      <PageLayout>
-        <URLProvider>
-        <PageDetailLayout
-          content={props.content.data}
-        />
-      </URLProvider>    
-      </PageLayout>
-    
-  );
-};
+class NewsDetail extends Component {
+  static getInitialProps = async ({ asPath }) => {
+    const data = await getRouter(asPath)
+      .then(data => data.data)
+      .catch(err => err.response.data);
+    return {
+      content: {
+        data: data.model,
+        route: data.route,
+        template: data.template
+      }
+    };
+  };
+  constructor(props) {
+    super(props);
+  }
 
-GundemPage.propTypes = {
+  render() {
+    const {
+      content: {
+        data,
+        data: { title }
+      }
+    } = this.props;
+    return (
+      <>
+        <Head>
+          <title>{title}</title>
+        </Head>
+
+        <PageLayout>
+            <PageDetailLayout content={data} />
+        </PageLayout>
+      </>
+    );
+  }
+}
+
+NewsDetail.propTypes = {
   content: propTypes.object
 };
 
-GundemPage.getInitialProps = async ({
-  asPath
-}) => {
-  const data = await getRouter(asPath)
-    .then(data => data.data)
-    .catch(err => err.response.data);
-  return {
-    content: {
-      data: data.model,
-      route: data.route,
-      template: data.template
-    }
-  };
-};
-
-export default GundemPage;
+export default NewsDetail;

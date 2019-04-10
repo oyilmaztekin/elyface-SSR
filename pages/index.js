@@ -4,15 +4,16 @@ import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import IndexLayout from "@nest/indexlayout";
 import "static/styles/pages.scss";
+import "static/styles/indexAds.scss";
 
 const IndexPage = props => {
   return (
     <Fragment>
       <PageLayout>
-        <IndexLayout
-          registry={props.registry}
-          dataset={props.dataset}
-        />
+          <IndexLayout
+            registry={props.registry}
+            dataset={props.dataset}
+          />
       </PageLayout>
     </Fragment>
   );
@@ -134,7 +135,7 @@ IndexPage.getInitialProps = async () => {
       egitim: egitim,
       saglik: saglik,
       magazin: magazin,
-      galeri:galeri
+      galeri: galeri
     },
     dataset: {
       surmanset: surmansetdataset,
@@ -152,7 +153,7 @@ IndexPage.getInitialProps = async () => {
       egitim: egitimdataset,
       saglik: saglikdataset,
       magazin: magazindataset,
-      galeri:galeridataset
+      galeri: galeridataset
     }
   };
 };

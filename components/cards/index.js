@@ -10,12 +10,13 @@ import "./assets/styles.scss";
 class Cards extends Component {
   constructor(props) {
     super(props);
+    const items = this.props.registry.data.items[0];
     this.state = {
       limit: this.props.limit,
       registry: this.props.registry,
       catTitle: null,
       catSlug: null,
-      isGallery: this.props.registry.data.items[0].type === "galeri"
+      isGallery: items && items.type && items.type === "galeri"
     }
   }
 
@@ -84,7 +85,7 @@ class Cards extends Component {
             <Card
               bg={bg}
               height={height}
-              id={_id}
+              id={`card-${_id}`}
               gallery={isGallery}
             >
               <Card.IMG

@@ -35,7 +35,7 @@ class Cardlist extends Component {
           _id,
           description,
           title,
-          self_path,
+          url,
           haber_gorsel
         } = item;
         const {
@@ -55,7 +55,7 @@ class Cardlist extends Component {
         return (
           <li
             key={ind}
-            id={_id}
+            id={`cardmanager-li-${_id}`}
             style={{
               width: width + "px"
             }}
@@ -64,7 +64,7 @@ class Cardlist extends Component {
             <Card
               bg={cardBg}
               height={height}
-              id={_id}
+              id={`cardmanager-card-${_id}`}
               gallery={gallery}
             >
               <Card.IMG
@@ -73,14 +73,14 @@ class Cardlist extends Component {
                 alt={title}
                 className={`card-img ${imgClassName}`}
                 border={border}
-                href={self_path}
+                href={url}
               />
               <Card.Title
                 title={title}
                 color={textColor}
                 fontSize={fontSize}
                 lineHeight={lineHeight}
-                href={self_path}
+                href={url}
               />
             </Card>
           </li>

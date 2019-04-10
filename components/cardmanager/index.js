@@ -71,7 +71,8 @@ class CardManager extends Component {
       dataset,
       limit,
       containerBG,
-      gallery
+      gallery,
+      className
     } = this.props;
 
     return (
@@ -91,6 +92,7 @@ class CardManager extends Component {
         limit={limit}
         containerBG={containerBG}
         gallery={gallery}
+        className={className}
       />
     );
   }
@@ -110,7 +112,8 @@ CardManager.propTypes = {
   imgClassName: propTypes.string,
   width: propTypes.number,
   height: propTypes.number,
-  lineHeight: propTypes.string
+  lineHeight: propTypes.string,
+  className:propTypes.string
 };
 
 export default CardManager;

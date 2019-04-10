@@ -27,6 +27,9 @@
   }
   &-img {
     display: block;
+    img {
+      margin:0px;
+    }
   }
   &-divider {
     width: 100%;

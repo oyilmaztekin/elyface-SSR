@@ -15,7 +15,7 @@
         "root": ["./"],
         "alias": {
           "@comp": "./components",
-          "@nest": "./nested",
+          "@nest":"./nested",
           "@globalstyle": "./globalstyles/styles.scss",
           "@mock": "./mocks",
           "@static": "./static",

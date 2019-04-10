@@ -1,0 +1,17 @@
+#anasayfa_sol{
+    position: fixed;
+    left:0px;
+    background-color:orange;
+    top:150px;
+    z-index:1;
+}
+
+#anasayfaMastHead{
+    margin-top:14px;
+    z-index: 5;
+    div, iframe{
+        margin:auto;
+        background-color:transparent;
+        display:block;
+    }
+}

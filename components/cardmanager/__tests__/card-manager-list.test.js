@@ -2,7 +2,7 @@
 import React from "react";
 import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import CardManager from "@nest/cardManager/";
+import CardManager from "@comp/cardmanager/";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("Card Manager Component Testing", () => {
@@ -126,7 +126,7 @@ describe("Card Manager Component Testing", () => {
     expect(li.attribs.style).toBe(
       "width: 400px;"
     );
-    expect(li.attribs.id).toBe(itemID);
+    expect(li.attribs.id).toBe(`cardmanager-li-${itemID}`);
 
     wrapper.setProps({ gallery: true });
 

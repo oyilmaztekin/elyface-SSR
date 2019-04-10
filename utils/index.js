@@ -2,13 +2,24 @@ export {
   getDataset,
   getContent,
   getRouter
-} from "./axios/index";
+} from "./axios";
 
 export {
-  URLProvider,
-  URLContext
-} from "./providers/urlprovider";
+  StoreProvider,
+  StoreContext,
+} from "./providers/global";
 
 export {
-  URLConsumerHOC
-} from "./consumers/urlconsumer";
+  InfiniteContext,
+  InfiniteProvider
+} from "./providers/infinite";
+
+export {
+  StoreConsumerHOC,
+} from "./consumers/global";
+
+export {
+  InfiniteConsumerHOC
+} from "./consumers/infinite";
+
+export { AdManager } from "./admanager";

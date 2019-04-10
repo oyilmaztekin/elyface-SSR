@@ -14,6 +14,8 @@ describe("Header Component Testing", () => {
         LogoImage="http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
         stickyClassName="orange-bg container"
         navElements={mockData}
+        activeClass="sticky-now"
+        releasedClass="released"
       />
     );
   });
@@ -22,23 +24,13 @@ describe("Header Component Testing", () => {
   });
   // onStateChange needs to be tested with scroll event.
   test("testing sticky header ", () => {
-    debugger;
     expect(
       wrapper.children().get(0).props.activeClass
-    ).toBe("active");
+    ).toBe("sticky-now");
     expect(
-      wrapper.children().get(0).props.className
+      wrapper.children().get(0).props.stickyClassName
     ).toBe("orange-bg container");
-    expect(
-      wrapper.children().get(0).props.enabled
-    ).toBe(true);
-    expect(
-      wrapper.children().get(0).props
-        .onStateChange
-    ).not.toBeUndefined();
-    expect(
-      wrapper.children().get(0).props.shouldFreeze
-    ).not.toBeUndefined();
+    
     expect(
       wrapper.children().get(0).props
         .releasedClass

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { URLContext } from "@utils";
+import { StoreContext } from "@utils";
 
-export const URLConsumerHOC = WrappedComponent => {
+export const StoreConsumerHOC = WrappedComponent => {
   return class extends Component {
     static displayName = WrappedComponent.displayName;
     // eslint-disable-next-line
@@ -10,11 +10,11 @@ export const URLConsumerHOC = WrappedComponent => {
     }
     render() {
       return (
-        <URLContext.Consumer>
-          {context => {
-            return <WrappedComponent {...this.props} context={context} />;
+        <StoreContext.Consumer>
+          {store => {
+            return <WrappedComponent {...this.props} store={store} />;
           }}
-        </URLContext.Consumer>
+        </StoreContext.Consumer>
       );
     }
   };
