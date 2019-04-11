@@ -10,8 +10,10 @@ export class InfiniteProvider extends Component {
     this.state = {
       activeURL: "",
       ssrURL: "",
+      ssrTitle: "",
       nodesHash: {}
     };
+    this.firstItem = {};
   }
 
   updateValue(key, val) {
@@ -19,6 +21,19 @@ export class InfiniteProvider extends Component {
   }
 
   componentDidMount() {
+    if (
+      !this.state.ssrURL &&
+      !this.state.activeURL
+    ) {
+      this.updateValue(
+        "ssrURL",
+        document.location.href
+      );
+      this.updateValue(
+        "ssrTitle",
+        document.title
+      );
+    }
     this.attachScrollListener();
   }
 
@@ -42,6 +57,7 @@ export class InfiniteProvider extends Component {
     if (this.state && this.state.nodesHash) {
       let pageOffset = window.pageYOffset;
       let nodes = this.state.nodesHash;
+      let counter = 0;
       Object.entries(nodes).forEach(item => {
         let offsetTop = item[1].offsetTop;
         let height = item[1].height;
@@ -58,6 +74,21 @@ export class InfiniteProvider extends Component {
           ) {
             return;
           }
+
+          if (counter < 1) {
+            ++counter;
+          }
+
+          if (counter === 1) {
+            let firstIt = {};
+            let it = item[1];
+            firstIt.height = it.height;
+            firstIt.offsetTop = it.offsetTop;
+            firstIt.id = it.id;
+            firstIt.url = it.url;
+            firstIt.title = it.title;
+            this.firstItem = firstIt;
+          }
           this.manipulateURL(
             document.location.origin +
               item[1].url,
@@ -67,8 +98,21 @@ export class InfiniteProvider extends Component {
             "activeURL",
             item[1].url
           );
-          
-        } 
+        }
+        if (
+          this.firstItem &&
+          this.firstItem.offsetTop &&
+          pageOffset < this.firstItem.offsetTop
+        ) {
+          this.manipulateURL(
+            this.state.ssrURL,
+            this.state.ssrTitle
+          );
+          this.updateValue(
+            "activeURL",
+            this.ssrURL
+          );
+        }
       });
     }
   }
