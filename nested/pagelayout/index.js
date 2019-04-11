@@ -8,6 +8,7 @@ import Icon from "@comp/icon/";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { StoreProvider } from "@utils";
 import { Block } from "@comp/layouts";
+import { InfiniteProvider } from "../../utils/providers/infinite";
 
 const PageLayout = props => {
   return (
@@ -23,7 +24,13 @@ const PageLayout = props => {
         type="section"
         className="content-section"
       >
-        {props.children}
+        {props.infinite ? (
+          <InfiniteProvider>
+            {props.children}
+          </InfiniteProvider>
+        ) : (
+          props.children
+        )}
       </Block>
       <Footer />
 
@@ -40,7 +47,8 @@ const PageLayout = props => {
 };
 
 PageLayout.propTypes = {
-  children: propTypes.node.isRequired
+  children: propTypes.node.isRequired,
+  infinite: propTypes.bool
 };
 
 export default PageLayout;

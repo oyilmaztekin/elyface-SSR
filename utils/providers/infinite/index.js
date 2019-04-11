@@ -9,6 +9,7 @@ export class InfiniteProvider extends Component {
     super(props);
     this.state = {
       activeURL: "",
+      ssrURL: "",
       nodesHash: {}
     };
   }
@@ -25,19 +26,51 @@ export class InfiniteProvider extends Component {
     if (this.state.nodesHash) {
       window.addEventListener(
         "scroll",
-        this.scrollListener,
-        true
+        this.scrollListener.bind(this),
+        false
       );
     }
   }
 
-  scrollListener(e) {
-    e.preventDefault();
+  manipulateURL(url, title) {
+    document.title = title;
+    window.history.pushState(null, title, url);
   }
 
-  @autobind
-  changeURL(url) {
-    this.updateValue("activeURL", url);
+  scrollListener(e) {
+    e.preventDefault();
+    if (this.state && this.state.nodesHash) {
+      let pageOffset = window.pageYOffset;
+      let nodes = this.state.nodesHash;
+      Object.entries(nodes).forEach(item => {
+        let offsetTop = item[1].offsetTop;
+        let height = item[1].height;
+        const { activeURL } = this.state;
+        if (
+          offsetTop &&
+          height &&
+          pageOffset >= offsetTop &&
+          pageOffset <= offsetTop + height
+        ) {
+          if (
+            activeURL &&
+            activeURL === item[1].url
+          ) {
+            return;
+          }
+          this.manipulateURL(
+            document.location.origin +
+              item[1].url,
+            item[1].title
+          );
+          this.updateValue(
+            "activeURL",
+            item[1].url
+          );
+          
+        } 
+      });
+    }
   }
 
   @autobind
@@ -53,7 +86,8 @@ export class InfiniteProvider extends Component {
     elObj.offsetTop = elTop;
     elObj.id = item._id;
     elObj.url = item.url;
-    newNodesHash[`${elHeight}_${elTop}`] = elObj;
+    elObj.title = item.title;
+    newNodesHash[elObj.id] = elObj;
 
     this.updateValue("nodesHash", newNodesHash);
   }
@@ -63,8 +97,7 @@ export class InfiniteProvider extends Component {
       <InfiniteContext.Provider
         value={{
           state: this.state,
-          createNodeHash: this.createNodeHash,
-          changeURL: this.changeURL
+          createNodeHash: this.createNodeHash
         }}
       >
         {this.props.children}

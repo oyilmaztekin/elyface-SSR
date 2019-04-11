@@ -38,7 +38,7 @@ class NewsDetail extends Component {
           <title>{title}</title>
         </Head>
 
-        <PageLayout>
+        <PageLayout infinite={true}>
             <PageDetailLayout content={data} />
         </PageLayout>
       </>
