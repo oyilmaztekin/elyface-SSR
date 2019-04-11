@@ -5,10 +5,14 @@ import { Block } from "@comp/layouts";
 import Article from "@comp/article/";
 import Breadcrumb from "@comp/breadcrumb";
 import propTypes from "prop-types";
-import { StoreConsumerHOC, InfiniteProvider } from "@utils";
+import {
+  StoreConsumerHOC,
+  InfiniteConsumerHOC
+} from "@utils";
 import {
   DFPSlotsProvider,
-  AdSlot
+  AdSlot,
+  DFPManager
 } from "react-dfp";
 import CardManager from "@comp/cardmanager/";
 import Infinite from "@comp/infinite";
@@ -20,11 +24,23 @@ class PageDetailLayout extends Component {
     super(props);
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.context.state.activeURL !==
+      this.props.context.state.activeURL
+    ) {
+      DFPManager.refresh();
+    }
+  }
+
   render() {
     const {
       content,
       store: {
         state: { adNetworkID }
+      },
+      context: {
+        state: { activeURL }
       }
     } = this.props;
     const {
@@ -48,6 +64,7 @@ class PageDetailLayout extends Component {
         url: path
       }
     };
+    
     return (
       <DFPSlotsProvider
         dfpNetworkId={adNetworkID}
@@ -108,9 +125,7 @@ class PageDetailLayout extends Component {
                   slotId="HaberDetay_970x250"
                 />
               </Article>
-              <InfiniteProvider>
-                <Infinite dataset="cat-gundem" />
-              </InfiniteProvider>
+              <Infinite dataset="cat-gundem" />
             </Block>
           </Container>
         </Block>
@@ -121,7 +136,13 @@ class PageDetailLayout extends Component {
 
 PageDetailLayout.propTypes = {
   content: propTypes.object,
-  store: propTypes.object
+  store: propTypes.object,
+  context: propTypes.object
 };
+
+// eslint-disable-next-line
+PageDetailLayout = InfiniteConsumerHOC(
+  PageDetailLayout
+);
 
 export default StoreConsumerHOC(PageDetailLayout);
