@@ -1,0 +1,60 @@
+@import "../../../globalstyles/styles.scss";
+
+article{
+    .article__h1{
+        font-weight: bold;
+        line-height: 40px;
+    }
+}
+
+.article-wrapper{
+    display: flex;
+
+    &__content{
+        min-width:590px;
+        
+    }
+}
+
+.main-article {
+    .article__h1{
+        padding:8px 0px;
+    }
+    .article__description{
+        line-height: 28px;
+        font-size:17px;
+        color:#666;
+    }
+}
+
+#article_category {
+    a{
+        display: inline-block;
+        font-size: 16px;
+        margin-top:10px;
+        cursor: pointer;
+        width:inherit;
+        color:$dark;
+    }
+}
+
+#galleries {
+    .galleries__li{
+        border-top: 5px solid #efefef;
+        margin-top:30px;
+        position:relative;
+        img{
+            margin-top:0px;
+        }
+        &__counter{
+            margin-top:10px;
+            display:inline-block;
+            background-color:$dark;
+            padding:8px;
+            color:#efefef;
+            font-size:14px;
+            
+        }
+    }
+    
+}

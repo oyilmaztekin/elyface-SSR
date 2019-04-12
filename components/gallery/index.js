@@ -1,18 +1,12 @@
 import "./assets/styles.scss";
 import React, { Component } from "react";
 import propTypes from "prop-types";
-import classNames from "classnames";
 import { Block, Element } from "@comp/layouts/";
-import LinkButton from "@comp/linkButton";
 import ClickableTag from "./lib/clickabletag";
 import Image from "@comp/image";
-import { AdSlot } from "react-dfp";
+import GalleryContent from "./lib/gallerycontent";
 
-function createMarkup(markup) {
-  return { __html: markup };
-}
-
-class Article extends Component {
+class Gallery extends Component {
   static displayName = "Article";
   constructor(props) {
     super(props);
@@ -22,10 +16,10 @@ class Article extends Component {
       title,
       cover,
       desc,
-      content,
       cat,
       catUrl,
       className,
+      galleries,
       isSSR
     } = this.props;
 
@@ -72,20 +66,15 @@ class Article extends Component {
               longdesc={desc}
             />
 
-            <Block type="article">
-              <div
-                dangerouslySetInnerHTML={createMarkup(
-                  content
-                )}
-              />
-            </Block>
+            <GalleryContent galleries={galleries} />
+
           </Block>
+          
           <Block
             type="div"
             className="article-wrapper__similiar"
           >
-            {this.props.children &&
-              this.props.children}
+            {this.props.children }
           </Block>
         </Block>
       </Block>
@@ -93,11 +82,11 @@ class Article extends Component {
   }
 }
 
-Article.propTypes = {
+Gallery.propTypes = {
   title: propTypes.string.isRequired,
   cover: propTypes.string.isRequired,
   desc: propTypes.string.isRequired,
-  content: propTypes.string.isRequired,
+  galleries:propTypes.array.isRequired,
   cat: propTypes.string,
   catUrl: propTypes.string,
   className: propTypes.string,
@@ -105,4 +94,4 @@ Article.propTypes = {
   children: propTypes.node
 };
 
-export default Article;
+export default Gallery;
