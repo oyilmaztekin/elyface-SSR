@@ -128,11 +128,13 @@ class Infinite extends PureComponent {
 Infinite.propTypes = {
   dataset: propTypes.object.isRequired,
   store: propTypes.object,
-  context:propTypes.object
+  context:propTypes.object,
+  gallery:propTypes.bool
 };
 
 Infinite.defaultProps = {
-  dataset: "cat-gundem"
+  dataset: "cat-gundem",
+  gallery: false
 };
 
 // eslint-disable-next-line

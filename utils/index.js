@@ -6,7 +6,7 @@ export {
 
 export {
   StoreProvider,
-  StoreContext,
+  StoreContext
 } from "./providers/global";
 
 export {
@@ -15,7 +15,7 @@ export {
 } from "./providers/infinite";
 
 export {
-  StoreConsumerHOC,
+  StoreConsumerHOC
 } from "./consumers/global";
 
 export {
