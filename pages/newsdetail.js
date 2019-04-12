@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Head from "next/head";
 import { getRouter } from "@utils";
+import HeadWrapper from "@comp/head";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import PageDetailLayout from "@nest/pagedetaillayout";
@@ -34,10 +34,7 @@ class NewsDetail extends Component {
     } = this.props;
     return (
       <>
-        <Head>
-          <title>{title}</title>
-        </Head>
-
+        <HeadWrapper title={title} description={data.description}/>
         <PageLayout infinite={true}>
             <PageDetailLayout content={data} />
         </PageLayout>

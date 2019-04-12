@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import { getDataset, getContent } from "@utils";
+import { getDataset } from "@utils";
+import HeadWrapper from "@comp/head/";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import IndexLayout from "@nest/indexlayout";
@@ -9,6 +10,7 @@ import "static/styles/indexAds.scss";
 const IndexPage = props => {
   return (
     <Fragment>
+      <HeadWrapper title="Haberi Yakala"/>
       <PageLayout>
           <IndexLayout
             registry={props.registry}
