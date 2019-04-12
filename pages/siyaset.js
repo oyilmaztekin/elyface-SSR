@@ -4,6 +4,7 @@ import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import CategoryLayout from "@nest/catLayout";
 import "static/styles/pages.scss";
+import "static/styles/indexAds.scss";
 
 const SiyasetPage = props => {
   return (
