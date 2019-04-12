@@ -53,17 +53,19 @@ class PageDetailLayout extends Component {
       url,
       id
     } = content;
-
+    
     const breadcrumbs = {
       active: {
         title: title,
         url: url
       },
       cat: {
-        title: ancestors[0].title,
         url: path
       }
     };
+    if(ancestors && ancestors.length < 0 && ancestors[0] && ancestors[0].title ){
+      breadcrumbs.cat.title = ancestors[0].title;
+    }
 
     return (
       <DFPSlotsProvider
