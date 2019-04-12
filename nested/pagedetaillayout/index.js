@@ -63,8 +63,15 @@ class PageDetailLayout extends Component {
         url: path
       }
     };
-    if(ancestors && ancestors.length < 0 && ancestors[0] && ancestors[0].title ){
+    if(ancestors && ancestors[0] && ancestors[0].title ){
       breadcrumbs.cat.title = ancestors[0].title;
+    }
+    else if(content.type && content.type === "galeri") {
+      if(content.type === "galeri"){
+        breadcrumbs.cat.title = content.type;
+        breadcrumbs.cat.url = "/gundem"
+      }
+      
     }
 
     return (
@@ -111,7 +118,7 @@ class PageDetailLayout extends Component {
                   breadcrumbs={breadcrumbs}
                 />
               )}
-
+      
               <Infinite dataset="cat-gundem" />
             </Block>
           </Container>

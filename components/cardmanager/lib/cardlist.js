@@ -115,15 +115,16 @@ class Cardlist extends Component {
           backgroundColor: containerBG
         }}
       >
-        <ul
-          className={classNames(
-            "card-manager",
-            vertical && `card-manager-vertical`,
-            !vertical && `card-manager-horizontal`
-          )}
-        >
-          {items}
-        </ul>
+          <ul
+            className={classNames(
+              "card-manager",
+              vertical && `card-manager-vertical`,
+              !vertical &&
+                `card-manager-horizontal`
+            )}
+          >
+            {items}
+          </ul>
       </section>
     );
   }

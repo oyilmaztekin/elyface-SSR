@@ -146,6 +146,15 @@ function createServer() {
     );
   });
 
+  server.get("/galeri", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/galeri",
+      req.query
+    );
+  });
+
   server.get("/magazin/:id", (req, res) => {
     return app.render(
       req,
