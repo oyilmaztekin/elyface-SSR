@@ -2,7 +2,6 @@ import "./assets/styles.scss";
 import React, { Component } from "react";
 import Container from "@comp/container/";
 import { Block } from "@comp/layouts";
-import Article from "@comp/article/";
 import Breadcrumb from "@comp/breadcrumb";
 import propTypes from "prop-types";
 import {
@@ -14,7 +13,8 @@ import {
   AdSlot,
   DFPManager
 } from "react-dfp";
-import CardManager from "@comp/cardmanager/";
+import RenderArticle from "./lib/renderarticle";
+import RenderGallery from "./lib/rendergallery";
 import Infinite from "@comp/infinite";
 
 class PageDetailLayout extends Component {
@@ -64,7 +64,7 @@ class PageDetailLayout extends Component {
         url: path
       }
     };
-    
+
     return (
       <DFPSlotsProvider
         dfpNetworkId={adNetworkID}
@@ -97,34 +97,19 @@ class PageDetailLayout extends Component {
               id="ssr-article"
               className={`articles-${id}`}
             >
-              <Article
-                title={title}
-                desc={description}
-                cat={breadcrumbs.cat.title}
-                catUrl={breadcrumbs.cat.url}
-                className="main-article"
-                cover={haber_gorsel[0]._id}
-                isSSR={true}
-                content={haber_metni}
-              >
-                <CardManager
-                  dataset="cat-gundem"
-                  limit={2}
-                  vertical={true}
-                  cardBg="#282841"
-                  className="section-cards__sag-manset-yani"
-                  imgClassName="nomargin"
-                  border="#ffa200"
-                  width={303}
-                  lineHeight="24"
-                  textColor="#fff"
+              {content &&
+              content.galeri_gorsel ? (
+                <RenderGallery
+                  content={content}
+                  breadcrumbs={breadcrumbs}
                 />
-                <AdSlot
-                  sizes={[[970, 120]]}
-                  adUnit={"HaberDetay_970x250"}
-                  slotId="HaberDetay_970x250"
+              ) : (
+                <RenderArticle
+                  content={content}
+                  breadcrumbs={breadcrumbs}
                 />
-              </Article>
+              )}
+
               <Infinite dataset="cat-gundem" />
             </Block>
           </Container>
