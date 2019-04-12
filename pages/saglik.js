@@ -6,7 +6,7 @@ import CategoryLayout from "@nest/catLayout";
 import "static/styles/pages.scss";
 import "static/styles/indexAds.scss";
 
-const SporPage = props => {
+const SaglikPage = props => {
   return (
     <Fragment>
       <PageLayout>
@@ -19,16 +19,16 @@ const SporPage = props => {
   );
 };
 
-SporPage.propTypes = {
+SaglikPage.propTypes = {
   registry: propTypes.object,
   dataset: propTypes.object
 };
 
-SporPage.getInitialProps = async () => {
+SaglikPage.getInitialProps = async () => {
   /**
    * TODO: galeri, magazin, sağlık, eğitim
    */
-  const dataset = "cat-spor";
+  const dataset = "cat-saglik";
   const seohaberleridataset = "seo-haberleri";
 
   const data = await getDataset(dataset)
@@ -53,4 +53,4 @@ SporPage.getInitialProps = async () => {
   };
 };
 
-export default SporPage;
+export default SaglikPage;

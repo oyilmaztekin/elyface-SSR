@@ -82,6 +82,24 @@ function createServer() {
       Object.assign({ id: req.params }, req.query)
     );
   });
+
+  server.get("/dunya", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/dunya",
+      req.query
+    );
+  });
+
+  server.get("/dunya/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
   
   server.get("/spor", (req, res) => {
     return app.render(
@@ -141,7 +159,7 @@ function createServer() {
     return app.render(
       req,
       res,
-      "/egitim",
+      "/emlak",
       req.query
     );
   });
@@ -201,6 +219,33 @@ function createServer() {
   });
 
   server.get("/seyahat/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
+
+  server.get("/saglik", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/saglik",
+      req.query
+    );
+  });
+
+  server.get("/saglik/:id", (req, res) => {
+    return app.render(
+      req,
+      res,
+      "/newsdetail",
+      Object.assign({ id: req.params }, req.query)
+    );
+  });
+
+  server.get("/:id", (req, res) => {
     return app.render(
       req,
       res,
