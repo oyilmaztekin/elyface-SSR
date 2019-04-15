@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "https://github.com/elluga/haberiyakalaSSR.git",
   "author": "özer yilmaztekin <yilmaztekin.ozer@gmail.com>",
-  "license": "UNLICENCED",
+  "license": "MIT",
   "private": true,
   "engines": {
     "node": "8.10.0"
