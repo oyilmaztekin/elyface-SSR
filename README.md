@@ -1,4 +1,4 @@
-# ElyFace React Front End Project 
+# ElyFace React Frontend Project 
 
 
 ### storybook [![Netlify Status](https://api.netlify.com/api/v1/badges/8f86544f-ff3d-4567-b528-ce630e433e46/deploy-status)](https://app.netlify.com/sites/storybook-haberiyakala/deploys)
