@@ -3,13 +3,6 @@ import Image from "@comp/image/";
 import Container from "@comp/container/";
 import Row from "@comp/row/";
 import SocialMediaIcon from "./socialmediaicon";
-import {
-  faFacebook,
-  faTwitterSquare,
-  faInstagram,
-  faGooglePlusSquare,
-  faYoutube
-} from "@fortawesome/free-brands-svg-icons";
 
 const Row1 = () => {
   return (
@@ -31,34 +24,29 @@ const Row1 = () => {
         </div>
         <div className="social-media">
           <SocialMediaIcon
-            icon={faFacebook}
+            icon="facebook"
             className="facebook"
             href="https://www.facebook.com/yakalahaberi"
-            color="#3b5998"
           />
           <SocialMediaIcon
-            icon={faTwitterSquare}
+            icon="twitter"
             className="twitter"
             href="https://twitter.com/haberiyakala"
-            color="#55acee"
           />
           <SocialMediaIcon
-            icon={faInstagram}
+            icon="instagram"
             className="instagram"
             href="http://instagram.com/haberiyakala"
-            color="#517fa4"
           />
           <SocialMediaIcon
-            icon={faGooglePlusSquare}
-            className="gogole-plus"
+            icon="google-plus"
+            className="google-plus"
             href="https://plus.google.com/u/0/109851901555941769237"
-            color="#dc4e41"
           />
           <SocialMediaIcon
-            icon={faYoutube}
+            icon="youtube"
             className="youtube"
             href="https://www.youtube.com/channel/UCJsk25gZ9jh3OKQUfyjOPtg"
-            color="#b31217"
           />
         </div>
       </Row>

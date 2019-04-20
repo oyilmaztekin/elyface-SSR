@@ -14,6 +14,12 @@ const HeadWrapper = props => {
       <Head>
         <title>{title}</title>
         <meta charset="UTF-8" />
+        <style>{`
+          svg {
+            width: 0px;
+            height:0px;
+          }
+        `}</style>
         <meta
           name="robots"
           content="index, follow"
@@ -115,7 +121,8 @@ HeadWrapper.propTypes = {
 };
 
 HeadWrapper.defaultProps = {
-    description: "Flaş gelişmeler ve son haberler haberiyakala.com&#039;da!"
-}
+  description:
+    "Flaş gelişmeler ve son haberler haberiyakala.com&#039;da!"
+};
 
 export default HeadWrapper;

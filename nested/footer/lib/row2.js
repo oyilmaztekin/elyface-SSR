@@ -4,10 +4,6 @@ import Row from "@comp/row/";
 import Lists from "@comp/lists/";
 import kategoriMock from "@mock/footerkategorimock.json";
 import SocialMediaIcon from "./socialmediaicon";
-import {
-  faAppStoreIos,
-  faAndroid
-} from "@fortawesome/free-brands-svg-icons";
 
 const Row1 = () => {
   return (
@@ -40,16 +36,18 @@ const Row1 = () => {
           <h3>Uygulama Linkleri</h3>
           <div className="app-icons">
             <SocialMediaIcon
-              icon={faAppStoreIos}
+              icon="apple"
               className="apple"
               href="http://www.haberiyakala.com/"
               color="#ffffff"
+              width="40"
             />
             <SocialMediaIcon
-              icon={faAndroid}
+              icon="android"
               className="android"
               href="http://www.haberiyakala.com/"
               color="#4DC247"
+              width="40"
             />
           </div>
           <h4>

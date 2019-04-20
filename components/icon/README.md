@@ -4,6 +4,10 @@ A simple component that wraps <FontAwesomeIcon> component.
 ### props
 - **_`icon`_**: string
   - Specifies the icon
+- **_`width`_**: number
+- **_`height`_**: number
+- **_`color`_**: string
+  - custom hex color
 - **_`className`_**: string
   - custom classname
 
@@ -12,10 +16,12 @@ A simple component that wraps <FontAwesomeIcon> component.
 
 ```javascript
 import Icon from "@comp/icon/"
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 <Icon
-  icon={faCoffee}
-  size="24"
+  icon="video"
+  width="60"
+  height="60"
+  className="customClass"
+  color="#ffffff"
 />
 ```
