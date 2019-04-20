@@ -1,18 +1,21 @@
 import React, { Fragment } from "react";
-import { getDataset, getContent } from "@utils";
+import { getDataset } from "@utils";
+import HeadWrapper from "@comp/head/";
 import PageLayout from "@nest/pagelayout";
 import propTypes from "prop-types";
 import IndexLayout from "@nest/indexlayout";
 import "static/styles/pages.scss";
+import "static/styles/indexAds.scss";
 
 const IndexPage = props => {
   return (
     <Fragment>
+      <HeadWrapper title="Haberi Yakala"/>
       <PageLayout>
-        <IndexLayout
-          registry={props.registry}
-          dataset={props.dataset}
-        />
+          <IndexLayout
+            registry={props.registry}
+            dataset={props.dataset}
+          />
       </PageLayout>
     </Fragment>
   );
@@ -134,7 +137,7 @@ IndexPage.getInitialProps = async () => {
       egitim: egitim,
       saglik: saglik,
       magazin: magazin,
-      galeri:galeri
+      galeri: galeri
     },
     dataset: {
       surmanset: surmansetdataset,
@@ -152,7 +155,7 @@ IndexPage.getInitialProps = async () => {
       egitim: egitimdataset,
       saglik: saglikdataset,
       magazin: magazindataset,
-      galeri:galeridataset
+      galeri: galeridataset
     }
   };
 };

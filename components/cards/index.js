@@ -10,12 +10,13 @@ import "./assets/styles.scss";
 class Cards extends Component {
   constructor(props) {
     super(props);
+    const items = this.props.registry.data.items[0];
     this.state = {
       limit: this.props.limit,
       registry: this.props.registry,
       catTitle: null,
       catSlug: null,
-      isGallery: this.props.registry.data.items[0].type === "galeri"
+      isGallery: items && items.type && items.type === "galeri"
     }
   }
 
@@ -53,7 +54,7 @@ class Cards extends Component {
           _id,
           description,
           title,
-          self_path,
+          url,
           haber_gorsel,
           galeri_gorsel,
           type
@@ -73,18 +74,18 @@ class Cards extends Component {
         return (
           <li
             key={ind}
-            id={_id}
             style={{
               width: width + "px"
             }}
             className="card-lists_item"
             data-cat-title={catTitle}
             data-cat-slug={catSlug}
+            data-content-id={_id}
           >
             <Card
               bg={bg}
               height={height}
-              id={_id}
+              id={`card-${_id}`}
               gallery={isGallery}
             >
               <Card.IMG
@@ -93,14 +94,14 @@ class Cards extends Component {
                 alt={title}
                 className={`card-img ${imgClassName}`}
                 border={border}
-                href={self_path}
+                href={url}
               />
               <Card.Title
                 title={title}
                 color={textColor}
                 fontSize={fontSize}
                 lineHeight={lineHeight}
-                href={self_path}
+                href={url}
               />
             </Card>
           </li>

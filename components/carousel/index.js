@@ -9,7 +9,6 @@ import Link from "next/link";
 import Image from "@comp/image/";
 import classNames from "classnames";
 import Icon from "@comp/icon/";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const CarouselIndicator = props => {
   const indicatorClass = classNames({
@@ -60,6 +59,7 @@ const CarouselSlide = props => {
     slide: { haber_gorsel },
     slide: { galeri_gorsel },
     slide: { type },
+    slide: { _id },
     layout,
     index
   } = props;
@@ -80,9 +80,9 @@ const CarouselSlide = props => {
 
   if (layout && layout === "bottom") {
     return (
-      <li key={index} className={slideClass}>
+      <li key={index} className={slideClass} data-content-id={_id}>
         <div className={slideDiv}>
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}`} passHref>
             <LinkButton text={slide.title}>
               <Image
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
@@ -94,12 +94,12 @@ const CarouselSlide = props => {
           
           {cat === "Galeri" ? 
               <Icon
-                icon={faCamera}
+                icon="gallery"
                 className="gallery-icon"
               />
             : null }
 
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}`} passHref>
             <LinkButton
               text={slide.title}
               className="slide__overlay"
@@ -121,9 +121,9 @@ const CarouselSlide = props => {
   }
   if (layout && layout === "left") {
     return (
-      <li key={index} className={slideClass}>
+      <li key={index} className={slideClass} data-content-id={_id}>
         <div className={slideDiv}>
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}`} passHref>
             <LinkButton text={slide.title}>
               <Image
                 src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
@@ -134,11 +134,11 @@ const CarouselSlide = props => {
           </Link>
           {cat === "Galeri" ? 
               <Icon
-                icon={faCamera}
+                icon="video"
                 className="gallery-icon-bottom"
               />
             : null }
-          <Link href={slide.url} passHref>
+          <Link href={`${slide.url}`} passHref>
             <LinkButton
               text={slide.title}
               className="slide__content__item"

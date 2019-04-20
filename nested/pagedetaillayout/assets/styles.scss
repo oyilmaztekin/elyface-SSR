@@ -1,0 +1,14 @@
+@import "../../../globalstyles/styles.scss";
+.heading{
+    h1{
+        color:$dark;
+        font-weight: bold;
+        line-height: 40px;
+    }
+    p.desc{
+        color:#555;
+        font-size:20px;
+        line-height:26px;
+        margin-top:20px;
+    }
+}

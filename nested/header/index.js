@@ -6,16 +6,11 @@ import Sticky from "react-stickynode";
 import Logo from "@comp/logo/";
 import Navigation from "@comp/navigation/";
 import Moment from "@comp/moment/";
-import SearchForm from "@comp/searchform/";
+// import SearchForm from "@comp/searchform/";
 import LinkButton from "@comp/linkButton/";
 import Icon from "@comp/icon/";
 import Container from "@comp/container/";
-
-import {
-  faCamera,
-  faVideo,
-  faClock
-} from "@fortawesome/free-solid-svg-icons";
+import { StoreConsumerHOC } from "@utils";
 
 class Header extends Component {
   static displayName = "Header";
@@ -24,11 +19,15 @@ class Header extends Component {
   }
   @autobind
   handleStateChange(status) {
-    if (status.status === Sticky.STATUS_FIXED) {
-      console.log("the component is sticky");
+    if(status.status === 2) {
+      this.props.store.updateValue("isHeaderSticky", true)
+    }
+    else {
+      this.props.store.updateValue("isHeaderSticky", false)
     }
   }
   render() {
+
     let {
       sticky,
       top,
@@ -78,16 +77,16 @@ class Header extends Component {
                 format="Do MMMM YYYY, dddd"
                 className="header__row-two-moment"
               >
-                <Icon icon={faClock} />{" "}
+                <Icon icon="clock" />{" "}
               </Moment>
               <div className="header__row-two-input-buttons-container">
-                <SearchForm
+                {/* <SearchForm
                   id="searh_form"
                   name="searh_form"
                   value="Ara"
                   type="search"
                   className="search-form-input header__row-two-input-buttons-container-form"
-                />
+                /> */}
 
                 <div className="header__row-two-input-buttons-container-btn">
                   <LinkButton
@@ -96,7 +95,7 @@ class Header extends Component {
                     href="#"
                   >
                     <span>
-                      <Icon icon={faCamera} />{" "}
+                      <Icon icon="gallery" color="#fff" />{" "}
                       Galeriler
                     </span>
                   </LinkButton>
@@ -108,7 +107,7 @@ class Header extends Component {
                     href="#"
                   >
                     <span>
-                      <Icon icon={faVideo} />{" "}
+                      <Icon icon="video" color="#fff" />{" "}
                       Videolar
                     </span>
                   </LinkButton>
@@ -141,7 +140,14 @@ Header.propTypes = {
     propTypes.number
   ]),
   activeClass: propTypes.string,
-  releasedClass: propTypes.string
+  releasedClass: propTypes.string,
+  store: propTypes.shape({
+    activeURL: propTypes.string,
+    pageTitle: propTypes.string,
+    isHeaderSticky:propTypes.bool,
+    adNetworkID:propTypes.string,
+    updateValue:propTypes.func
+  })
 };
 
-export default Header;
+export default StoreConsumerHOC(Header);

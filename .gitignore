@@ -4,6 +4,8 @@ node_modules
 .DS_Store
 npm-debug.log
 .netlify
+.vscode/
+.serverless
 
 # webpack output
 .next/

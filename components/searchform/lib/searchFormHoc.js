@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import autobind from "autobind-decorator";
 import Icon from "@comp/icon/";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function SearchFormHOC(SearchFieldComponent) {
   return class SearchForm extends Component {
@@ -59,7 +58,7 @@ function SearchFormHOC(SearchFieldComponent) {
             className="search-form-submit"
             onClick={onClick}
           >
-            <Icon icon={faSearch} size="16" />
+            <Icon icon="search" />
           </button>
         </form>
       );

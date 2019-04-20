@@ -67,12 +67,6 @@ describe("SearchForm Component Testing", () => {
       "search-form-submit"
     );
     expect(button.attribs.type).toBe("submit");
-    expect(
-      buttonReactWrapper.get(0).props.size
-    ).toBe("16");
-    expect(
-      buttonReactWrapper.get(0).props.icon.prefix
-    ).toBe("fas");
   });
 
   test("testing button click ", () => {

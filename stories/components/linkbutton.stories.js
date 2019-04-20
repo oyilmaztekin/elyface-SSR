@@ -13,7 +13,6 @@ import LinkButton from "@comp/linkButton/";
 import Image from "@comp/image/";
 import { withReadme } from "storybook-readme";
 import linkReadme from "@comp/linkButton/README.md";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import Icon from "@comp/icon/";
 
 const navStyle = {
@@ -54,7 +53,7 @@ storiesOf("SSR Link Buttons", module)
             )}
           >
             <span>
-              <Icon icon={faCamera} /> Sample
+              <Icon icon="video" /> Sample
               Button
             </span>
           </LinkButton>

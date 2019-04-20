@@ -1,0 +1,23 @@
+ul.breadcrumb{
+    display:flex;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+    a{
+        color:#282841;
+        font-size: 14px;
+    }
+    li::after {
+        content:"/";
+        margin:0px 10px;
+        opacity: .4;
+        font-size: 11px;
+        
+    }
+    li:last-child{
+        font-weight: bold;
+    }
+    li:last-child::after{
+        content:"";
+    }
+    
+}

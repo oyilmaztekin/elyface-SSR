@@ -6,7 +6,6 @@ import Image from "@comp/image/";
 import LinkButton from "@comp/linkButton/";
 import Link from "next/link";
 import Icon from "@comp/icon/";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const Card = props => {
   let {
@@ -22,6 +21,7 @@ const Card = props => {
   return (
     <div
       id={id}
+      data-content-id={id}
       className={classNames(
         "card",
         className && `card-${className}`,
@@ -35,7 +35,7 @@ const Card = props => {
     >
       {gallery ? (
         <Icon
-          icon={faCamera}
+          icon="gallery"
           className="card-icon"
         />
       ) : null}

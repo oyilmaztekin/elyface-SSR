@@ -1,0 +1,38 @@
+@import "../../../globalstyles/styles.scss";
+
+article{
+    .article__h1{
+        font-weight: bold;
+        line-height: 40px;
+    }
+}
+
+.article-wrapper{
+    display: flex;
+
+    &__content{
+        width:610px;
+    }
+}
+
+.main-article {
+    .article__h1{
+        padding:8px 0px;
+    }
+    .article__description{
+        line-height: 28px;
+        font-size:17px;
+        color:#666;
+    }
+}
+
+#article_category {
+    a{
+        display: inline-block;
+        font-size: 16px;
+        margin-top:10px;
+        cursor: pointer;
+        width:inherit;
+        color:$dark;
+    }
+}

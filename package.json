@@ -4,16 +4,21 @@
   "main": "index.js",
   "repository": "https://github.com/elluga/haberiyakalaSSR.git",
   "author": "özer yilmaztekin <yilmaztekin.ozer@gmail.com>",
-  "license": "UNLICENCED",
+  "license": "MIT",
   "private": true,
+  "engines": {
+    "node": "8.10.0"
+  },
+  "engineStrict": true,
   "scripts": {
     "dev": "esw . && node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
+    "start-sls": "sls offline start",
     "export": "next export",
     "test": "jest --no-cache --verbose --coverage",
     "test-debug": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
-    "test-debug-scope": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand linkbutton.test.js --testNamePattern='testing title and alt props'",
+    "test-debug-scope": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand icon.test.js --testNamePattern='should have correct props'",
     "story": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "esw ."
@@ -40,10 +45,6 @@
     }
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.14",
-    "@fortawesome/free-brands-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autobind-decorator": "^2.4.0",
@@ -58,10 +59,12 @@
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
-    "react-bootstrap": "^1.0.0-beta.5",
+    "react-dfp": "^0.11.0",
     "react-dom": "^16.7.0",
     "react-scroll-up": "^1.3.3",
-    "react-stickynode": "^2.1.1"
+    "react-stickynode": "^2.1.1",
+    "serverless-http": "^1.9.1",
+    "serverless-offline": "^4.9.4"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -76,7 +79,7 @@
     "@storybook/react": "^4.1.11",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "babel-plugin-module-resolver": "^3.1.3",
+    "babel-plugin-module-resolver": "^3.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^4.19.1",
@@ -92,7 +95,9 @@
     "jest": "^24.0.0",
     "jest-enzyme": "^7.0.1",
     "prettier": "1.16.1",
+    "raw-loader": "^2.0.0",
     "react-test-renderer": "^16.7.0",
+    "sinon": "^7.3.1",
     "storybook-readme": "^4.0.5",
     "svg-inline-loader": "^0.8.0",
     "svg-url-loader": "^2.3.2",

@@ -104,12 +104,11 @@ describe("Card Component Test", () => {
     const icon = wrapper.children().props()
       .children[0];
     const svg = wrapper.find("svg");
-    debugger;
     expect(icon.props.className).toBe(
       "card-icon"
     );
     expect(typeof icon.props.icon).toEqual(
-      "object"
+      "string"
     );
     expect(
       wrapper.closest(Image)

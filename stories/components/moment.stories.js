@@ -10,7 +10,6 @@ import Moment from "@comp/moment/";
 import { withReadme } from "storybook-readme";
 import momentReadme from "@comp/moment/README.md";
 import Icon from "@comp/icon/";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 storiesOf("Moment", module)
   .addDecorator(withKnobs)
@@ -24,7 +23,7 @@ storiesOf("Moment", module)
           "Do MMMM YYYY, dddd"
         )}
       >
-        <Icon icon={faClock} />{" "}
+        <Icon icon="clock" />{" "}
       </Moment>
     );
   });

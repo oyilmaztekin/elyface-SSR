@@ -5,40 +5,50 @@ import Footer from "@nest/footer/";
 import propTypes from "prop-types";
 import ScrollToTop from "react-scroll-up";
 import Icon from "@comp/icon/";
-import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { StoreProvider } from "@utils";
+import { Block } from "@comp/layouts";
+import { InfiniteProvider } from "../../utils/providers/infinite";
 
 const PageLayout = props => {
   return (
-    <Fragment>
+    <StoreProvider>
       <Header
-        LogoImage="http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
+        LogoImage="/static/logo.png"
         navElements={mockData}
         zIndex={9}
         activeClass="sticky-now"
       />
-      <section
-        className="content-section"
-        data-content-id=""
-      >
-        {props.children}
-      </section>
 
+      <Block
+        type="section"
+        className="content-section"
+      >
+        {props.infinite ? (
+          <InfiniteProvider>
+            {props.children}
+          </InfiniteProvider>
+        ) : (
+          props.children
+        )}
+      </Block>
       <Footer />
 
       <ScrollToTop showUnder={160}>
         <span className="scroll-to-top">
           <Icon
-            icon={faArrowAltCircleUp}
+            icon="up-arrow"
             color="#FFA200"
+            width="25"
           />
         </span>
       </ScrollToTop>
-    </Fragment>
+    </StoreProvider>
   );
 };
 
 PageLayout.propTypes = {
-  children: propTypes.node.isRequired
+  children: propTypes.node.isRequired,
+  infinite: propTypes.bool
 };
 
 export default PageLayout;

@@ -14,6 +14,8 @@ const SocialMediaIcon = props => {
         <Icon
           icon={props.icon}
           color={props.color}
+          width={props.width}
+          height={props.height}
         />
       </LinkButton>
     </Link>
@@ -25,7 +27,9 @@ SocialMediaIcon.propTypes = {
   className: propTypes.string,
   color: propTypes.string,
   href: propTypes.string,
-  desc: propTypes.desc
+  desc: propTypes.desc,
+  width:propTypes.string,
+  height:propTypes.string
 };
 
 export default SocialMediaIcon;
