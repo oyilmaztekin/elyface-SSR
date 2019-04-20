@@ -1,26 +1,29 @@
-
 import "./assets/styles.scss";
-import React, { Component } from "react";
+import React from "react";
 import propTypes from "prop-types";
 import classNames from "classnames";
 
-class Image extends Component {
-  static displayName = "Image";
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    let classN = classNames({
-      responsive: this.props.responsive
-    });
+const Image = props => {
+  let classN = classNames({
+    responsive: props.responsive
+  });
+  if (!props.placeholder) {
     return (
       <img
-        alt={this.props.desc}
+        alt={props.alt}
         className={classN}
-        {...this.props}
+        {...props}
       />
     );
   }
+  return (
+    <img
+      alt={props.alt}
+      className={classN}
+      src="/static/placeholder.jpg"
+      data-source={props.source}
+    />
+  );
 }
 
 Image.propTypes = {
@@ -31,7 +34,11 @@ Image.propTypes = {
   longdesc: propTypes.string,
   desc: propTypes.string,
   srcSet: propTypes.string,
-  sizes: propTypes.string
+  sizes: propTypes.string,
+  source: propTypes.string,
+  onLoad: propTypes.func,
+  placeholder: propTypes.bool,
+  alt: propTypes.string
 };
 
 export default Image;

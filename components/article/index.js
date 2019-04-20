@@ -65,12 +65,22 @@ class Article extends Component {
             type="div"
             className="article-wrapper__content"
           >
-            <Image
-              src={`http://assets.blupoint.io/img/75/0x0/${cover}`}
-              responsive
-              alt={title}
-              longdesc={desc}
-            />
+            {isSSR && cat ? (
+              <Image
+                source={`http://assets.blupoint.io/img/75/0x0/${cover}`}
+                placeholder={true}
+                responsive
+                alt={title}
+                longdesc={desc}
+              />
+            ) : (
+              <Image
+                src={`http://assets.blupoint.io/img/75/0x0/${cover}`}
+                responsive
+                alt={title}
+                longdesc={desc}
+              />
+            )}
 
             <Block type="article">
               <div

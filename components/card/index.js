@@ -71,7 +71,8 @@ Card.IMG = props => {
       <Link href={props.href} passHref>
         <LinkButton text={props.alt}>
           <Image
-            src={props.src}
+            source={props.src}
+            placeholder={true}
             responsive
             alt={props.alt}
             longdesc={props.longdesc}
@@ -91,7 +92,8 @@ Card.IMG.propTypes = {
   longdesc: propTypes.string,
   className: propTypes.string,
   border: propTypes.string,
-  href: propTypes.string
+  href: propTypes.string,
+  placeholder: propTypes.bool
 };
 
 Card.Title = props => {

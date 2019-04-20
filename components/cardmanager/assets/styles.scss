@@ -1,8 +1,21 @@
 @import "../../../globalstyles/styles.scss";
 
 // Fix for jumping arrows
-.card-dataset{
-    padding:40px;
+.section-cards {
+  padding: 40px 0px;
+  &__heading {
+    margin-bottom: -10px;
+  }
+}
+
+.nested-cards {
+  ul > li:nth-child(3n + 4) {
+    margin-left: 0px;
+  }
+}
+
+.card-dataset {
+  padding: 40px 0px;
 }
 .card-manager {
   display: flex;
@@ -20,6 +33,7 @@
     flex-direction: row;
     li {
       margin-left: 40px;
+      margin-top: 30px;
     }
     li:first-child {
       margin-left: 0px;
@@ -28,5 +42,3 @@
   &_item {
   }
 }
-
-
