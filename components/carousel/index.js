@@ -9,7 +9,6 @@ import Link from "next/link";
 import Image from "@comp/image/";
 import classNames from "classnames";
 import Icon from "@comp/icon/";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const CarouselIndicator = props => {
   const indicatorClass = classNames({
@@ -95,7 +94,7 @@ const CarouselSlide = props => {
           
           {cat === "Galeri" ? 
               <Icon
-                icon={faCamera}
+                icon="gallery"
                 className="gallery-icon"
               />
             : null }
@@ -135,7 +134,7 @@ const CarouselSlide = props => {
           </Link>
           {cat === "Galeri" ? 
               <Icon
-                icon={faCamera}
+                icon="video"
                 className="gallery-icon-bottom"
               />
             : null }

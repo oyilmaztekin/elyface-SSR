@@ -108,7 +108,7 @@ describe("Card Component Test", () => {
       "card-icon"
     );
     expect(typeof icon.props.icon).toEqual(
-      "object"
+      "string"
     );
     expect(
       wrapper.closest(Image)

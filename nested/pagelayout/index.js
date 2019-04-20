@@ -5,7 +5,6 @@ import Footer from "@nest/footer/";
 import propTypes from "prop-types";
 import ScrollToTop from "react-scroll-up";
 import Icon from "@comp/icon/";
-import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { StoreProvider } from "@utils";
 import { Block } from "@comp/layouts";
 import { InfiniteProvider } from "../../utils/providers/infinite";
@@ -37,8 +36,9 @@ const PageLayout = props => {
       <ScrollToTop showUnder={160}>
         <span className="scroll-to-top">
           <Icon
-            icon={faArrowAltCircleUp}
+            icon="up-arrow"
             color="#FFA200"
+            width="25"
           />
         </span>
       </ScrollToTop>
