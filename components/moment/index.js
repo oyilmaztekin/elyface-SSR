@@ -2,12 +2,13 @@
 import "./assets/styles.scss";
 import React from "react";
 import propTypes from "prop-types";
-import moment from "moment";
-import "moment/locale/tr";
+import dateFns from "date-fns";
+import tr from 'date-fns/locale/tr'
+
 
 const Moment = props => {
-  const momentFormat = moment().format(
-    props.format
+  const momentFormat = dateFns.format(
+    new Date(), props.format, { locale: tr }
   );
   return (
     <div className={props.className}>
