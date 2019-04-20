@@ -9,10 +9,10 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe("Moment Component Testing", () => {
   const formatM = moment().format(
-    "Do MMMM YYYY, dddd"
+    "D MMMM YYYY, dddd"
   );
   const wrapper = mount(
-    <Moment format="Do MMMM YYYY, dddd" />
+    <Moment format="D MMMM YYYY, dddd" />
   );
   test("should rendered without crashing ", () => {
     wrapper;
@@ -32,7 +32,7 @@ describe("Moment Component Testing", () => {
       wrapper.props().format
     ).not.toBeUndefined();
     expect(wrapper.props().format).toBe(
-      "Do MMMM YYYY, dddd"
+      "D MMMM YYYY, dddd"
     );
     const finded = wrapper.find(
       "[data-test='moment-format']"

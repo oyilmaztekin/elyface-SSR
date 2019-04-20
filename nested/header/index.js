@@ -74,7 +74,7 @@ class Header extends Component {
 
             <div className="row header__row-two">
               <Moment
-                format="Do MMMM YYYY, dddd"
+                format="D MMMM YYYY, dddd"
                 className="header__row-two-moment"
               >
                 <Icon icon="clock" />{" "}
