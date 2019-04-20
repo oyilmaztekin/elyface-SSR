@@ -3,14 +3,13 @@ import React, { Fragment } from "react";
 import propTypes from "prop-types";
 import Head from "next/head";
 
-const HeadWrapper = props => {
+const HeaderWrapepr = props => {
   let title;
   props.title
     ? (title = props.title)
     : "Haberi Yakala";
 
   return (
-    <Fragment>
       <Head>
         <title>{title}</title>
         <meta charset="UTF-8" />
@@ -111,18 +110,17 @@ const HeadWrapper = props => {
           content="off"
         />
       </Head>
-    </Fragment>
   );
 };
 
-HeadWrapper.propTypes = {
+HeaderWrapepr.propTypes = {
   title: propTypes.string.isRequired,
   description: propTypes.string
 };
 
-HeadWrapper.defaultProps = {
+HeaderWrapepr.defaultProps = {
   description:
     "Flaş gelişmeler ve son haberler haberiyakala.com&#039;da!"
 };
 
-export default HeadWrapper;
+export default HeaderWrapepr;

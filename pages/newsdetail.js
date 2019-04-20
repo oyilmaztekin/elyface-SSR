@@ -25,6 +25,24 @@ class NewsDetail extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    const script = document.createElement(
+      "script"
+    );
+    script.innerText = `
+      window.addEventListener("load", ()=> {
+        const images = document.querySelectorAll(
+          "[data-source]"
+        );
+        images.forEach(img => {
+          img.src =
+            img.attributes["data-source"].nodeValue;
+        });
+      })
+    `;
+    document.body.appendChild(script);
+  }
+  
   render() {
     const {
       content: {

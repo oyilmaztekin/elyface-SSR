@@ -56,8 +56,14 @@ class Icon extends Component {
 
 Icon.propTypes = {
   icon: propTypes.string.isRequired,
-  width: propTypes.number,
-  height: propTypes.number,
+  width: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.string
+  ]),
+  height: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.string
+  ]),
   className: propTypes.string,
   color: propTypes.string
 };
