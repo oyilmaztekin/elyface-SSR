@@ -1,15 +1,13 @@
-
 import "./assets/styles.scss";
 import React from "react";
 import propTypes from "prop-types";
-import dateFns from "date-fns";
-import tr from 'date-fns/locale/tr'
+import dayjs from "dayjs";
+import "dayjs/locale/tr";
 
+dayjs.locale("tr");
 
 const Moment = props => {
-  const momentFormat = dateFns.format(
-    new Date(), props.format, { locale: tr }
-  );
+  const momentFormat = dayjs().format(props.format).toString();
   return (
     <div className={props.className}>
       {props.children}
