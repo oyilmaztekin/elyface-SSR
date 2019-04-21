@@ -50,6 +50,7 @@
     "autobind-decorator": "^2.4.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "compression": "^1.7.4",
     "dayjs": "^1.8.12",
     "express": "^4.16.4",
     "next": "^7.0.2",

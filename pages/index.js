@@ -158,6 +158,7 @@ class IndexPage extends Component {
     const script = document.createElement(
       "script"
     );
+    script.setAttribute("defer","true")
     script.innerText = `
       window.addEventListener("load", ()=> {
         const images = document.querySelectorAll(

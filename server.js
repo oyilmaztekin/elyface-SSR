@@ -2,6 +2,8 @@
 const path = require("path");
 
 const express = require("express");
+const compression = require('compression');
+
 const next = require("next");
 
 const port =
@@ -10,8 +12,20 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false
+  }
+
+  // fallback to standard filter function
+  return compression.filter(req, res)
+}
+
 function createServer() {
   const server = express();
+  server.use(compression({ filter: shouldCompress }))
+
 
   server.get(
     "/service-worker.js",

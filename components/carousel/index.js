@@ -86,7 +86,7 @@ const CarouselSlide = props => {
             <LinkButton text={slide.title}>
               <Image
                 placeholder={true}
-                source={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
+                source={`http://assets.blupoint.io/img/75/632x0/${gorsel}`}
                 alt={slide.title}
                 longdesc={slide.description}
               />
@@ -127,7 +127,7 @@ const CarouselSlide = props => {
           <Link href={`${slide.url}`} passHref>
             <LinkButton text={slide.title}>
               <Image
-                src={`http://assets.blupoint.io/img/75/0x0/${gorsel}`}
+                src={`http://assets.blupoint.io/img/75/610x0/${gorsel}`}
                 alt={slide.title}
                 longdesc={slide.description}
               />

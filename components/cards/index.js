@@ -89,7 +89,7 @@ class Cards extends Component {
               gallery={isGallery}
             >
               <Card.IMG
-                src={`http://assets.blupoint.io/img/75/600x340/${gorsel}`}
+                src={`http://assets.blupoint.io/img/75/393x0/${gorsel}`}
                 longdesc={description}
                 alt={title}
                 className={`card-img ${imgClassName}`}
