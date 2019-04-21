@@ -11,7 +11,7 @@
   },
   "engineStrict": true,
   "scripts": {
-    "dev": "esw . && node server.js",
+    "dev": "yarn lint && node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "start-sls": "sls offline start",
@@ -21,11 +21,11 @@
     "test-debug-scope": "/usr/local/bin/node --inspect-brk node_modules/jest/bin/jest.js --runInBand icon.test.js --testNamePattern='should have correct props'",
     "story": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "esw ."
+    "lint": "esw . && tsc --pretty"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "esw . && jest --no-cache --verbose --coverage"
+      "pre-commit": "yarn lint && yarn test"
     }
   },
   "jest": {
@@ -47,6 +47,7 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
     "autobind-decorator": "^2.4.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",

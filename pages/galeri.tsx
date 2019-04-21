@@ -5,28 +5,32 @@ import React, {
 import { getDataset } from "@utils";
 import HeaderWrapepr from "@comp/head/";
 import PageLayout from "@nest/pagelayout";
-import propTypes from "prop-types";
 import CategoryLayout from "@nest/catLayout";
+import {
+  CatDataTypes,
+  ErrorResponse
+} from "./@types/category/catDataTypes";
+import { CategoryPropsInterface } from "./@types/category/propTypes";
 import "static/styles/pages.scss";
 import "static/styles/indexAds.scss";
 
-class EgitimPage extends Component {
+class GaleriPage extends Component<CategoryPropsInterface> {
   static getInitialProps = async () => {
     /**
      * TODO: galeri, magazin, sağlık, eğitim
      */
-    const dataset = "cat-egitim";
-    const seohaberleridataset = "seo-haberleri";
+    const dataset:string = "type-galeri";
+    const seohaberleridataset:string = "seo-haberleri";
 
     const data = await getDataset(dataset)
-      .then(data => data.data)
-      .catch(err => err.response.data);
+      .then((data:CatDataTypes) => data.data)
+      .catch((err:ErrorResponse) => err.response.data);
 
     const seohaberleri = await getDataset(
       seohaberleridataset
     )
-      .then(data => data.data)
-      .catch(err => err.response.data);
+      .then((data:CatDataTypes) => data.data)
+      .catch((err:ErrorResponse) => err.response.data);
     return {
       registry: {
         data: data,
@@ -40,7 +44,7 @@ class EgitimPage extends Component {
     };
   };
 
-  constructor(props) {
+  constructor(props:CategoryPropsInterface) {
     super(props);
   }
 
@@ -76,9 +80,4 @@ class EgitimPage extends Component {
   }
 }
 
-EgitimPage.propTypes = {
-  registry: propTypes.object,
-  dataset: propTypes.object
-};
-
-export default EgitimPage;
+export default GaleriPage;

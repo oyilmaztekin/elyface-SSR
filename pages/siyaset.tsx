@@ -5,28 +5,32 @@ import React, {
 import { getDataset } from "@utils";
 import HeaderWrapepr from "@comp/head/";
 import PageLayout from "@nest/pagelayout";
-import propTypes from "prop-types";
 import CategoryLayout from "@nest/catLayout";
+import {
+  CatDataTypes,
+  ErrorResponse
+} from "./@types/category/catDataTypes";
+import { CategoryPropsInterface } from "./@types/category/propTypes";
 import "static/styles/pages.scss";
 import "static/styles/indexAds.scss";
 
-class YasamPage extends Component {
+class SiyasetPage extends Component<CategoryPropsInterface> {
   static getInitialProps = async () => {
     /**
      * TODO: galeri, magazin, sağlık, eğitim
      */
-    const dataset = "cat-yasam";
+    const dataset = "cat-siyaset";
     const seohaberleridataset = "seo-haberleri";
 
     const data = await getDataset(dataset)
-      .then(data => data.data)
-      .catch(err => err.response.data);
+      .then((data:CatDataTypes) => data.data)
+      .catch((err:ErrorResponse) => err.response.data);
 
     const seohaberleri = await getDataset(
       seohaberleridataset
     )
-      .then(data => data.data)
-      .catch(err => err.response.data);
+      .then((data:CatDataTypes) => data.data)
+      .catch((err:ErrorResponse) => err.response.data);
     return {
       registry: {
         data: data,
@@ -40,7 +44,7 @@ class YasamPage extends Component {
     };
   };
 
-  constructor(props) {
+  constructor(props:CategoryPropsInterface) {
     super(props);
   }
 
@@ -75,10 +79,4 @@ class YasamPage extends Component {
     );
   }
 }
-
-YasamPage.propTypes = {
-  registry: propTypes.object,
-  dataset: propTypes.object
-};
-
-export default YasamPage;
+export default SiyasetPage;

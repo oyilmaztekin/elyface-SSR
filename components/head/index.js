@@ -21,8 +21,13 @@ const HeaderWrapepr = props => {
         `}</style>
       <link
         rel="manifest"
-        href="/static/manifest.json"
+        href="/static/favicon_io/site.webmanifest"
       />
+      <link
+        rel="shortcut icon"
+        href="/static/favicon_io/favicon.ico"
+      />
+
       <meta
         name="robots"
         content="index, follow"

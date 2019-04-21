@@ -11,8 +11,8 @@ import "static/styles/indexAds.scss";
 class NewsDetail extends Component {
   static getInitialProps = async ({ asPath }) => {
     const data = await getRouter(asPath)
-      .then(data => data.data)
-      .catch(err => err.response.data);
+      .then((data) => data.data)
+      .catch((err) => err.response.data);
     return {
       content: {
         data: data.model,

@@ -3,7 +3,9 @@ const withPlugins = require("next-compose-plugins");
 const size = require("next-size");
 const sass = require("@zeit/next-sass");
 const css = require("@zeit/next-css");
+const typeScript = require('@zeit/next-typescript');
 const images = require("next-images");
+
 
 const {
   PHASE_PRODUCTION_BUILD,
@@ -37,6 +39,7 @@ module.exports = withPlugins(
         }
       }
     ],
+    typeScript,
     images,
     size,
     [

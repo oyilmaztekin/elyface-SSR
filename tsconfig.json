@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./*"],
+      "test/*": ["test/*"],
+      "@comp/*": ["components/*"],
+      "@nest/*": ["nested/*"],
+      "@globalstyle": ["./globalstyles/styles.scss"],
+      "@mock/*": ["mocks"],
+      "@static/*": ["static"],
+      "@apis/*": ["configs/index.js"],
+      "@utils": ["./utils/index.js"]
+    },
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "lib": ["dom", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext"
+  },
+  "include": ["./pages/**/*"]
+}
