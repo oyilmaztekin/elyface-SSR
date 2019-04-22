@@ -1,4 +1,3 @@
-declare module "react";
 declare module "@utils";
 declare module "@comp/head/";
 declare module "@nest/pagelayout";

@@ -69,6 +69,7 @@ type indexReturnedDatasets = {
 };
 
 export interface IndexPropsInterface {
+  initialLoadedItems: number;
   registry: {
     [key: string]: indexReturnedObjects;
   };

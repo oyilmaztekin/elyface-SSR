@@ -5,7 +5,6 @@ import React, {
 import { getDataset } from "@utils";
 import HeaderWrapepr from "@comp/head/";
 import PageLayout from "@nest/pagelayout";
-import propTypes from "prop-types";
 import CategoryLayout from "@nest/catLayout";
 import {
   CatDataTypes,
@@ -80,10 +79,4 @@ class EmlakPage extends Component<CategoryPropsInterface> {
     );
   }
 }
-
-EmlakPage.propTypes = {
-  registry: propTypes.object,
-  dataset: propTypes.object
-};
-
 export default EmlakPage;
