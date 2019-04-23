@@ -1,7 +1,4 @@
-import React, {
-  Fragment,
-  Component
-} from "react";
+import React, { Fragment } from "react";
 import { getDataset } from "@utils";
 import HeaderWrapepr from "@comp/head/";
 import PageLayout from "@nest/pagelayout";
@@ -10,74 +7,61 @@ import {
   CatDataTypes,
   ErrorResponse
 } from "../@types/category/catDataTypes";
+import { OptimizationProvider } from "@utils";
 import { CategoryPropsInterface } from "../@types/category/propTypes";
 import "static/styles/pages.scss";
 import "static/styles/indexAds.scss";
 
-class TeknolojiPage extends Component<CategoryPropsInterface> {
-  static getInitialProps = async () => {
-    /**
-     * TODO: galeri, magazin, sağlık, eğitim
-     */
-    const dataset = "cat-teknoloji";
-    const seohaberleridataset = "seo-haberleri";
-
-    const data = await getDataset(dataset)
-      .then((data:CatDataTypes) => data.data)
-      .catch((err:ErrorResponse) => err.response.data);
-
-    const seohaberleri = await getDataset(
-      seohaberleridataset
-    )
-      .then((data:CatDataTypes) => data.data)
-      .catch((err:ErrorResponse) => err.response.data);
-    return {
-      registry: {
-        data: data,
-        datacarousel: data.data.items,
-        seohaberleri: seohaberleri
-      },
-      dataset: {
-        data: dataset,
-        seohaberleri: seohaberleridataset
-      }
-    };
-  };
-
-  constructor(props:CategoryPropsInterface) {
-    super(props);
-  }
-
-  componentDidMount() {
-    const script = document.createElement(
-      "script"
-    );
-    script.innerText = `
-      window.addEventListener("load", ()=> {
-        const images = document.querySelectorAll(
-          "[data-source]"
-        );
-        images.forEach(img => {
-          img.src =
-            img.attributes["data-source"].nodeValue;
-        });
-      })
-    `;
-    document.body.appendChild(script);
-  }
-  render() {
-    return (
-      <Fragment>
-        <HeaderWrapepr title="Haberi Yakala" />
+const TeknolojiPage = (
+  props: CategoryPropsInterface
+) => {
+  return (
+    <Fragment>
+      <HeaderWrapepr title="Haberi Yakala" />
+      <OptimizationProvider>
         <PageLayout>
           <CategoryLayout
-            registry={this.props.registry}
-            dataset={this.props.dataset}
+            registry={props.registry}
+            dataset={props.dataset}
           />
         </PageLayout>
-      </Fragment>
+      </OptimizationProvider>
+    </Fragment>
+  );
+};
+
+TeknolojiPage.getInitialProps = async () => {
+  /**
+   * TODO: galeri, magazin, sağlık, eğitim
+   */
+  const dataset: string = "cat-teknoloji";
+  const seohaberleridataset: string =
+    "seo-haberleri";
+
+  const data = await getDataset(dataset)
+    .then((data: CatDataTypes) => data.data)
+    .catch(
+      (err: ErrorResponse) => err.response.data
     );
-  }
-}
+
+  const seohaberleri = await getDataset(
+    seohaberleridataset
+  )
+    .then((data: CatDataTypes) => data.data)
+    .catch(
+      (err: ErrorResponse) => err.response.data
+    );
+  return {
+    registry: {
+      data: data,
+      datacarousel: data.data.items,
+      seohaberleri: seohaberleri
+    },
+    dataset: {
+      data: dataset,
+      seohaberleri: seohaberleridataset
+    }
+  };
+};
 
 export default TeknolojiPage;

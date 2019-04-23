@@ -1,9 +1,30 @@
-import React from "react";
+import React, {Component} from "react";
 import propTypes from "prop-types";
 import Article from "@comp/article/";
 import CardManager from "@comp/cardmanager/";
+import { OptimizationConsumerHOC } from "@utils";
 
-const RenderArticle = props => {
+class RenderArticle extends Component {
+  constructor(props){
+    super(props);
+  }
+  componentDidMount() {
+    const {
+      context,
+      initialLoadImages
+    } = this.props;
+
+    initialLoadImages &&
+      context &&
+      context.startInitialLoad &&
+      context.startInitialLoad(initialLoadImages);
+
+    context &&
+      context.state &&
+      context.attachLazyLoadListener &&
+      context.attachLazyLoadListener();
+  }
+  render(){
   const {
     title,
     description,
@@ -13,9 +34,9 @@ const RenderArticle = props => {
     haber_gorsel,
     url,
     id
-  } = props.content;
+  } = this.props.content;
 
-  const { breadcrumbs } = props;
+  const { breadcrumbs } = this.props;
   return (
     <Article
       title={title}
@@ -42,10 +63,25 @@ const RenderArticle = props => {
     </Article>
   );
 };
+}
 
 RenderArticle.propTypes = {
+  initialLoadImages:propTypes.number,
   breadcrumbs: propTypes.object,
-  content: propTypes.object
+  content: propTypes.object,
+  context: propTypes.shape({
+    state: propTypes.shape({
+      initialLoadImages:propTypes.number,
+      imageElements: propTypes.object,
+      isInitialLoadCompleted:propTypes.bool
+    }),
+    startInitialLoad:propTypes.func,
+    attachLazyLoadListener:propTypes.func
+  })
 };
 
-export default RenderArticle;
+RenderArticle.defaultProps = {
+  initialLoadImages:1
+}
+
+export default OptimizationConsumerHOC(RenderArticle);

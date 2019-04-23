@@ -70,13 +70,23 @@ Card.IMG = props => {
     <div className={props.className}>
       <Link href={props.href} passHref>
         <LinkButton text={props.alt}>
-          <Image
-            source={props.src}
-            placeholder={true}
-            responsive
-            alt={props.alt}
-            longdesc={props.longdesc}
-          />
+          {!props.placeholder ? (
+            <Image
+              src={props.src}
+              placeholder={false}
+              responsive
+              alt={props.alt}
+              longdesc={props.longdesc}
+            />
+          ) : (
+            <Image
+              source={props.src}
+              placeholder={true}
+              responsive
+              alt={props.alt}
+              longdesc={props.longdesc}
+            />
+          )}
         </LinkButton>
       </Link>
       {props.border && ImgDivider}

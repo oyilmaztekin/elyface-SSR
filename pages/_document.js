@@ -1,9 +1,9 @@
+import React from "react";
 import Document, {
     Head,
     Main,
     NextScript
   } from "next/document";
-  import HeadWrapper from "@comp/head";
   
   class PageDocument extends Document {
     static async getInitialProps(ctx) {

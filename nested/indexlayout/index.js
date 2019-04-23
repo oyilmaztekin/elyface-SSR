@@ -76,7 +76,7 @@ class IndexLayout extends Component {
               height={422}
               layout="bottom"
               slides={this.props.registry.manset}
-              className="manset-alti-slider"
+              className="surmanset-alti-slider"
               bg="#fff"
             />
             <Cards
@@ -125,7 +125,6 @@ class IndexLayout extends Component {
           <Row>
             <Carousel
               width={632}
-              height={225}
               layout="left"
               slides={
                 this.props.registry.cokokunanlar

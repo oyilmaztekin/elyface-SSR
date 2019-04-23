@@ -95,6 +95,7 @@ class Cards extends Component {
                 className={`card-img ${imgClassName}`}
                 border={border}
                 href={url}
+                placeholder={true}
               />
               <Card.Title
                 title={title}

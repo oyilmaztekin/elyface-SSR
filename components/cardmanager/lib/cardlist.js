@@ -74,6 +74,7 @@ class Cardlist extends Component {
                 className={`card-img ${imgClassName}`}
                 border={border}
                 href={url}
+                placeholder={false}
               />
               <Card.Title
                 title={title}

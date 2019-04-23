@@ -69,18 +69,20 @@ const CarouselSlide = props => {
     gorsel = haber_gorsel[0]._id;
     cat = ancestors[0].title;
     url = slide.self_path;
-
   }
   if (type === "galeri") {
     gorsel = galeri_gorsel._id;
     cat = "Galeri";
-    url = `galeri/${slide.self_path}`
+    url = `galeri/${slide.self_path}`;
   }
-
 
   if (layout && layout === "bottom") {
     return (
-      <li key={index} className={slideClass} data-content-id={_id}>
+      <li
+        key={index}
+        className={slideClass}
+        data-content-id={_id}
+      >
         <div className={slideDiv}>
           <Link href={`${slide.url}`} passHref>
             <LinkButton text={slide.title}>
@@ -92,13 +94,13 @@ const CarouselSlide = props => {
               />
             </LinkButton>
           </Link>
-          
-          {cat === "Galeri" ? 
-              <Icon
-                icon="gallery"
-                className="gallery-icon"
-              />
-            : null }
+
+          {cat === "Galeri" ? (
+            <Icon
+              icon="gallery"
+              className="gallery-icon"
+            />
+          ) : null}
 
           <Link href={`${slide.url}`} passHref>
             <LinkButton
@@ -122,7 +124,11 @@ const CarouselSlide = props => {
   }
   if (layout && layout === "left") {
     return (
-      <li key={index} className={slideClass} data-content-id={_id}>
+      <li
+        key={index}
+        className={slideClass}
+        data-content-id={_id}
+      >
         <div className={slideDiv}>
           <Link href={`${slide.url}`} passHref>
             <LinkButton text={slide.title}>
@@ -134,12 +140,12 @@ const CarouselSlide = props => {
               />
             </LinkButton>
           </Link>
-          {cat === "Galeri" ? 
-              <Icon
-                icon="video"
-                className="gallery-icon-bottom"
-              />
-            : null }
+          {cat === "Galeri" ? (
+            <Icon
+              icon="video"
+              className="gallery-icon-bottom"
+            />
+          ) : null}
           <Link href={`${slide.url}`} passHref>
             <LinkButton
               text={slide.title}
@@ -148,7 +154,6 @@ const CarouselSlide = props => {
                 width: props.width / 2.3
               }}
             >
-
               <span className="slide__category">
                 {cat}
               </span>
@@ -182,6 +187,16 @@ class Carousel extends Component {
 
   @autobind
   goToSlide(index) {
+    let images = document.querySelectorAll(
+      `.${this.props.className} img[data-source]`
+    );
+    let activeImg = images[index];
+    if (
+      !activeImg.src.startsWith("http://assets.")
+    ) {
+      activeImg.src = activeImg.dataset.source;
+    }
+
     this.setState({
       activeIndex: index
     });
