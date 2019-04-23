@@ -3,4 +3,7 @@ declare module "@comp/head/";
 declare module "@nest/pagelayout";
 declare module "@nest/indexlayout";
 declare module "@nest/catLayout";
+declare module "@comp/card/";
+declare module "@comp/image/";
+declare module "@comp/linkButton/"
 declare module "prop-types";

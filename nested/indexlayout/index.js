@@ -62,12 +62,9 @@ class IndexLayout extends Component {
               this.props.registry.surmanset
             }
             vertical={false}
-            containerBG="#ffffff"
             bg="#fff"
-            textColor="#323232"
             gallery={false}
             imgClassName="className"
-            border="#ffa200"
             width={303}
           />
           <Row>
@@ -80,13 +77,9 @@ class IndexLayout extends Component {
               bg="#fff"
             />
             <Cards
-              dataset={
-                this.props.dataset.sagmanset
-              }
+              dataset={this.props.dataset.sagmanset}
               className="section-cards__sag-manset-yani"
-              registry={
-                this.props.registry.sagmanset
-              }
+              registry={this.props.registry.sagmanset}
               vertical={true}
               width={303}
               // height={196}
@@ -109,16 +102,11 @@ class IndexLayout extends Component {
                 this.props.registry.mansetalti
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
             />
           </Row>
 
@@ -141,16 +129,11 @@ class IndexLayout extends Component {
                 this.props.registry.galeri
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={true}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -162,16 +145,11 @@ class IndexLayout extends Component {
                 this.props.registry.gundem
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={true}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -182,16 +160,11 @@ class IndexLayout extends Component {
                 this.props.registry.ekonomi
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -202,16 +175,11 @@ class IndexLayout extends Component {
                 this.props.registry.magazin
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -222,16 +190,11 @@ class IndexLayout extends Component {
                 this.props.registry.siyaset
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -241,16 +204,11 @@ class IndexLayout extends Component {
               dataset={this.props.dataset.yasam}
               registry={this.props.registry.yasam}
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -263,16 +221,11 @@ class IndexLayout extends Component {
                 this.props.registry.teknoloji
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -281,16 +234,11 @@ class IndexLayout extends Component {
               dataset={this.props.dataset.dunya}
               registry={this.props.registry.dunya}
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -302,16 +250,11 @@ class IndexLayout extends Component {
                 this.props.registry.saglik
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -322,16 +265,11 @@ class IndexLayout extends Component {
                 this.props.registry.egitim
               }
               vertical={false}
-              containerBG="#ffffff"
               bg="#fff"
-              textColor="#323232"
-              fontSize="18"
               gallery={false}
               imgClassName="className"
               className="nested-cards"
-              border="#ffa200"
               width={303}
-              lineHeight="24"
               heading={true}
             />
           </Row>
@@ -366,24 +304,27 @@ class IndexLayout extends Component {
 IndexLayout.propTypes = {
   dataset: propTypes.object,
   registry: propTypes.registry,
-  initialLoadImages:propTypes.number,
+  initialLoadImages: propTypes.number,
   store: propTypes.shape({
     state: propTypes.shape({
       activeURL: propTypes.string,
       pageTitle: propTypes.string,
       isHeaderSticky: propTypes.bool,
       adNetworkID: propTypes.string,
-      updateValue: propTypes.func
+      updateValue: propTypes.func,
+      brand: propTypes.string,
+      defaultFontSize: propTypes.string,
+      defaultFontColor: propTypes.string
     })
   }),
   context: propTypes.shape({
     state: propTypes.shape({
-      initialLoadImages:propTypes.number,
+      initialLoadImages: propTypes.number,
       imageElements: propTypes.object,
-      isInitialLoadCompleted:propTypes.bool
+      isInitialLoadCompleted: propTypes.bool
     }),
-    startInitialLoad:propTypes.func,
-    attachLazyLoadListener:propTypes.func
+    startInitialLoad: propTypes.func,
+    attachLazyLoadListener: propTypes.func
   })
 };
 

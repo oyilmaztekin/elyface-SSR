@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import propTypes from "prop-types";
 import CardList from "./lib/cardlist";
 import { getDataset } from "@utils";
-
 /**
  * @author Özer Yılmaztekin
  *
@@ -75,24 +74,24 @@ class CardManager extends Component {
     } = this.props;
 
     return (
-        <CardList
-          inherit={inherit}
-          registry={cardRegistry}
-          dataset={dataset}
-          cardBg={cardBg}
-          imgClassName={imgClassName}
-          border={border}
-          textColor={textColor}
-          fontSize={fontSize}
-          width={width}
-          height={height}
-          vertical={vertical}
-          lineHeight={lineHeight}
-          limit={limit}
-          containerBG={containerBG}
-          gallery={gallery}
-          className={className}
-        />
+      <CardList
+        inherit={inherit}
+        registry={cardRegistry}
+        dataset={dataset}
+        cardBg={cardBg}
+        imgClassName={imgClassName}
+        border={border}
+        textColor={textColor}
+        fontSize={fontSize}
+        width={width}
+        height={height}
+        vertical={vertical}
+        lineHeight={lineHeight}
+        limit={limit}
+        containerBG={containerBG}
+        gallery={gallery}
+        className={className}
+      />
     );
   }
 }

@@ -6,6 +6,7 @@ import Image from "@comp/image/";
 import LinkButton from "@comp/linkButton/";
 import Link from "next/link";
 import Icon from "@comp/icon/";
+import { StoreConsumerHOC } from "@utils";
 
 const Card = props => {
   let {
@@ -128,7 +129,7 @@ Card.Title = props => {
             style={{
               color: color && color,
               fontSize: fontSize + "px",
-              lineHeight: lineHeight + "px"
+              lineHeight: lineHeight
             }}
           >
             {title}

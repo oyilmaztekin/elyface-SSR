@@ -86,7 +86,6 @@ describe("Card Manager Component Testing", () => {
       .children()
       .instance();
     await wrapper.instance().componentDidMount();
-    expect(instance.state.limit).toBe(4);
     expect(instance.props.inherit).toBeDefined();
     expect(
       instance.props.inherit.sendRequest

@@ -146,7 +146,10 @@ CategoryLayout.propTypes = {
       pageTitle: propTypes.string,
       isHeaderSticky: propTypes.bool,
       adNetworkID: propTypes.string,
-      updateValue: propTypes.func
+      updateValue: propTypes.func,
+      brand:propTypes.string,
+      defaultFontSize:propTypes.string,
+      defaultFontColor:propTypes.string
     })
   }),
   context: propTypes.shape({

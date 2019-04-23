@@ -11,7 +11,10 @@ export const InfiniteConsumerHOC = WrappedComponent => {
         state: propTypes.shape({
           pageTitle: propTypes.string,
           isHeaderSticky: propTypes.bool,
-          adNetworkID: propTypes.string
+          adNetworkID: propTypes.string,
+          brand: propTypes.string,
+          defaultFontSize: propTypes.string,
+          defaultFontColor: propTypes.string
         })
       })
     };

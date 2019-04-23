@@ -19,15 +19,19 @@ class Header extends Component {
   }
   @autobind
   handleStateChange(status) {
-    if(status.status === 2) {
-      this.props.store.updateValue("isHeaderSticky", true)
-    }
-    else {
-      this.props.store.updateValue("isHeaderSticky", false)
+    if (status.status === 2) {
+      this.props.store.updateValue(
+        "isHeaderSticky",
+        true
+      );
+    } else {
+      this.props.store.updateValue(
+        "isHeaderSticky",
+        false
+      );
     }
   }
   render() {
-
     let {
       sticky,
       top,
@@ -62,7 +66,9 @@ class Header extends Component {
                   title="Haberi Yakala Logosu"
                   className="header__row-one-logo"
                 />
-                <span className="header__row-one-logo-text">Elyface</span>
+                <span className="header__row-one-logo-text">
+                  Elyface
+                </span>
               </LinkButton>
               <Navigation
                 navElements={navElements}
@@ -96,7 +102,10 @@ class Header extends Component {
                     href="#"
                   >
                     <span>
-                      <Icon icon="gallery" color="#fff" />{" "}
+                      <Icon
+                        icon="gallery"
+                        color="#fff"
+                      />{" "}
                       Galeriler
                     </span>
                   </LinkButton>
@@ -108,7 +117,10 @@ class Header extends Component {
                     href="#"
                   >
                     <span>
-                      <Icon icon="video" color="#fff" />{" "}
+                      <Icon
+                        icon="video"
+                        color="#fff"
+                      />{" "}
                       Videolar
                     </span>
                   </LinkButton>
@@ -145,9 +157,12 @@ Header.propTypes = {
   store: propTypes.shape({
     activeURL: propTypes.string,
     pageTitle: propTypes.string,
-    isHeaderSticky:propTypes.bool,
-    adNetworkID:propTypes.string,
-    updateValue:propTypes.func
+    isHeaderSticky: propTypes.bool,
+    adNetworkID: propTypes.string,
+    updateValue: propTypes.func,
+    brand: propTypes.string,
+    defaultFontSize: propTypes.string,
+    defaultFontColor: propTypes.string
   })
 };
 

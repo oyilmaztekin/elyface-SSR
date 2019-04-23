@@ -10,7 +10,10 @@ export class StoreProvider extends Component {
     this.state = {
       pageTitle: "",
       isHeaderSticky: false,
-      adNetworkID: "61966246"
+      adNetworkID: "61966246",
+      brand:"#ffa200",
+      defaultFontSize:"18",
+      defaultFontColor:"#323232"
     };
   }
 

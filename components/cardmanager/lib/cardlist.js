@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import propTypes from "prop-types";
 import Card from "@comp/card/";
 import classNames from "classnames";
+import { StoreConsumerHOC } from "@utils";
 
 class Cardlist extends Component {
   constructor(props) {
@@ -51,6 +52,9 @@ class Cardlist extends Component {
         } = this.props;
 
         let gorsel = haber_gorsel[0]._id;
+        let lineHeighCondition = lineHeight
+          ? lineHeight
+          : "24";
 
         return (
           <li
@@ -72,15 +76,31 @@ class Cardlist extends Component {
                 longdesc={description}
                 alt={title}
                 className={`card-img ${imgClassName}`}
-                border={border}
+                border={
+                  border
+                    ? border
+                    : this.props.store.state.brand
+                }
                 href={url}
                 placeholder={false}
               />
               <Card.Title
                 title={title}
-                color={textColor}
-                fontSize={fontSize}
-                lineHeight={lineHeight}
+                color={
+                  textColor
+                    ? textColor
+                    : this.props.store.state
+                        .defaultFontColor
+                }
+                fontSize={
+                  fontSize
+                    ? fontSize
+                    : this.props.store.state
+                        .defaultFontSize
+                }
+                lineHeight={
+                  lineHeighCondition + "px"
+                }
                 href={url}
               />
             </Card>
@@ -116,16 +136,15 @@ class Cardlist extends Component {
           backgroundColor: containerBG
         }}
       >
-          <ul
-            className={classNames(
-              "card-manager",
-              vertical && `card-manager-vertical`,
-              !vertical &&
-                `card-manager-horizontal`
-            )}
-          >
-            {items}
-          </ul>
+        <ul
+          className={classNames(
+            "card-manager",
+            vertical && `card-manager-vertical`,
+            !vertical && `card-manager-horizontal`
+          )}
+        >
+          {items}
+        </ul>
       </section>
     );
   }
@@ -146,7 +165,19 @@ Cardlist.propTypes = {
   vertical: propTypes.bool,
   limit: propTypes.number,
   containerBG: propTypes.string,
-  gallery: propTypes.bool
+  gallery: propTypes.bool,
+  store: propTypes.shape({
+    state: propTypes.shape({
+      activeURL: propTypes.string,
+      pageTitle: propTypes.string,
+      isHeaderSticky: propTypes.bool,
+      adNetworkID: propTypes.string,
+      updateValue: propTypes.func,
+      brand: propTypes.string,
+      defaultFontSize: propTypes.string,
+      defaultFontColor: propTypes.string
+    })
+  })
 };
 
-export default Cardlist;
+export default StoreConsumerHOC(Cardlist);

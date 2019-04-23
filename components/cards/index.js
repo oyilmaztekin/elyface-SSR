@@ -5,6 +5,7 @@ import LinkButton from "@comp/linkButton/";
 import autobind from "autobind-decorator";
 import Card from "@comp/card/";
 import classNames from "classnames";
+import { StoreConsumerHOC } from "@utils";
 import "./assets/styles.scss";
 
 class Cards extends Component {
@@ -70,6 +71,7 @@ class Cards extends Component {
         if (type === "galeri") {
           gorsel = galeri_gorsel._id;
         }
+        let lineHeighCondition = lineHeight ? lineHeight : "24";
 
         return (
           <li
@@ -93,15 +95,15 @@ class Cards extends Component {
                 longdesc={description}
                 alt={title}
                 className={`card-img ${imgClassName}`}
-                border={border}
+                border={border ? border : this.props.store.state.brand}
                 href={url}
                 placeholder={true}
               />
               <Card.Title
                 title={title}
-                color={textColor}
-                fontSize={fontSize}
-                lineHeight={lineHeight}
+                color={textColor ? textColor : this.props.store.state.defaultFontColor}
+                fontSize={fontSize ? fontSize : this.props.store.state.defaultFontSize}
+                lineHeight={lineHeighCondition + "px"}
                 href={url}
               />
             </Card>
@@ -185,7 +187,19 @@ Cards.propTypes = {
   limit: propTypes.number,
   gallery: propTypes.bool,
   className: propTypes.string,
-  heading: propTypes.bool
+  heading: propTypes.bool,
+  store: propTypes.shape({
+    state: propTypes.shape({
+      activeURL: propTypes.string,
+      pageTitle: propTypes.string,
+      isHeaderSticky: propTypes.bool,
+      adNetworkID: propTypes.string,
+      updateValue: propTypes.func,
+      brand:propTypes.string,
+      defaultFontSize:propTypes.string,
+      defaultFontColor:propTypes.string
+    })
+  }),
 };
 
-export default Cards;
+export default StoreConsumerHOC(Cards);
