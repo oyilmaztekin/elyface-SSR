@@ -7,8 +7,8 @@ import {
   MansetCokOkuanlarDataInterface,
   RegularDataTypes,
   ErrorResponse
-} from "./@types/responseDataTypes";
-import { IndexPropsInterface } from "./@types/index/propTypes";
+} from "../@types/responseDataTypes";
+import { IndexPropsInterface } from "../@types/index/propTypes";
 import { OptimizationProvider } from "@utils";
 import "static/styles/pages.scss";
 import "static/styles/indexAds.scss";

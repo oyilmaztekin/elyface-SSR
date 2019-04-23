@@ -62,6 +62,7 @@ class Header extends Component {
                   title="Haberi Yakala Logosu"
                   className="header__row-one-logo"
                 />
+                <span class="header__row-one-logo-text">Elyface</span>
               </LinkButton>
               <Navigation
                 navElements={navElements}

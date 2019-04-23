@@ -27,6 +27,8 @@ const HeaderWrapepr = props => {
         rel="shortcut icon"
         href="/static/favicon_io/favicon.ico"
       />
+      <link rel="preconnect" href="http://assets.blupoint.io" />
+      <link rel="preconnect" href="http://delivery.blupoint.io" />
 
       <meta
         name="robots"
@@ -55,7 +57,7 @@ const HeaderWrapepr = props => {
       />
       <meta
         property="og:image"
-        content="http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
+        content="static/logo.png"
       />
       <meta
         property="og:site_name"
@@ -87,7 +89,7 @@ const HeaderWrapepr = props => {
       />
       <meta
         name="twitter:image:src"
-        content="http://cdn.haberiyakala.com/assets/default/desktop/img/logo.png"
+        content="static/logo.png"
       />
       <meta
         name="twitter:url"

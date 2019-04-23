@@ -13,10 +13,10 @@ const Row1 = () => {
       <Row paddingTop={40} paddingBottom={40}>
         <div className="logo">
           <Image
-            src="/static/logo-white.png"
+            src="/static/logo.png"
             title="Haberi Yakala Logosu"
-            className=""
           />
+          <span>Elyface</span>
         </div>
         <div className="copyright">
           <strong>haberiyakala.com</strong>{" "}

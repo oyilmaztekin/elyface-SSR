@@ -9,8 +9,8 @@ import CategoryLayout from "@nest/catLayout";
 import {
   CatDataTypes,
   ErrorResponse
-} from "./@types/category/catDataTypes";
-import { CategoryPropsInterface } from "./@types/category/propTypes";
+} from "../@types/category/catDataTypes";
+import { CategoryPropsInterface } from "../@types/category/propTypes";
 import "static/styles/pages.scss";
 import "static/styles/indexAds.scss";
 

@@ -127,7 +127,8 @@ const CarouselSlide = props => {
           <Link href={`${slide.url}`} passHref>
             <LinkButton text={slide.title}>
               <Image
-                src={`http://assets.blupoint.io/img/75/610x0/${gorsel}`}
+                placeholder={true}
+                source={`http://assets.blupoint.io/img/75/610x0/${gorsel}`}
                 alt={slide.title}
                 longdesc={slide.description}
               />

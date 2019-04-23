@@ -3,9 +3,8 @@ const withPlugins = require("next-compose-plugins");
 const size = require("next-size");
 const sass = require("@zeit/next-sass");
 const css = require("@zeit/next-css");
-const typeScript = require('@zeit/next-typescript');
+const typeScript = require("@zeit/next-typescript");
 const images = require("next-images");
-
 
 const {
   PHASE_PRODUCTION_BUILD,
@@ -17,7 +16,32 @@ const {
 // next.js configuration
 const nextConfig = {
   useFileSystemPublicRoutes: false,
-  distDir: ".next"
+  distDir: ".next",
+  webpack: (config, options) => {
+    config.optimization.splitChunks = {
+      chunks: "async",
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: "~",
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    };
+
+    return config;
+  }
 };
 
 module.exports = withPlugins(

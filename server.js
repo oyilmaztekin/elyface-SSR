@@ -40,6 +40,7 @@ function createServer() {
   );
 
   server.get("/", (req, res) => {
+    res.header('Cache-Control', 'max-age=31536000')
     return app.render(req, res, "/", req.query);
   });
 
